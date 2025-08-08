@@ -1,0 +1,16 @@
+[
+  {
+    "session_id": "a9d17f50-5adb-4d08-97a4-30920fd7a4c8",
+    "transcript_path": "/home/bryan/.claude/projects/-home-bryan-agentgen/a9d17f50-5adb-4d08-97a4-30920fd7a4c8.jsonl",
+    "cwd": "/home/bryan/agentgen",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "@agent-orchestrator-opus to review consolidation oppurtunity, and use @agent-expert-programmer to implement... let's use a action-first naming convention.. there are too many agents. let's break these down into logical groupings..."
+  },
+  {
+    "session_id": "a9d17f50-5adb-4d08-97a4-30920fd7a4c8",
+    "transcript_path": "/home/bryan/.claude/projects/-home-bryan-agentgen/a9d17f50-5adb-4d08-97a4-30920fd7a4c8.jsonl",
+    "cwd": "/home/bryan/agentgen",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "already exists yeah?"
+  }
+]

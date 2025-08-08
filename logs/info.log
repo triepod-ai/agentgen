@@ -6,3 +6,6 @@
 [2025-08-08T17:56:45.076Z] [INFO] Ensured Neo4j constraints and indexes exist for Entity and Observation nodes.
 [2025-08-08T17:57:02.881Z] [INFO] Received SIGTERM, shutting down...
 [2025-08-08T17:57:02.883Z] [INFO] Neo4j driver closed.
+[2025-08-08T18:27:44.017Z] [INFO] Knowledge Graph MCP Server (Neo4j/File Fallback) running on stdio
+[2025-08-08T18:27:44.112Z] [INFO] Successfully connected to Neo4j.
+[2025-08-08T18:27:44.180Z] [INFO] Ensured Neo4j constraints and indexes exist for Entity and Observation nodes.

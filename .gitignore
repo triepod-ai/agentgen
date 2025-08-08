@@ -2,3 +2,5 @@
 .specs/
 .env
 .mcp.json
+logs/
+agentgen.code-workspace

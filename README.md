@@ -2,15 +2,19 @@
 
 ## Overview
 
-This directory contains 31 optimized agents (25 general + 6 specialists) with complexity-based model selection for maximum efficiency. Each agent is optimized for <400 characters and focuses on immediate execution.
+This directory contains 32 optimized agents (25 general + 7 specialists) with complexity-based model selection for maximum efficiency. Each agent is optimized for <400 characters and focuses on immediate execution.
 
 ## Design Philosophy
+
+Based on enterprise agent architecture patterns from Microsoft Azure, Speakeasy, and Databricks:
 
 - **Action-First Naming**: Clear action verbs (analyze, build, debug, etc.)
 - **<400 Character Limit**: Optimized for fast loading and context efficiency
 - **Immediate Execution**: All agents execute workflows immediately upon invocation
 - **Specialized Focus**: Single responsibility agents with clear trigger patterns
 - **Complexity-Based Models**: Green (haiku), Yellow (sonnet), Red (opus) based on task complexity
+- **Orchestration Patterns**: Sequential, concurrent, and hierarchical coordination support
+- **Tool Integration**: MCP protocol compatibility for external service access
 
 ## Usage Patterns
 
@@ -100,13 +104,14 @@ Maximum capability for complex tasks:
 - `query-database` (Yellow)
 - `extract-insights` (Yellow)
 
-### 5. Specialized Tools (4 Agents)
+### 5. Specialized Tools (5 Agents)
 - `analyze-screenshot` (Green)
 - `manage-git` (Green)
 - `export-context` (Yellow)
-- `orchestrate-tasks` (Yellow)
+- `orchestrate-tasks` (Red)
+- `orchestrate-agents` (Red)
 
-### 6. Specialist Agents (6 Agents - Yellow/Red Complexity)
+### 6. Specialist Agents (7 Agents - Yellow/Red Complexity)
 Deep expertise for complex scenarios:
 - **python-specialist** (Yellow): Advanced Python patterns, async, optimization
 - **react-specialist** (Yellow): React hooks, performance, SSR/SSG
@@ -114,10 +119,11 @@ Deep expertise for complex scenarios:
 - **architect-specialist** (Red): System design, microservices, scalability
 - **security-specialist** (Red): Vulnerability assessment, compliance
 - **ml-specialist** (Red): Neural architectures, model optimization
+- **orchestrate-agents** (Red): Multi-agent coordination, parallel execution
 
 ## Migration from Old Agents
 
-The previous 70+ agents have been consolidated into these 25 optimized agents. All old agents are preserved in the `deprecated/` directory for reference.
+The previous 70+ agents have been consolidated into these 32 optimized agents. All old agents are preserved in the `deprecated/` directory for reference.
 
 See `MIGRATION_LOG.md` for detailed mapping of old agents to new consolidated ones.
 
@@ -127,16 +133,43 @@ See `MIGRATION_LOG.md` for detailed mapping of old agents to new consolidated on
 - **Intelligent Routing**: Complexity-based model selection
 - **Clearer Triggers**: Action-first naming improves auto-activation accuracy  
 - **Better Context**: Optimized prompts preserve main conversation context
-- **Reduced Confusion**: 25 focused agents vs 70+ overlapping ones
+- **Reduced Confusion**: 32 focused agents vs 70+ overlapping ones
 - **Cost Optimization**: Tiered model usage minimizes token consumption
+
+## Architecture Patterns
+
+Based on enterprise best practices, our agents support multiple orchestration patterns:
+
+### **Single-Agent Patterns**
+- **Reactive**: Basic input → processing → output (Green agents)
+- **Memory-Augmented**: Context-aware processing with history (Yellow agents)
+- **Tool-Using**: MCP integration for external API access (All tiers)
+- **Planning**: Multi-step workflow orchestration (Yellow/Red agents)
+- **Reflection**: Self-improving agents with feedback loops (Red specialists)
+
+### **Multi-Agent Patterns**
+- **Sequential**: Linear pipeline processing (e.g., analyze → review → deploy)
+- **Concurrent**: Parallel processing with result aggregation 
+- **Hierarchical**: Supervisor agents coordinating sub-agents
+- **Handoff**: Dynamic delegation between specialists
+- **Competitive**: Multiple agents solving same problem, best result selected
+
+### **Coordination Examples**
+```bash
+# Sequential: analyze-codebase → review-code → deploy-application
+# Concurrent: Multiple agents analyze different aspects in parallel
+# Hierarchical: orchestrate-agents coordinates specialist teams
+# Handoff: debug-issue → security-specialist for vulnerability analysis
+```
 
 ## Best Practices
 
-1. Start with the simplest (Green) agent for your task
-2. Use @-mention for best results
-3. Provide clear, actionable context
-4. Let agents auto-activate when possible
-5. Leverage specialist agents for complex, domain-specific tasks
+1. **Start Simple**: Use single-agent patterns before multi-agent complexity
+2. **Match Complexity**: Green for simple tasks, Red for complex reasoning
+3. **Leverage Orchestration**: Use orchestrate-agents for complex multi-step workflows
+4. **Tool Integration**: Utilize MCP protocol for external service connectivity
+5. **Context Efficiency**: <400 char limit ensures fast loading and clear focus
+6. **Specialization**: Use specialist agents for domain-specific expertise
 
 ## Support & Feedback
 

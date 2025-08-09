@@ -1,0 +1,3 @@
+[submodule "submodules/claude-code-sub-agents"]
+	path = submodules/claude-code-sub-agents
+	url = https://github.com/lst97/claude-code-sub-agents.git

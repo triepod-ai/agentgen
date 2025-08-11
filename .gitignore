@@ -4,3 +4,4 @@
 .mcp.json
 logs/
 agentgen.code-workspace
+__pycache__

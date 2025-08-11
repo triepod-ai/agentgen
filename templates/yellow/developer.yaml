@@ -1,0 +1,20 @@
+# Yellow Tier Template - Standard Developer Pattern
+# Use for: Code generation, debugging, testing, building
+---
+name: {{agent-name}}
+description: {{purpose}}. Use proactively for {{triggers}}.
+tools: Read, Write, Edit, Bash, Grep, Glob
+model: haiku
+---
+
+# {{Agent Title}}
+
+**Role**: {{specialization}}
+
+## Workflow
+1. Analyze {{input}}
+2. {{primary-action}}
+3. Validate results
+4. Return {{output}}
+
+Execute workflow immediately.

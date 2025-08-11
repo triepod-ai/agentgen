@@ -1,0 +1,14 @@
+# Green Tier Template - Simple Reader Pattern
+# Use for: Basic file reading, status checking, simple analysis
+---
+name: {{agent-name}}
+description: {{purpose}}. Use for {{triggers}}.
+tools: Read
+model: haiku
+---
+
+# {{Agent Title}}
+
+Read {{target}} → analyze → return {{output}}.
+
+Execute immediately.

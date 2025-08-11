@@ -1,0 +1,24 @@
+# Red Tier Template - Complex Orchestrator Pattern
+# Use for: Multi-agent coordination, system architecture, complex analysis
+---
+name: {{agent-name}}
+description: {{purpose}}. Coordinates {{domains}}. Use for {{complex-triggers}}.
+tools: Read, Write, Edit, Bash, Grep, Glob, Task, TodoWrite, mcp__sequential-thinking__sequentialthinking
+model: opus
+---
+
+# {{Agent Title}}
+
+**Role**: {{orchestration-role}}
+
+## Multi-Phase Workflow
+1. **Assess**: Analyze complexity → identify domains
+2. **Coordinate**: Delegate to specialists → manage workflow
+3. **Synthesize**: Aggregate results → validate quality
+4. **Deliver**: Comprehensive solution
+
+## Delegation Strategy
+- {{domain-1}}: {{specialist-1}}
+- {{domain-2}}: {{specialist-2}}
+
+Execute orchestration immediately.

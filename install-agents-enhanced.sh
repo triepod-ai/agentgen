@@ -1,35 +1,16 @@
 #!/bin/bash
 
-# Claude Code Sub-Agents Installer
+# Claude Code Sub-Agents Installer with Profile Support
 # Install subagents from the claude-code-sub-agents repository to a target project
 
 set -e
 
-# Colors for output - with proper terminal detection
-if [[ -t 1 ]] || [[ "${FORCE_COLOR:-}" == "1" ]] || [[ "${CLICOLOR_FORCE:-}" == "1" ]]; then
-    # Terminal supports colors or color is forced
-    RED='\033[0;31m'
-    GREEN='\033[0;32m'
-    YELLOW='\033[1;33m'
-    BLUE='\033[0;34m'
-    NC='\033[0m' # No Color
-else
-    # No color support or NO_COLOR is set
-    RED=''
-    GREEN=''
-    YELLOW=''
-    BLUE=''
-    NC=''
-fi
-
-# Disable colors if NO_COLOR is set (https://no-color.org)
-if [[ "${NO_COLOR:-}" != "" ]]; then
-    RED=''
-    GREEN=''
-    YELLOW=''
-    BLUE=''
-    NC=''
-fi
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
 
 # Default values
 FORCE=false
@@ -40,24 +21,16 @@ SKIP_SPEAK_CHECK=false
 PROFILE_NAME=""
 SHOW_PROFILE=""
 LIST_PROFILES=false
-INSTALL_SIMPLE=false
-SIMPLE_READ=false
-SIMPLE_WRITE=false
-SIMPLE_BASH=false
-SIMPLE_GREP=false
-SIMPLE_EDIT=false
 
 # Script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SUBMODULE_DIR="$SCRIPT_DIR/submodules/claude-code-sub-agents"
 PROFILES_DIR="$SCRIPT_DIR/profiles"
-SIMPLE_AGENTS_DIR="$SCRIPT_DIR/simple-agents"
-ARCHIVE_AGENTS_DIR="$SCRIPT_DIR/archive/agents"
 
 # Function to display help
 show_help() {
     cat << EOF
-Claude Code Sub-Agents Installer
+Claude Code Sub-Agents Installer with Profile Support
 
 USAGE:
     install-agents [OPTIONS] <target-project-path> [agent-names...]
@@ -74,14 +47,6 @@ OPTIONS:
     --verbose           Show detailed installation progress
     --skip-speak-check  Skip speak command validation
 
-SIMPLE AGENTS OPTIONS:
-    --simple            Install all 21 simple single-tool agents
-    --simple-read       Install Read-based agents (config, log, readme, env, screenshot)
-    --simple-write      Install Write-based agents (gitignore, readme, env, changelog)
-    --simple-bash       Install Bash-based agents (test, build, git, dependencies)
-    --simple-grep       Install Grep-based agents (error, todo, import, function finders)
-    --simple-edit       Install Edit-based agents (comment remover, whitespace, sorter, typo fixer)
-
 ARGUMENTS:
     target-project-path Path to the project where agents will be installed
     agent-names         Specific agents to install (optional if --all is used)
@@ -95,12 +60,6 @@ EXAMPLES:
 
     # Install a profile (group of agents)
     install-agents --profile development-team /path/to/my-project
-
-    # Install all simple agents
-    install-agents --simple /path/to/my-project
-
-    # Install specific simple agent categories
-    install-agents --simple-read --simple-bash /path/to/my-project
 
     # List available agents and profiles
     install-agents --list
@@ -121,18 +80,17 @@ AGENT CATEGORIES:
     - security:         Security auditing and vulnerability assessment
     - specialization:   API documentation and specialized expertise
 
-SIMPLE AGENT CATEGORIES (Ultra-fast, single-tool focused):
-    - Read Agents:      Config, log, README, env readers + screenshot analyzer
-    - Write Agents:     .gitignore, README, env, changelog generators
-    - Bash Agents:      Test runner, build runner, git executor, dependency installer
-    - Grep Agents:      Error, TODO, import, function finders
-    - Edit Agents:      Comment remover, whitespace fixer, import sorter, typo fixer
+AVAILABLE PROFILES:
+    - development-team: Complete development team for full-stack projects
+    - security-audit:   Security-focused assessment team
+    - frontend-focus:   UI/UX development specialists
+    - backend-focus:    API and infrastructure specialists
+    - ai-ml-team:       Machine learning and data science team
 
 FEATURES:
     ✅ Selective agent installation
-    ✅ Category-based organization
-    ✅ Simple single-tool agents for ultra-fast loading
     ✅ Profile-based group installation
+    ✅ Category-based organization
     ✅ Speak command integration support
     ✅ Conflict detection and resolution
     ✅ Backup of existing agents
@@ -168,15 +126,13 @@ list_profiles() {
         return 0
     fi
     
-    profile_count=0
+    local profile_count=0
     for profile_file in "$PROFILES_DIR"/*.profile; do
         if [ -f "$profile_file" ]; then
-            set +e  # Temporarily disable exit on error
-            profile_name=$(basename "$profile_file" .profile)
-            description=$(grep "^description:" "$profile_file" 2>/dev/null | sed 's/^description: *//' || echo "No description")
+            local profile_name=$(basename "$profile_file" .profile)
+            local description=$(grep "^description:" "$profile_file" 2>/dev/null | sed 's/^description: *//' || echo "No description")
             echo -e "${GREEN}$profile_name:${NC} $description"
             ((profile_count++))
-            set -e  # Re-enable exit on error
         fi
     done
     
@@ -217,13 +173,6 @@ show_profile() {
             local agent_name="${BASH_REMATCH[1]}"
             echo "  - $agent_name"
             ((agent_count++))
-        elif [[ ! "$line" =~ ^[[:space:]]*# ]] && [[ ! "$line" =~ ^[[:space:]]*$ ]]; then
-            # Handle simple list format (one agent per line)
-            local agent_name=$(echo "$line" | xargs)  # trim whitespace
-            if [ -n "$agent_name" ]; then
-                echo "  - $agent_name"
-                ((agent_count++))
-            fi
         fi
     done < "$profile_file"
     
@@ -252,72 +201,11 @@ parse_profile() {
         if [[ "$line" =~ ^[[:space:]]*-[[:space:]]*(.+)$ ]]; then
             local agent_name="${BASH_REMATCH[1]}"
             agents+=("$agent_name")
-        elif [[ ! "$line" =~ ^[[:space:]]*# ]] && [[ ! "$line" =~ ^[[:space:]]*$ ]]; then
-            # Handle simple list format (one agent per line)
-            local agent_name=$(echo "$line" | xargs)  # trim whitespace
-            if [ -n "$agent_name" ]; then
-                agents+=("$agent_name")
-            fi
         fi
     done < "$profile_file"
     
     # Return agents as space-separated string
     printf '%s\n' "${agents[@]}"
-}
-
-# Function to install agents from profile
-install_profile() {
-    local profile_name="$1"
-    local target_dir="$2"
-    
-    print_info "Installing profile: $profile_name"
-    
-    # Parse profile to get agent list
-    local agents
-    if ! agents=($(parse_profile "$profile_name")); then
-        return 1
-    fi
-    
-    if [ ${#agents[@]} -eq 0 ]; then
-        print_warning "No agents found in profile: $profile_name"
-        return 1
-    fi
-    
-    print_info "Profile contains ${#agents[@]} agents"
-    [ "$VERBOSE" = true ] && show_profile "$profile_name"
-    
-    local count=0
-    local failed=0
-    
-    # Install each agent in the profile
-    for agent_name in "${agents[@]}"; do
-        set +e  # Temporarily disable exit on error for this loop iteration
-        
-        if agent_file=$(find_agent_file "$agent_name" 2>/dev/null) && [ -n "$agent_file" ]; then
-            install_agent "$agent_file" "$target_dir"
-            install_result=$?
-            if [ $install_result -eq 0 ]; then
-                ((count++))
-            else
-                ((failed++))
-            fi
-        else
-            print_error "Agent not found: $agent_name (from profile: $profile_name)"
-            ((failed++))
-        fi
-        
-        set -e  # Re-enable exit on error
-    done
-    
-    if [ $count -gt 0 ]; then
-        print_success "Profile installation complete: $count agents installed"
-    fi
-    
-    if [ $failed -gt 0 ]; then
-        print_warning "$failed agents failed or skipped"
-    fi
-    
-    return 0
 }
 
 # Function to list available agents
@@ -351,28 +239,6 @@ list_agents() {
             basename "$agent" .md | sed 's/^/  - /'
         fi
     done
-    
-    # List simple agents
-    echo ""
-    print_info "Available simple single-tool agents:"
-    echo ""
-    if [ -d "$SIMPLE_AGENTS_DIR" ]; then
-        local categories=("read:Read Agents (Analyzers)" "write:Write Agents (Generators)" "bash:Bash Agents (Executors)" "grep:Grep Agents (Searchers)" "edit:Edit Agents (Modifiers)")
-        
-        for category_info in "${categories[@]}"; do
-            IFS=':' read -r category display_name <<< "$category_info"
-            echo -e "${GREEN}$display_name:${NC}"
-            
-            agents=()
-            while IFS= read -r agent; do
-                agents+=("$agent")
-            done < <(get_simple_agents_by_category "$category")
-            for agent in "${agents[@]}"; do
-                echo "  - $agent"
-            done
-            echo ""
-        done
-    fi
     
     # Also show available profiles
     echo ""
@@ -413,193 +279,7 @@ find_agent_file() {
         return 0
     fi
     
-    # Check in simple agents directory
-    if [ -f "$SIMPLE_AGENTS_DIR/$agent_name.md" ]; then
-        echo "$SIMPLE_AGENTS_DIR/$agent_name.md"
-        return 0
-    fi
-    
-    # Check in archive agents directory
-    if [ -f "$ARCHIVE_AGENTS_DIR/$agent_name.md" ]; then
-        echo "$ARCHIVE_AGENTS_DIR/$agent_name.md"
-        return 0
-    fi
-    
     return 1
-}
-
-# Function to get simple agents by category
-get_simple_agents_by_category() {
-    local category="$1"
-    local agents=()
-    
-    case "$category" in
-        "read")
-            agents=("config-reader" "log-reader" "readme-reader" "env-reader" "analyze-screenshot")
-            ;;
-        "write")
-            agents=("gitignore-writer" "readme-writer" "env-writer" "changelog-writer")
-            ;;
-        "bash")
-            agents=("test-runner" "build-runner" "git-executor" "dependency-installer")
-            ;;
-        "grep")
-            agents=("error-finder" "todo-finder" "import-finder" "function-finder")
-            ;;
-        "edit")
-            agents=("comment-remover" "whitespace-fixer" "import-sorter" "typo-fixer")
-            ;;
-        *)
-            return 1
-            ;;
-    esac
-    
-    printf '%s\n' "${agents[@]}"
-}
-
-# Function to get all simple agents
-get_all_simple_agents() {
-    all_agents=()
-    
-    # Add all categories
-    for category in read write bash grep edit; do
-        while IFS= read -r agent; do
-            all_agents+=("$agent")
-        done < <(get_simple_agents_by_category "$category")
-    done
-    
-    printf '%s\n' "${all_agents[@]}"
-}
-
-# Function to install simple agents by category
-install_simple_agents_category() {
-    local category="$1"
-    local target_dir="$2"
-    local category_display="$3"
-    
-    agents=()
-    while IFS= read -r agent; do
-        agents+=("$agent")
-    done < <(get_simple_agents_by_category "$category")
-    
-    if [ ${#agents[@]} -eq 0 ]; then
-        print_error "Unknown simple agent category: $category"
-        return 1
-    fi
-    
-    print_info "Installing $category_display agents..."
-    
-    count=0
-    failed=0
-    
-    for agent_name in "${agents[@]}"; do
-        set +e  # Temporarily disable exit on error for this loop iteration
-        
-        # Find agent file
-        if agent_file=$(find_agent_file "$agent_name" 2>/dev/null) && [ -n "$agent_file" ]; then
-            # Install agent
-            install_agent "$agent_file" "$target_dir"
-            install_result=$?
-            if [ $install_result -eq 0 ]; then
-                ((count++))
-            else
-                ((failed++))
-            fi
-        else
-            print_error "Simple agent not found: $agent_name"
-            ((failed++))
-        fi
-        
-        set -e  # Re-enable exit on error
-    done
-    
-    print_success "$category_display installation: $count agents installed"
-    
-    if [ $failed -gt 0 ]; then
-        print_warning "$failed $category_display agents failed or skipped"
-    fi
-    
-    return 0
-}
-
-# Function to install all simple agents
-install_all_simple_agents() {
-    local target_dir="$1"
-    
-    print_info "Installing all simple single-tool agents..."
-    echo ""
-    
-    total_count=0
-    total_failed=0
-    
-    # Install by category with visual organization
-    categories=("read:Read Agents (Analyzers)" "write:Write Agents (Generators)" "bash:Bash Agents (Executors)" "grep:Grep Agents (Searchers)" "edit:Edit Agents (Modifiers)")
-    
-    for category_info in "${categories[@]}"; do
-        IFS=':' read -r category display_name <<< "$category_info"
-        
-        echo -e "${BLUE}$display_name:${NC}"
-        
-        agents=()
-        while IFS= read -r agent; do
-            agents+=("$agent")
-        done < <(get_simple_agents_by_category "$category")
-        
-        count=0
-        failed=0
-        
-        for agent_name in "${agents[@]}"; do
-            set +e  # Temporarily disable exit on error for this loop iteration
-            
-            if agent_file=$(find_agent_file "$agent_name" 2>/dev/null) && [ -n "$agent_file" ]; then
-                # Get tool from agent for display
-                tool=$(grep "^tools:" "$agent_file" | sed 's/tools: //' 2>/dev/null || echo "Unknown")
-                
-                install_agent "$agent_file" "$target_dir"
-                install_result=$?
-                if [ $install_result -eq 0 ]; then
-                    echo -e "  ${GREEN}✓${NC} Installed $agent_name (Tool: $tool)"
-                    ((count++))
-                    ((total_count++))
-                else
-                    echo -e "  ${YELLOW}⏭️${NC} Skipped $agent_name (already exists or failed)"
-                    ((failed++))
-                    ((total_failed++))
-                fi
-            else
-                print_error "  Simple agent not found: $agent_name"
-                ((failed++))
-                ((total_failed++))
-            fi
-            
-            set -e  # Re-enable exit on error
-        done
-        
-        echo ""
-    done
-    
-    # Summary
-    echo -e "${GREEN}═══════════════════════════════════════${NC}"
-    echo -e "${GREEN}Simple Agents Installation Complete!${NC}"
-    echo -e "${GREEN}═══════════════════════════════════════${NC}"
-    echo ""
-    echo "📊 Summary:"
-    echo "  • Installed: $total_count agents"
-    echo "  • Skipped/Failed: $total_failed agents"
-    echo ""
-    echo "🚀 These single-tool agents are optimized for:"
-    echo "  • Ultra-fast loading (<100ms)"
-    echo "  • Specific, focused tasks"
-    echo "  • Minimal token usage"
-    echo "  • Clear, predictable behavior"
-    echo ""
-    echo "💡 Usage examples:"
-    echo -e "  ${YELLOW}@config-reader${NC} - Read and parse config files"
-    echo -e "  ${YELLOW}@error-finder${NC} - Find all errors in codebase"
-    echo -e "  ${YELLOW}@test-runner${NC} - Run test suite"
-    echo -e "  ${YELLOW}@gitignore-writer${NC} - Generate .gitignore"
-    echo -e "  ${YELLOW}@whitespace-fixer${NC} - Clean up formatting"
-    echo ""
 }
 
 # Function to install a single agent
@@ -640,6 +320,56 @@ install_agent() {
     cp "$agent_file" "$target_file"
     
     print_success "Installed: $agent_name"
+    return 0
+}
+
+# Function to install agents from profile
+install_profile() {
+    local profile_name="$1"
+    local target_dir="$2"
+    
+    print_info "Installing profile: $profile_name"
+    
+    # Parse profile to get agent list
+    local agents
+    if ! agents=($(parse_profile "$profile_name")); then
+        return 1
+    fi
+    
+    if [ ${#agents[@]} -eq 0 ]; then
+        print_warning "No agents found in profile: $profile_name"
+        return 1
+    fi
+    
+    print_info "Profile contains ${#agents[@]} agents"
+    [ "$VERBOSE" = true ] && show_profile "$profile_name"
+    
+    local count=0
+    local failed=0
+    
+    # Install each agent in the profile
+    for agent_name in "${agents[@]}"; do
+        agent_file=$(find_agent_file "$agent_name")
+        if [ $? -eq 0 ]; then
+            if install_agent "$agent_file" "$target_dir"; then
+                ((count++))
+            else
+                ((failed++))
+            fi
+        else
+            print_error "Agent not found: $agent_name (from profile: $profile_name)"
+            ((failed++))
+        fi
+    done
+    
+    if [ $count -gt 0 ]; then
+        print_success "Profile installation complete: $count agents installed"
+    fi
+    
+    if [ $failed -gt 0 ]; then
+        print_warning "$failed agents failed or skipped"
+    fi
+    
     return 0
 }
 
@@ -769,15 +499,11 @@ install_all_agents() {
             [ "$VERBOSE" = true ] && print_info "Processing category: $category"
             for agent_file in "$SUBMODULE_DIR/$category"/*.md; do
                 if [ -f "$agent_file" ]; then
-                    set +e  # Temporarily disable exit on error
-                    install_agent "$agent_file" "$target_dir"
-                    install_result=$?
-                    if [ $install_result -eq 0 ]; then
+                    if install_agent "$agent_file" "$target_dir"; then
                         ((count++))
                     else
                         ((skipped++))
                     fi
-                    set -e  # Re-enable exit on error
                 fi
             done
         fi
@@ -786,15 +512,11 @@ install_all_agents() {
     # Install root-level agents
     for agent_file in "$SUBMODULE_DIR"/*.md; do
         if [ -f "$agent_file" ] && [ "$(basename "$agent_file")" != "README.md" ] && [ "$(basename "$agent_file")" != "CLAUDE.md" ]; then
-            set +e  # Temporarily disable exit on error
-            install_agent "$agent_file" "$target_dir"
-            install_result=$?
-            if [ $install_result -eq 0 ]; then
+            if install_agent "$agent_file" "$target_dir"; then
                 ((count++))
             else
                 ((skipped++))
             fi
-            set -e  # Re-enable exit on error
         fi
     done
     
@@ -840,30 +562,6 @@ while [[ $# -gt 0 ]]; do
             fi
             SHOW_PROFILE="$2"
             shift 2
-            ;;
-        --simple)
-            INSTALL_SIMPLE=true
-            shift
-            ;;
-        --simple-read)
-            SIMPLE_READ=true
-            shift
-            ;;
-        --simple-write)
-            SIMPLE_WRITE=true
-            shift
-            ;;
-        --simple-bash)
-            SIMPLE_BASH=true
-            shift
-            ;;
-        --simple-grep)
-            SIMPLE_GREP=true
-            shift
-            ;;
-        --simple-edit)
-            SIMPLE_EDIT=true
-            shift
             ;;
         --dry-run)
             DRY_RUN=true
@@ -944,67 +642,13 @@ check_speak_command || true
 print_info "Installing agents to: $TARGET_AGENTS_DIR"
 [ "$DRY_RUN" = true ] && print_warning "DRY-RUN MODE: No changes will be made"
 
-# Check for simple agents installation
-if [ "$INSTALL_SIMPLE" = true ]; then
-    install_all_simple_agents "$TARGET_AGENTS_DIR"
-elif [ "$SIMPLE_READ" = true ] || [ "$SIMPLE_WRITE" = true ] || [ "$SIMPLE_BASH" = true ] || [ "$SIMPLE_GREP" = true ] || [ "$SIMPLE_EDIT" = true ]; then
-    # Install specific simple agent categories
-    any_installed=false
-    
-    if [ "$SIMPLE_READ" = true ]; then
-        install_simple_agents_category "read" "$TARGET_AGENTS_DIR" "Read Agents (Analyzers)"
-        any_installed=true
-    fi
-    
-    if [ "$SIMPLE_WRITE" = true ]; then
-        install_simple_agents_category "write" "$TARGET_AGENTS_DIR" "Write Agents (Generators)"
-        any_installed=true
-    fi
-    
-    if [ "$SIMPLE_BASH" = true ]; then
-        install_simple_agents_category "bash" "$TARGET_AGENTS_DIR" "Bash Agents (Executors)"
-        any_installed=true
-    fi
-    
-    if [ "$SIMPLE_GREP" = true ]; then
-        install_simple_agents_category "grep" "$TARGET_AGENTS_DIR" "Grep Agents (Searchers)"
-        any_installed=true
-    fi
-    
-    if [ "$SIMPLE_EDIT" = true ]; then
-        install_simple_agents_category "edit" "$TARGET_AGENTS_DIR" "Edit Agents (Modifiers)"
-        any_installed=true
-    fi
-    
-    if [ "$any_installed" = true ]; then
-        echo ""
-        print_success "Simple agent categories installation complete!"
-        echo ""
-        echo "💡 Usage examples:"
-        echo -e "  ${YELLOW}@config-reader${NC} - Read and parse config files"
-        echo -e "  ${YELLOW}@error-finder${NC} - Find all errors in codebase"
-        echo -e "  ${YELLOW}@test-runner${NC} - Run test suite"
-        echo ""
-    fi
-elif [ "$INSTALL_ALL" = true ]; then
+if [ "$INSTALL_ALL" = true ]; then
     install_all_agents "$TARGET_AGENTS_DIR"
 elif [ ! -z "$PROFILE_NAME" ]; then
     # Install from profile
     install_profile "$PROFILE_NAME" "$TARGET_AGENTS_DIR"
 elif [ $# -eq 0 ]; then
-    print_error "No agents or installation option specified."
-    echo ""
-    echo -e "${YELLOW}Available options:${NC}"
-    echo "  --all                Install all available agents"
-    echo "  --simple             Install all simple single-tool agents"
-    echo "  --simple-read        Install Read-based agents only"
-    echo "  --simple-write       Install Write-based agents only"
-    echo "  --simple-bash        Install Bash-based agents only"
-    echo "  --simple-grep        Install Grep-based agents only"
-    echo "  --simple-edit        Install Edit-based agents only"
-    echo "  --profile <name>     Install agents from a profile"
-    echo "  [agent-names...]     Install specific named agents"
-    echo ""
+    print_error "No agents or profile specified. Use --all, --profile <name>, or specify agent names."
     print_info "Use --list to see available agents or --list-profiles to see available profiles"
     exit 1
 else
@@ -1013,12 +657,9 @@ else
     failed=0
     
     for agent_name in "$@"; do
-        set +e  # Temporarily disable exit on error for this loop iteration
-        
-        if agent_file=$(find_agent_file "$agent_name" 2>/dev/null) && [ -n "$agent_file" ]; then
-            install_agent "$agent_file" "$TARGET_AGENTS_DIR"
-            install_result=$?
-            if [ $install_result -eq 0 ]; then
+        agent_file=$(find_agent_file "$agent_name")
+        if [ $? -eq 0 ]; then
+            if install_agent "$agent_file" "$TARGET_AGENTS_DIR"; then
                 ((count++))
             else
                 ((failed++))
@@ -1027,8 +668,6 @@ else
             print_error "Agent not found: $agent_name"
             ((failed++))
         fi
-        
-        set -e  # Re-enable exit on error
     done
     
     if [ $count -gt 0 ]; then

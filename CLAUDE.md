@@ -2,6 +2,15 @@
 
 This document provides references to all agent system documentation and best practices for the agentgen project.
 
+## 🌐 Global Agents Configuration
+
+**[GLOBAL_AGENTS_SETUP.md](./GLOBAL_AGENTS_SETUP.md)** - Global Agent Management ⭐
+Documentation for globally available agents configured via symbolic links in `~/.claude/agents/`:
+- 22 specialist agents available across all projects
+- Setup instructions for creating global symbolic links
+- Precedence rules (project agents override global)
+- Management best practices and troubleshooting
+
 ## 📚 Core Documentation
 
 ### **[README.md](./README.md)** - Main Agent System Overview
@@ -34,6 +43,17 @@ Technical details of the agent consolidation process:
 - Agent categorization and optimization
 - Migration strategy from legacy agents
 
+## Documentation Guidelines
+- When creating **documentation**, always create a reference to it in CLAUDE.MD so the AI can find the context of the changes if needed.
+
+### Recent Documentation Updates
+
+- **[README_UV.md](./README_UV.md)** - UV Wrapper Documentation ⭐ - Modern Python interface with 10-100x faster dependency management (Added: 2025-01-10)
+- **[INSTALL_AGENTS_HELP.md](./INSTALL_AGENTS_HELP.md)** - Comprehensive help documentation for install-agents command (Added: 2025-01-10)
+- **[DEFAULT_AGENTS.md](./DEFAULT_AGENTS.md)** - Default agent profiles and configurations (Added: 2025-01-10)
+- **[SIMPLE_AGENTS.md](./SIMPLE_AGENTS.md)** - Simple agent profiles for basic tasks (Added: 2025-01-10)
+- **[profiles/README.md](./profiles/README.md)** - Agent profiles organization and usage guide (Added: 2025-01-10)
+
 ## 🏗️ Architecture Patterns
 
 Based on enterprise research, our agent system supports:
@@ -53,6 +73,16 @@ Based on enterprise research, our agent system supports:
 - **Competitive**: Multiple agents, best result selected
 
 ## 🎯 Quick Start Guide
+
+### 0. Setup with UV (Recommended)
+```bash
+# Modern Python interface with UV (10-100x faster)
+./uv-wrapper.py setup --dev
+agentgen install /path/to/project --all
+
+# Traditional shell interface (still supported)
+./install-agents --all /path/to/project
+```
 
 ### 1. Choose the Right Agent
 ```bash
@@ -134,23 +164,40 @@ See `AGENT_CONSOLIDATION_STRATEGY.md` for detailed mapping of old agents to new 
 
 **Note**: This documentation reflects enterprise-grade agent architecture patterns and provides practical guidance for building robust, scalable agent systems based on proven industry practices.
 
+
+
 ## Installed Sub-Agents
 
 This project has the following specialized AI sub-agents available:
 
 ### Available Agents
 
+- **agent-organizer** (general): Specialized agent for domain-specific tasks
+- **analyze-screenshot** (general): Specialized agent for domain-specific tasks
 - **api-documenter** (specialization): Specialized agent for domain-specific tasks
+- **backend-architect** (development): Specialized agent for domain-specific tasks
 - **code-reviewer** (quality-testing): Specialized agent for domain-specific tasks
+- **config-reader** (general): Specialized agent for domain-specific tasks
+- **context-manager** (general): Specialized agent for domain-specific tasks
 - **debugger** (quality-testing): Specialized agent for domain-specific tasks
+- **deployment-engineer** (infrastructure): Specialized agent for domain-specific tasks
+- **documentation-expert** (specialization): Specialized agent for domain-specific tasks
+- **documentation-hub** (general): Specialized agent for domain-specific tasks
+- **env-reader** (general): Specialized agent for domain-specific tasks
+- **frontend-developer** (development): Specialized agent for domain-specific tasks
+- **full-stack-developer** (development): Specialized agent for domain-specific tasks
+- **log-reader** (general): Specialized agent for domain-specific tasks
+- **nextjs-pro** (development): Specialized agent for domain-specific tasks
+- **readme-reader** (general): Specialized agent for domain-specific tasks
 - **test-automator** (quality-testing): Specialized agent for domain-specific tasks
+- **ui-designer** (development): Specialized agent for domain-specific tasks
 
 ### Usage Instructions
 
 These agents can be invoked in three ways:
 
 1. **Automatic Invocation**: Claude Code will automatically select the appropriate agent based on your task
-2. **Explicit Invocation**: Use phrases like "Use the $agent to..." or "Have $agent handle this"
+2. **Explicit Invocation**: Use phrases like "Use the ui-designer to..." or "Have ui-designer handle this"
 3. **Agent Organizer**: For complex multi-agent workflows, the agent-organizer can coordinate multiple specialists
 
 ### Examples

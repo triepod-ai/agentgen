@@ -44,8 +44,8 @@ Based on enterprise agent architecture patterns from Microsoft Azure, Speakeasy,
 - **<400 Character Limit**: Optimized for fast loading and context efficiency
 - **Immediate Execution**: All agents execute workflows immediately upon invocation
 - **Specialized Focus**: Single responsibility agents with clear trigger patterns
-- **Complexity-Based Models**: Green (haiku), Yellow (sonnet), Red (opus) based on task complexity
-- **Orchestration Patterns**: Sequential, concurrent, and hierarchical coordination support
+- **Complexity-Based Models**: Green (Haiku), Blue (Sonnet 3.5), Yellow (Sonnet 3.7), Orange (Sonnet 4), Red (Opus) based on task complexity
+- **Orchestration Patterns**: Four-layer intelligent routing with cost-optimized model selection
 - **Tool Integration**: MCP protocol compatibility for external service access
 
 ## Agent Categories
@@ -63,7 +63,7 @@ Based on enterprise agent architecture patterns from Microsoft Azure, Speakeasy,
 `process-data`, `train-model`, `query-database`, `extract-insights`
 
 ### Specialized Tools (5 agents)
-`analyze-screenshot`, `manage-git`, `export-context`, `orchestrate-tasks`, `orchestrate-agents`
+`analyze-screenshot`, `manage-git`, `export-context`, `orchestrate-tasks`, `orchestrate-agents`, `@general-request`, `@orchestrate-agents-adv`
 
 ### Specialist Agents (7 agents)
 `python-specialist`, `react-specialist`, `database-specialist`, `architect-specialist`, `security-specialist`, `ml-specialist`, `orchestrate-agents`
@@ -103,5 +103,19 @@ Based on enterprise agent architecture patterns from Microsoft Azure, Speakeasy,
 ## Complexity System
 
 - **Green (Easy) - Haiku Model**: Simple, single-step tasks (9 agents)
-- **Yellow (Moderate) - Sonnet Model**: Multi-step workflows (14 agents)
-- **Red (Complex) - Opus Model**: Advanced reasoning and orchestration (10 agents)
+- **Blue (Standard) - Sonnet 3.5 Model**: Moderate complexity tasks (7 agents)
+- **Yellow (Advanced) - Sonnet 3.7 Model**: Multi-step workflows (14 agents)
+- **Orange (Complex) - Sonnet 4 Model**: Enterprise coordination (7 agents)
+- **Red (Enterprise) - Opus Model**: Advanced reasoning and multi-agent orchestration (10 agents)
+
+## Orchestration Hierarchy
+
+1. **@general-request** (Sonnet 3.7/Yellow): Preliminary research and request analysis
+2. **@orchestrate-tasks** (Sonnet 3.7/Yellow): Intelligence layer with complexity analysis and routing
+3. **@orchestrate-agents** (Sonnet 4/Orange): Simple coordination for 1-3 agents
+4. **@orchestrate-agents-adv** (Opus/Red): Complex enterprise coordination for 4+ agents
+
+### Cost Benefits
+- **Up to 70-80% cost reduction** through intelligent model selection
+- Cleaner context management
+- Intelligent, layered routing of complex tasks

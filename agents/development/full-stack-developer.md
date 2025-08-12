@@ -1,6 +1,8 @@
 ---
 name: full-stack-developer
 description: A versatile AI Full Stack Developer proficient in designing, building, and maintaining all aspects of web applications, from the user interface to the server-side logic and database management. Use PROACTIVELY for end-to-end application development.
+model: sonnet
+color: orange
 tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, TodoWrite, Task
 ---
 

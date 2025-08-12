@@ -11,22 +11,34 @@ Based on research from Microsoft Azure Architecture Center, Speakeasy, and Datab
 
 ### 2. **Complexity-Appropriate Architecture**
 ```yaml
-Simple Tasks (Green):
+Simple Tasks (Green - Haiku):
   - Reactive patterns
   - Direct input → output
   - Minimal context requirements
   - Examples: File operations, status updates
 
-Moderate Tasks (Yellow):
+Standard Tasks (Blue - Sonnet 3.5):
+  - Basic context integration
+  - Simple multi-step workflows
+  - Lightweight tool usage
+  - Examples: Basic data processing, simple translations
+
+Advanced Tasks (Yellow - Sonnet 3.7):
   - Memory-augmented patterns
   - Multi-step workflows
-  - Tool integration
+  - Complex tool integration
   - Examples: Code review, API development
 
-Complex Tasks (Red):
-  - Planning and reflection patterns
-  - Multi-agent coordination
-  - Advanced reasoning
+Enterprise Tasks (Orange - Sonnet 4):
+  - Agent coordination
+  - Intelligent routing
+  - Cross-domain workflow management
+  - Examples: Task orchestration, initial multi-agent setup
+
+Complex Tasks (Red - Opus):
+  - Advanced planning and reflection
+  - Multi-agent complex coordination
+  - Enterprise-scale reasoning
   - Examples: Architecture design, security auditing
 ```
 
@@ -119,9 +131,16 @@ Audit Trails:
 #### Latency Management
 ```yaml
 Model Selection:
-  - Use appropriate complexity tier (Green/Yellow/Red)
+  - Use appropriate complexity tier (Green/Blue/Yellow/Orange/Red)
+  - Route through hierarchical orchestration layers
   - Cache repeated queries and results
   - Minimize unnecessary LLM calls
+
+Orchestration Layers:
+  1. @general-request (Sonnet 3.7/Yellow): Initial request analysis
+  2. @orchestrate-tasks (Sonnet 3.7/Yellow): Routing intelligence
+  3. @orchestrate-agents (Sonnet 4/Orange): 1-3 agent coordination
+  4. @orchestrate-agents-adv (Opus/Red): Complex multi-agent workflows
 
 Parallel Processing:
   - Use concurrent patterns when possible
@@ -132,19 +151,41 @@ Context Optimization:
   - Keep agent descriptions under 400 characters
   - Minimize context window usage
   - Use summarization for long histories
+  - Leverage intelligent routing to reduce token consumption
+
+Cost Benefits:
+  - Up to 70-80% potential cost reduction
+  - Cleaner context management
+  - Intelligent model selection based on task complexity
 ```
 
 #### Cost Optimization
 ```yaml
 Tiered Usage:
-  - Green agents for simple tasks (lowest cost)
-  - Yellow agents for standard workflows (balanced)
-  - Red agents only for complex reasoning (highest capability)
+  - Green (Haiku) agents for simple tasks (lowest cost)
+  - Blue (Sonnet 3.5) agents for standard operations (low-mid range)
+  - Yellow (Sonnet 3.7) agents for advanced workflows (balanced)
+  - Orange (Sonnet 4) agents for intelligent routing (pre-enterprise)
+  - Red (Opus) agents only for complex reasoning (highest capability)
+
+Orchestration Hierarchy:
+  1. @general-request (Sonnet 3.7/Yellow): Initial request analysis
+  2. @orchestrate-tasks (Sonnet 3.7/Yellow): Routing intelligence
+  3. @orchestrate-agents (Sonnet 4/Orange): 1-3 agent coordination
+  4. @orchestrate-agents-adv (Opus/Red): Complex multi-agent workflows
 
 Efficient Orchestration:
+  - Use layered approach to minimize token consumption
+  - Route tasks through appropriate complexity tier
+  - Leverage @orchestrate-tasks for intelligent routing
   - Combine steps where possible
   - Use deterministic chains for predictable flows
   - Cache results to avoid redundant processing
+
+Cost Benefits:
+  - 70-80% potential cost reduction
+  - Cleaner context management
+  - Intelligent model selection based on task complexity
 ```
 
 ## Testing and Validation
@@ -230,25 +271,45 @@ Troubleshooting:
 
 ## Decision Framework
 
-Use this framework to choose the right architecture pattern:
+Use this framework to choose the right architecture pattern with our new 4-layer orchestration system:
 
 ```yaml
 Start Here:
   Question: "Can a single agent handle this workflow effectively?"
-  Yes: → Single-Agent System
-  No: → Continue
+  Yes: → Green (Haiku) or Blue (Sonnet 3.5) Agent
+  No: → Continue Complexity Assessment
 
-Complexity Check:
-  Question: "Do you have clearly distinct domains or specialized expertise needs?"
-  Yes: → Multi-Agent System
-  No: → Single-Agent with Tool Integration
+Complexity Triage:
+  # Follows new 4-layer orchestration model
+  Complexity Level:
+    0-20%: → Green (Haiku) Agent
+    20-50%: → Blue (Sonnet 3.5) Agent
+    50-75%: → Yellow (Sonnet 3.7) Agent with @orchestrate-tasks
+    75-90%: → Orange (Sonnet 4) Agent with @orchestrate-agents
+    90-100%: → Red (Opus) Agent with @orchestrate-agents-adv
 
-Pattern Selection:
-  Simple & Predictable: → Deterministic Chain
-  Dynamic but Manageable: → Single-Agent with Planning
-  Multiple Domains: → Multi-Agent Supervisor Pattern
-  Complex Collaboration: → Multi-Agent Group Chat or Hierarchical
-  Open-Ended Problems: → Multi-Agent Magentic Pattern
+Routing Considerations:
+  # Uses new intelligent routing framework
+  Domain Complexity:
+    Single Domain: → @orchestrate-tasks for intelligent routing
+    Multi-Domain: → @orchestrate-agents for coordination
+    Enterprise-Scale: → @orchestrate-agents-adv with full multi-agent capabilities
+
+Orchestration Patterns:
+  Simple & Predictable: → Deterministic Chain via @orchestrate-tasks
+  Dynamic but Manageable: → Single-Agent with @orchestrate-tasks planning
+  Multiple Domains: → Multi-Agent Supervisor Pattern via @orchestrate-agents
+  Complex Collaboration: → Hierarchical Pattern via @orchestrate-agents-adv
+  Open-Ended Problems: → Advanced Magnetic Pattern via Opus (Red) tier
 ```
 
-This framework provides practical guidance for building robust, scalable, and maintainable agent systems based on proven enterprise patterns and best practices.
+### Orchestration Layer Decision Matrix
+
+| Layer | Model | Complexity | Typical Use Case | Agent Count |
+|-------|-------|------------|-----------------|-------------|
+| 1: Request Analysis | Sonnet 3.7 (Yellow) | 0-50% | Initial scoping | 1 |
+| 2: Task Intelligence | Sonnet 3.7 (Yellow) | 20-75% | Routing & analysis | 1-2 |
+| 3: Agent Coordination | Sonnet 4 (Orange) | 50-90% | Simple multi-agent | 1-3 |
+| 4: Enterprise Orchestration | Opus (Red) | 75-100% | Complex workflows | 4+ |
+
+This framework provides practical guidance for building robust, scalable, and maintainable agent systems based on proven enterprise patterns and best practices, enhanced with our new 4-layer orchestration model.

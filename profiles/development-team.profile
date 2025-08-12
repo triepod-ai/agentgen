@@ -6,23 +6,29 @@ description: Complete development team with architecture, development, QA, and c
 
 agents:
   # Infrastructure & Architecture
-  - cloud-architect
+  - cloud-architect-specialist
   - deployment-engineer
-  - architect-review
+  - architect-specialist
   
   # Development & Design  
   - ui-designer
   - ux-designer
   - frontend-developer
   - full-stack-developer
+  - build-backend
   - analyze-screenshot
   
-  # Quality & Documentation
+  # Quality & Testing
   - code-reviewer
   - debugger
   - qa-expert
-  - documentation-expert
+  - test-automator
   
-  # Coordination
+  # Documentation & Coordination
+  - documentation-expert
   - agent-organizer
-  - context-manager
+  - orchestrate-tasks
+  
+  # Tools & Management
+  - agent-builder
+  - product-manager

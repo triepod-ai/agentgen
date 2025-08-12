@@ -2,27 +2,6 @@
 
 This document provides references to all agent system documentation and best practices for the agentgen project.
 
-## 🔗 NEW: Symlink-Based Agent Hub System
-
-**[README_SYMLINK_HUB.md](./README_SYMLINK_HUB.md)** - Symlink Management System ⭐⭐⭐
-The agentgen repository now serves as the **central hub** for all agents using symbolic links:
-- Single source of truth - all agents maintained in one location (`agents/` directory)
-- Instant updates - changes propagate immediately to all projects
-- Space efficient - ~95% reduction in disk usage (no file duplication)
-- **Unified installer**: `./install-agents` now supports both `--symlink` and `--copy` modes
-- Legacy installer: `./install-agents-symlink` (standalone symlink-only installer)
-- Migration tool: `./migrate-to-symlinks.sh` to convert existing installations
-- Full testing suite to verify symlink functionality
-- Currently managing 18+ agents across 9 categories (core, development, specialists, etc.)
-- Backward compatible with existing copy-based installations
-
-**[SYMLINK_HUB_IMPLEMENTATION_PLAN.md](./SYMLINK_HUB_IMPLEMENTATION_PLAN.md)** - Implementation Details
-Complete technical plan for the symlink-based agent hub system:
-- Architecture design and directory structure
-- Migration strategy from copy-based to symlink-based
-- Testing and validation procedures
-- Rollback and recovery plans
-
 ## 🌐 Global Agents Configuration
 
 **[GLOBAL_AGENTS_SETUP.md](./GLOBAL_AGENTS_SETUP.md)** - Global Agent Management ⭐
@@ -69,9 +48,6 @@ Technical details of the agent consolidation process:
 
 ### Recent Documentation Updates
 
-- **[COMPLETION_README.md](./COMPLETION_README.md)** - Bash completion for install-agents command with intelligent context-aware suggestions ⭐ (Added: 2025-01-11)
-- **[README_SYMLINK_HUB.md](./README_SYMLINK_HUB.md)** - Symlink-based agent hub documentation ⭐⭐⭐ (Added: 2025-01-11)
-- **[SYMLINK_HUB_IMPLEMENTATION_PLAN.md](./SYMLINK_HUB_IMPLEMENTATION_PLAN.md)** - Technical implementation plan for symlink system (Added: 2025-01-11)
 - **[README_UV.md](./README_UV.md)** - UV Wrapper Documentation ⭐ - Modern Python interface with 10-100x faster dependency management (Added: 2025-01-10)
 - **[INSTALL_AGENTS_HELP.md](./INSTALL_AGENTS_HELP.md)** - Comprehensive help documentation for install-agents command (Added: 2025-01-10)
 - **[DEFAULT_AGENTS.md](./DEFAULT_AGENTS.md)** - Default agent profiles and configurations (Added: 2025-01-10)
@@ -98,24 +74,7 @@ Based on enterprise research, our agent system supports:
 
 ## 🎯 Quick Start Guide
 
-### 0. Setup with Symlinks (NEW - Recommended)
-```bash
-# UNIFIED INSTALLER with symlinks (recommended)
-./install-agents --symlink --global --profile core
-./install-agents --symlink --project . --profile development
-
-# Maintenance (symlink mode)
-./install-agents --symlink --health
-./install-agents --symlink --repair
-
-# Migrate existing installations to symlinks
-./migrate-to-symlinks.sh .
-
-# Legacy symlink-only installer (still available)
-./install-agents-symlink --project . --profile development
-```
-
-### 1. Setup with UV (Alternative)
+### 0. Setup with UV (Recommended)
 ```bash
 # Modern Python interface with UV (10-100x faster)
 ./uv-wrapper.py setup --dev
@@ -125,7 +84,7 @@ agentgen install /path/to/project --all
 ./install-agents --all /path/to/project
 ```
 
-### 2. Choose the Right Agent
+### 1. Choose the Right Agent
 ```bash
 # Simple tasks (Green complexity)
 @analyze-screenshot extract-data-from-ui
@@ -140,7 +99,7 @@ agentgen install /path/to/project --all
 @secure-application audit-vulnerabilities
 ```
 
-### 3. Leverage Orchestration
+### 2. Leverage Orchestration
 ```bash
 # Sequential workflow
 analyze-codebase → review-code → deploy-application
@@ -152,7 +111,7 @@ Multiple agents analyze different aspects in parallel
 orchestrate-agents coordinates specialist teams
 ```
 
-### 4. Follow Best Practices
+### 3. Follow Best Practices
 - Start with single-agent patterns before multi-agent complexity
 - Match complexity tier to task requirements
 - Use <400 character agent descriptions for optimal performance
@@ -165,7 +124,6 @@ orchestrate-agents coordinates specialist teams
 - **Better Context**: Optimized prompts preserve main conversation
 - **Cost Optimization**: Tiered model usage minimizes token consumption
 - **Enterprise Patterns**: Based on Microsoft Azure, Speakeasy, Databricks research
-- **NEW: Symlink Efficiency**: Instant updates, no duplication, single source of truth
 
 ## 🔧 Agent Categories
 
@@ -273,9 +231,3 @@ These agents can be invoked in three ways:
 ---
 *Agents installed via claude-code-sub-agents repository*
 
-
-# important-instruction-reminders
-Do what has been asked; nothing more, nothing less.
-NEVER create files unless they're absolutely necessary for achieving your goal.
-ALWAYS prefer editing an existing file to creating a new one.
-NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.

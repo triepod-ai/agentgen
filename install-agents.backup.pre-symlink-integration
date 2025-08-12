@@ -46,12 +46,6 @@ SIMPLE_WRITE=false
 SIMPLE_BASH=false
 SIMPLE_GREP=false
 SIMPLE_EDIT=false
-# New symlink mode variables
-SYMLINK_MODE=false
-GLOBAL_INSTALL=false
-HEALTH_CHECK=false
-REPAIR=false
-COPY_MODE=false
 
 # Script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -59,7 +53,6 @@ SUBMODULE_DIR="$SCRIPT_DIR/submodules/claude-code-sub-agents"
 PROFILES_DIR="$SCRIPT_DIR/profiles"
 SIMPLE_AGENTS_DIR="$SCRIPT_DIR/simple-agents"
 ARCHIVE_AGENTS_DIR="$SCRIPT_DIR/archive/agents"
-AGENTS_HUB="$SCRIPT_DIR/agents"
 
 # Function to display help
 show_help() {
@@ -68,16 +61,6 @@ Claude Code Sub-Agents Installer
 
 USAGE:
     install-agents [OPTIONS] <target-project-path> [agent-names...]
-
-INSTALLATION MODES (project-level is default):
-    --copy              Use copy-based installation (default) - installs to project/.claude/agents/
-    --symlink           Use symlink-based installation (agents/hub) - single source of truth
-    --project <path>    Install agents to specific project (symlink mode) - PROJECT/.claude/agents/
-    --global            Install agents globally (symlink mode only) - ~/.claude/agents/
-
-MAINTENANCE (symlink mode only):
-    --health            Check health of existing symlinks
-    --repair            Repair broken symlinks
 
 OPTIONS:
     --help              Show this help message
@@ -104,30 +87,29 @@ ARGUMENTS:
     agent-names         Specific agents to install (optional if --all is used)
 
 EXAMPLES:
-    # PROJECT-LEVEL INSTALLATION (default and recommended)
-    install-agents --profile core /path/to/my-project
-    install-agents --profile development-team /path/to/my-project
+    # Install specific agents
     install-agents /path/to/my-project code-reviewer test-automator
 
-    # SYMLINK MODE (single source of truth - advanced)
-    install-agents --symlink --project /path/to/my-project --profile core
-    install-agents --symlink --project /path/to/my-project --profile development-team
-    
-    # GLOBAL INSTALLATION (symlink mode only - for core agents)
-    install-agents --symlink --global --profile core
+    # Install all agents
+    install-agents --all /path/to/my-project
 
-    # MAINTENANCE (symlink mode only)
-    install-agents --symlink --health
-    install-agents --symlink --project /path/to/my-project --repair
+    # Install a profile (group of agents)
+    install-agents --profile development-team /path/to/my-project
 
-    # SIMPLE AGENTS
+    # Install all simple agents
     install-agents --simple /path/to/my-project
+
+    # Install specific simple agent categories
     install-agents --simple-read --simple-bash /path/to/my-project
 
-    # INFORMATION
+    # List available agents and profiles
     install-agents --list
     install-agents --list-profiles
+
+    # Show profile details
     install-agents --show-profile development-team
+
+    # Dry run to see what would be installed
     install-agents --dry-run --profile development-team /path/to/my-project
 
 AGENT CATEGORIES:
@@ -155,8 +137,6 @@ FEATURES:
     ✅ Conflict detection and resolution
     ✅ Backup of existing agents
     ✅ Dry-run mode for safe testing
-    ✅ SYMLINK MODE: Single source of truth, instant updates, space efficient
-    ✅ SYMLINK MODE: Health checks and repair functionality
 
 EOF
 }
@@ -176,196 +156,6 @@ print_warning() {
 
 print_error() {
     echo -e "${RED}[ERROR]${NC} $1"
-}
-
-# Additional logging functions for symlink mode (borrowed from install-agents-symlink)
-log_verbose() {
-    if [[ "$VERBOSE" == "true" ]]; then
-        echo -e "${CYAN}[VERBOSE]${NC} $1"
-    fi
-}
-
-# Check if hub directory exists (for symlink mode)
-check_hub() {
-    if [[ ! -d "$AGENTS_HUB" ]]; then
-        print_error "Agents hub not found at: $AGENTS_HUB"
-        print_error "Symlink mode requires the agents hub directory. Use --copy mode instead."
-        return 1
-    fi
-    log_verbose "Using agents hub: $AGENTS_HUB"
-    return 0
-}
-
-# Get list of agents in a category (for symlink mode)
-get_category_agents() {
-    local category="$1"
-    local category_path="$AGENTS_HUB/$category"
-    
-    if [[ -d "$category_path" ]]; then
-        find "$category_path" -name "*.md" -type f | sort
-    fi
-}
-
-# Get all agents for a profile (symlink mode version)
-get_profile_agents_symlink() {
-    local profile="$1"
-    local agents=()
-    
-    case "$profile" in
-        "core")
-            agents+=($(get_category_agents "core"))
-            ;;
-        "development")
-            agents+=($(get_category_agents "development"))
-            ;;
-        "specialists")
-            agents+=($(get_category_agents "specialists"))
-            ;;
-        "infrastructure")
-            agents+=($(get_category_agents "infrastructure"))
-            ;;
-        "quality")
-            agents+=($(get_category_agents "quality"))
-            ;;
-        "content")
-            agents+=($(get_category_agents "content"))
-            ;;
-        "data")
-            agents+=($(get_category_agents "data"))
-            ;;
-        "tools")
-            agents+=($(get_category_agents "tools"))
-            ;;
-        "simple")
-            agents+=($(get_category_agents "simple"))
-            ;;
-        "all")
-            for category in core development specialists infrastructure quality content data tools simple; do
-                agents+=($(get_category_agents "$category"))
-            done
-            ;;
-        *)
-            print_error "Unknown profile: $profile"
-            return 1
-            ;;
-    esac
-    
-    printf "%s\n" "${agents[@]}"
-}
-
-# Create symlink with proper error handling
-create_symlink() {
-    local source="$1"
-    local target="$2"
-    local agent_name=$(basename "$source" .md)
-    
-    log_verbose "Creating symlink: $target -> $source"
-    
-    if [[ "$DRY_RUN" == "true" ]]; then
-        echo -e "${CYAN}[DRY-RUN]${NC} Would create symlink: $target -> $source"
-        return 0
-    fi
-    
-    # Check if target already exists
-    if [[ -e "$target" || -L "$target" ]]; then
-        if [[ "$FORCE" == "true" ]]; then
-            log_verbose "Removing existing file/link: $target"
-            rm -f "$target"
-        else
-            print_warning "Skipping $agent_name (already exists, use --force to overwrite)"
-            return 1
-        fi
-    fi
-    
-    # Create the symlink
-    if ln -s "$source" "$target" 2>/dev/null; then
-        print_success "Installed $agent_name"
-        return 0
-    else
-        print_error "Failed to create symlink for $agent_name"
-        return 1
-    fi
-}
-
-# Check health of symlinks
-health_check() {
-    local target_dir="$1"
-    
-    if [[ ! -d "$target_dir" ]]; then
-        print_error "Directory not found: $target_dir"
-        return 1
-    fi
-    
-    print_info "Checking health of symlinks in: $target_dir"
-    
-    local total=0
-    local working=0
-    local broken=0
-    
-    find "$target_dir" -name "*.md" -type l 2>/dev/null | while read -r link; do
-        ((total++))
-        if [[ -e "$link" ]]; then
-            ((working++))
-            log_verbose "✓ $(basename "$link" .md) -> $(readlink "$link")"
-        else
-            ((broken++))
-            print_warning "✗ $(basename "$link" .md) -> $(readlink "$link") (BROKEN)"
-        fi
-    done
-    
-    echo
-    print_info "Health check complete: $working working, $broken broken out of $total total symlinks"
-    return 0
-}
-
-# Repair broken symlinks
-repair_links() {
-    local target_dir="$1"
-    
-    if [[ ! -d "$target_dir" ]]; then
-        print_error "Directory not found: $target_dir"
-        return 1
-    fi
-    
-    print_info "Repairing broken symlinks in: $target_dir"
-    
-    local repaired=0
-    
-    find "$target_dir" -name "*.md" -type l 2>/dev/null | while read -r link; do
-        if [[ ! -e "$link" ]]; then
-            local agent_name=$(basename "$link" .md)
-            print_warning "Found broken symlink: $agent_name"
-            
-            # Try to find the agent in the hub
-            local found_agent=""
-            for category in core development specialists infrastructure quality content data tools simple; do
-                local candidate="$AGENTS_HUB/$category/$agent_name.md"
-                if [[ -f "$candidate" ]]; then
-                    found_agent="$candidate"
-                    break
-                fi
-            done
-            
-            if [[ -n "$found_agent" ]]; then
-                print_info "Repairing $agent_name -> $found_agent"
-                if [[ "$DRY_RUN" != "true" ]]; then
-                    rm -f "$link"
-                    if ln -s "$found_agent" "$link"; then
-                        ((repaired++))
-                        print_success "Repaired $agent_name"
-                    else
-                        print_error "Failed to repair $agent_name"
-                    fi
-                else
-                    echo -e "${CYAN}[DRY-RUN]${NC} Would repair $agent_name -> $found_agent"
-                fi
-            else
-                print_warning "Could not find source for $agent_name in hub"
-            fi
-        fi
-    done
-    
-    print_success "Repair complete: $repaired links repaired"
 }
 
 # Function to list available profiles
@@ -426,13 +216,13 @@ show_profile() {
         if [[ "$line" =~ ^[[:space:]]*-[[:space:]]*(.+)$ ]]; then
             local agent_name="${BASH_REMATCH[1]}"
             echo "  - $agent_name"
-            agent_count=$((agent_count + 1))
+            ((agent_count++))
         elif [[ ! "$line" =~ ^[[:space:]]*# ]] && [[ ! "$line" =~ ^[[:space:]]*$ ]]; then
             # Handle simple list format (one agent per line)
             local agent_name=$(echo "$line" | xargs)  # trim whitespace
             if [ -n "$agent_name" ]; then
                 echo "  - $agent_name"
-                agent_count=$((agent_count + 1))
+                ((agent_count++))
             fi
         fi
     done < "$profile_file"
@@ -605,44 +395,31 @@ check_speak_command() {
     fi
 }
 
-# Function to find agent file with hub support
+# Function to find agent file
 find_agent_file() {
     local agent_name="$1"
     
-    # PRIORITY 1: Check in agents hub first (highest priority)
-    if [[ -d "$AGENTS_HUB" ]]; then
-        for category in core development specialists infrastructure quality content data tools simple; do
-            if [[ -f "$AGENTS_HUB/$category/$agent_name.md" ]]; then
-                echo "$AGENTS_HUB/$category/$agent_name.md"
-                return 0
-            fi
-        done
-    fi
-    
-    # PRIORITY 2: Check in submodule (legacy support)
-    if [[ -d "$SUBMODULE_DIR" ]]; then
-        # Check in each category
-        for category in business data-ai development infrastructure quality-testing security specialization; do
-            if [ -f "$SUBMODULE_DIR/$category/$agent_name.md" ]; then
-                echo "$SUBMODULE_DIR/$category/$agent_name.md"
-                return 0
-            fi
-        done
-        
-        # Check in root
-        if [ -f "$SUBMODULE_DIR/$agent_name.md" ]; then
-            echo "$SUBMODULE_DIR/$agent_name.md"
+    # Check in each category
+    for category in business data-ai development infrastructure quality-testing security specialization; do
+        if [ -f "$SUBMODULE_DIR/$category/$agent_name.md" ]; then
+            echo "$SUBMODULE_DIR/$category/$agent_name.md"
             return 0
         fi
+    done
+    
+    # Check in root
+    if [ -f "$SUBMODULE_DIR/$agent_name.md" ]; then
+        echo "$SUBMODULE_DIR/$agent_name.md"
+        return 0
     fi
     
-    # PRIORITY 3: Check in simple agents directory
+    # Check in simple agents directory
     if [ -f "$SIMPLE_AGENTS_DIR/$agent_name.md" ]; then
         echo "$SIMPLE_AGENTS_DIR/$agent_name.md"
         return 0
     fi
     
-    # PRIORITY 4: Check in archive agents directory (lowest priority)
+    # Check in archive agents directory
     if [ -f "$ARCHIVE_AGENTS_DIR/$agent_name.md" ]; then
         echo "$ARCHIVE_AGENTS_DIR/$agent_name.md"
         return 0
@@ -1032,34 +809,6 @@ while [[ $# -gt 0 ]]; do
             show_help
             exit 0
             ;;
-        --symlink)
-            SYMLINK_MODE=true
-            shift
-            ;;
-        --copy)
-            COPY_MODE=true
-            shift
-            ;;
-        --global)
-            GLOBAL_INSTALL=true
-            shift
-            ;;
-        --project)
-            if [ -z "$2" ]; then
-                print_error "--project requires a path argument"
-                exit 1
-            fi
-            PROJECT_PATH="$2"
-            shift 2
-            ;;
-        --health)
-            HEALTH_CHECK=true
-            shift
-            ;;
-        --repair)
-            REPAIR=true
-            shift
-            ;;
         --force)
             FORCE=true
             shift
@@ -1154,125 +903,7 @@ if [ ! -z "$SHOW_PROFILE" ]; then
     exit 0
 fi
 
-# Validate and setup installation modes
-if [[ "$SYMLINK_MODE" == "true" && "$COPY_MODE" == "true" ]]; then
-    print_error "Cannot use both --symlink and --copy modes simultaneously"
-    exit 1
-fi
-
-# Validate global install requirements
-if [[ "$GLOBAL_INSTALL" == "true" && "$SYMLINK_MODE" != "true" ]]; then
-    print_error "--global requires --symlink mode"
-    print_info "Use: install-agents --symlink --global --profile <name>"
-    exit 1
-fi
-
-# Set default mode if neither specified
-if [[ "$SYMLINK_MODE" != "true" && "$COPY_MODE" != "true" ]]; then
-    COPY_MODE=true  # Default to copy mode for backward compatibility
-fi
-
-# Validate hub exists for symlink mode
-if [[ "$SYMLINK_MODE" == "true" ]]; then
-    if ! check_hub; then
-        print_info "Agents hub not available. Falling back to copy mode..."
-        SYMLINK_MODE=false
-        COPY_MODE=true
-    else
-        print_info "Using SYMLINK MODE with agents hub"
-    fi
-else
-    print_info "Using COPY MODE (traditional file copying)"
-fi
-
-# Handle symlink-specific operations
-if [[ "$SYMLINK_MODE" == "true" ]]; then
-    # Determine target directory for symlink mode
-    if [[ "$GLOBAL_INSTALL" == "true" ]]; then
-        TARGET_AGENTS_DIR="$HOME/.claude/agents"
-        print_info "Installing agents globally to: $TARGET_AGENTS_DIR"
-    elif [[ -n "$PROJECT_PATH" ]]; then
-        TARGET_AGENTS_DIR="$PROJECT_PATH/.claude/agents"
-        print_info "Installing agents to project: $TARGET_AGENTS_DIR"
-    else
-        print_error "Symlink mode requires either --global or --project PATH"
-        print_info "Examples:"
-        print_info "  install-agents --symlink --global --profile core"
-        print_info "  install-agents --symlink --project /path/to/project --profile development"
-        exit 1
-    fi
-
-    # Handle health check
-    if [[ "$HEALTH_CHECK" == "true" ]]; then
-        health_check "$TARGET_AGENTS_DIR"
-        exit 0
-    fi
-
-    # Handle repair
-    if [[ "$REPAIR" == "true" ]]; then
-        repair_links "$TARGET_AGENTS_DIR"
-        exit 0
-    fi
-
-    # For symlink mode, we need a profile
-    if [[ -z "$PROFILE_NAME" && "$INSTALL_ALL" != "true" && "$INSTALL_SIMPLE" != "true" ]]; then
-        print_error "Symlink mode requires a profile (--profile <name>) or --all"
-        print_info "Use --list-profiles to see available profiles"
-        exit 1
-    fi
-    
-    # Create target directory for symlinks
-    if [[ ! -d "$TARGET_AGENTS_DIR" ]]; then
-        print_info "Creating directory: $TARGET_AGENTS_DIR"
-        if [[ "$DRY_RUN" != "true" ]]; then
-            mkdir -p "$TARGET_AGENTS_DIR"
-        fi
-    fi
-
-    # Handle symlink installation
-    if [[ "$INSTALL_ALL" == "true" ]]; then
-        PROFILE_NAME="all"
-    fi
-    
-    if [[ -n "$PROFILE_NAME" ]]; then
-        # Install via symlinks using profile
-        agents=($(get_profile_agents_symlink "$PROFILE_NAME"))
-        if [[ ${#agents[@]} -eq 0 ]]; then
-            print_warning "No agents found for profile: $PROFILE_NAME"
-            exit 1
-        fi
-
-        print_info "Installing ${#agents[@]} agents from profile '$PROFILE_NAME' using symlinks"
-        
-        success_count=0
-        skip_count=0
-        
-        for agent_file in "${agents[@]}"; do
-            set +e  # Temporarily disable exit on error for this loop iteration
-            
-            agent_name=$(basename "$agent_file" .md)
-            target_file="$TARGET_AGENTS_DIR/$agent_name.md"
-            
-            if create_symlink "$agent_file" "$target_file"; then
-                ((success_count++))
-            else
-                ((skip_count++))
-            fi
-            
-            set -e  # Re-enable exit on error
-        done
-        
-        echo
-        print_success "Symlink installation complete: $success_count installed, $skip_count skipped"
-        print_info "Next steps:"
-        print_info "• Test agents with Claude Code"
-        print_info "• Run health check: install-agents --symlink --health"
-        print_info "• Update agents by modifying files in: $AGENTS_HUB"
-        exit 0
-    fi
-fi
-
-# Check if submodule is initialized (for copy mode)
+# Check if submodule is initialized
 if [ ! -d "$SUBMODULE_DIR" ]; then
     print_error "Submodule not found at: $SUBMODULE_DIR"
     print_info "Initializing submodule..."

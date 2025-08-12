@@ -40,6 +40,7 @@ SKIP_SPEAK_CHECK=false
 PROFILE_NAME=""
 SHOW_PROFILE=""
 LIST_PROFILES=false
+LIST_INSTALLED=false
 INSTALL_SIMPLE=false
 SIMPLE_READ=false
 SIMPLE_WRITE=false
@@ -84,6 +85,7 @@ OPTIONS:
     --force             Force installation, overwrite existing agents
     --all               Install all available agents
     --list              List all available agents
+    --list-installed    List agents installed in target project
     --profile <name>    Install agents from a profile
     --list-profiles     List all available profiles
     --show-profile <name> Show details of a specific profile
@@ -126,6 +128,7 @@ EXAMPLES:
 
     # INFORMATION
     install-agents --list
+    install-agents --list-installed /path/to/my-project
     install-agents --list-profiles
     install-agents --show-profile development-team
     install-agents --dry-run --profile development-team /path/to/my-project
@@ -587,6 +590,93 @@ list_agents() {
     # Also show available profiles
     echo ""
     list_profiles
+}
+
+# Function to list installed agents
+list_installed_agents() {
+    local target_project="$1"
+    
+    if [ -z "$target_project" ]; then
+        print_error "Target project path required for --list-installed"
+        print_info "Usage: install-agents --list-installed <project-path>"
+        return 1
+    fi
+    
+    # Convert to absolute path
+    target_project="$(cd "$target_project" 2>/dev/null && pwd)" || {
+        print_error "Target project path does not exist: $target_project"
+        return 1
+    }
+    
+    local agents_dir="$target_project/.claude/agents"
+    
+    if [ ! -d "$agents_dir" ]; then
+        print_info "No agents directory found at: $agents_dir"
+        print_info "No agents are currently installed in this project."
+        return 0
+    fi
+    
+    print_info "Installed agents in: $target_project"
+    echo ""
+    
+    # Count total agents
+    local total_agents=0
+    local symlinked_agents=0
+    local copied_agents=0
+    
+    # Check if any agents exist
+    if ! ls "$agents_dir"/*.md >/dev/null 2>&1; then
+        print_info "No agents are currently installed in this project."
+        return 0
+    fi
+    
+    # List all agents with their details
+    echo -e "${GREEN}Installed Agents:${NC}"
+    
+    for agent_file in "$agents_dir"/*.md; do
+        if [ -f "$agent_file" ]; then
+            local agent_name=$(basename "$agent_file" .md)
+            local install_type=""
+            
+            total_agents=$((total_agents + 1))
+            
+            # Determine if it's a symlink or copy
+            if [ -L "$agent_file" ]; then
+                install_type="symlink"
+                symlinked_agents=$((symlinked_agents + 1))
+                
+                # Display the agent with symlink info
+                echo "  - $agent_name ($install_type)"
+                local target_path=$(readlink "$agent_file")
+                echo "    └─ Source: $target_path"
+            else
+                install_type="copy"
+                copied_agents=$((copied_agents + 1))
+                
+                # Display the agent
+                echo "  - $agent_name ($install_type)"
+            fi
+        fi
+    done
+    
+    echo ""
+    
+    # Summary
+    echo -e "${BLUE}Summary:${NC}"
+    echo "  • Total agents: $total_agents"
+    if [ $symlinked_agents -gt 0 ]; then
+        echo "  • Symlinked: $symlinked_agents (single source of truth)"
+    fi
+    if [ $copied_agents -gt 0 ]; then
+        echo "  • Copied: $copied_agents (independent files)"
+    fi
+    echo ""
+    
+    # Usage examples
+    echo -e "${YELLOW}Usage examples:${NC}"
+    echo "  @agent-name         Direct @-mention invocation"
+    echo "  Use the agent-name  Explicit invocation"
+    echo "  [natural request]   Auto-activation based on task description"
 }
 
 # Function to check if speak command is available
@@ -1072,6 +1162,10 @@ while [[ $# -gt 0 ]]; do
             list_agents
             exit 0
             ;;
+        --list-installed)
+            LIST_INSTALLED=true
+            shift
+            ;;
         --profile)
             if [ -z "$2" ]; then
                 print_error "--profile requires a profile name"
@@ -1151,6 +1245,17 @@ fi
 
 if [ ! -z "$SHOW_PROFILE" ]; then
     show_profile "$SHOW_PROFILE"
+    exit 0
+fi
+
+if [ "$LIST_INSTALLED" = true ]; then
+    # For --list-installed, we need a target project path
+    if [ $# -eq 0 ]; then
+        print_error "No target project path specified for --list-installed"
+        print_info "Usage: install-agents --list-installed <project-path>"
+        exit 1
+    fi
+    list_installed_agents "$1"
     exit 0
 fi
 

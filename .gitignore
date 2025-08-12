@@ -1,7 +1,7 @@
 # Folder view configuration files
 .DS_Store
 Desktop.ini
-
+.claude/
 # Thumbnail cache files
 ._*
 Thumbs.db
@@ -27,3 +27,4 @@ log
 .claude
 .mcp.json
 agentgen.code-workspace
+.env

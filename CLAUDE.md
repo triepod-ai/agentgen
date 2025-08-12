@@ -210,68 +210,105 @@ See `AGENT_CONSOLIDATION_STRATEGY.md` for detailed mapping of old agents to new 
 
 ## Installed Sub-Agents
 
-This project has the following specialized AI sub-agents available:
+This project has specialized AI sub-agents installed from two sources:
 
-### Available Agents
+### Agent Sources and Access
 
-- **agent-organizer** (general): Specialized agent for domain-specific tasks
-- **analyze-screenshot** (general): Specialized agent for domain-specific tasks
-- **api-documenter** (specialization): Specialized agent for domain-specific tasks
-- **backend-architect** (development): Specialized agent for domain-specific tasks
-- **code-reviewer** (quality-testing): Specialized agent for domain-specific tasks
-- **config-reader** (general): Specialized agent for domain-specific tasks
-- **context-manager** (general): Specialized agent for domain-specific tasks
-- **debugger** (quality-testing): Specialized agent for domain-specific tasks
-- **deployment-engineer** (infrastructure): Specialized agent for domain-specific tasks
-- **documentation-expert** (specialization): Specialized agent for domain-specific tasks
-- **documentation-hub** (general): Specialized agent for domain-specific tasks
-- **env-reader** (general): Specialized agent for domain-specific tasks
-- **frontend-developer** (development): Specialized agent for domain-specific tasks
-- **full-stack-developer** (development): Specialized agent for domain-specific tasks
-- **log-reader** (general): Specialized agent for domain-specific tasks
-- **nextjs-pro** (development): Specialized agent for domain-specific tasks
-- **readme-reader** (general): Specialized agent for domain-specific tasks
-- **test-automator** (quality-testing): Specialized agent for domain-specific tasks
-- **ui-designer** (development): Specialized agent for domain-specific tasks
+#### 1. Primary Agent Hub (`/agents/` folder) 
+- **Location**: Central repository in `agents/` directory
+- **Distribution**: Symlink-based system for instant updates
+- **Access**: Direct @-mention (e.g., `@code-reviewer`) or auto-activation
+- **Count**: 18+ optimized agents across 9 categories
+
+#### 2. Submodule Agent Collection (`/submodules/claude-code-sub-agents/`)
+- **Location**: Git submodule repository
+- **Installation**: Via `install-agents` command - copies/symlinks to `.claude/agents/`
+- **Access**: **No direct agent access** - submodule is a source repository only
+- **Process**: `install-agents` → agents copied to project → then available as regular subagents
+
+### How Submodule Agents Work
+
+**Important**: The submodule itself doesn't provide agent access. Instead:
+
+1. **Installation**: Run `install-agents [options]` to copy agents from submodule
+2. **Integration**: Agents become available in your `.claude/agents/` directory
+3. **Usage**: Interact with installed agents directly (not the submodule)
+
+```bash
+# Install agents from submodule
+./install-agents --all .                    # Copy all agents to project
+./install-agents --profile development .    # Install development profile
+
+# Then use installed agents normally
+@code-reviewer analyze this PR              # Direct @-mention
+@agent-organizer coordinate multiple tasks  # Complex workflows
+```
+
+### Currently Available Agents
+
+The following agents are installed and available in this project:
+
+- **agent-organizer** (general): Multi-agent workflow coordination
+- **analyze-screenshot** (general): Image analysis and UI extraction  
+- **api-documenter** (specialization): API documentation generation
+- **backend-architect** (development): Server-side architecture design
+- **code-reviewer** (quality-testing): Code quality and security review
+- **config-reader** (general): Configuration file analysis
+- **context-manager** (general): Project context management
+- **debugger** (quality-testing): Error investigation and resolution
+- **deployment-engineer** (infrastructure): CI/CD and deployment automation
+- **documentation-expert** (specialization): Technical writing specialist
+- **documentation-hub** (general): Documentation discovery and analysis
+- **env-reader** (general): Environment configuration analysis
+- **frontend-developer** (development): UI/UX development specialist
+- **full-stack-developer** (development): End-to-end application development
+- **log-reader** (general): Log analysis and error extraction
+- **nextjs-pro** (development): Next.js application specialist
+- **readme-reader** (general): README and documentation analysis
+- **test-automator** (quality-testing): Automated testing implementation
+- **ui-designer** (development): User interface design specialist
 
 ### Usage Instructions
 
-These agents can be invoked in three ways:
+**Three Ways to Use Installed Agents:**
 
-1. **Automatic Invocation**: Claude Code will automatically select the appropriate agent based on your task
-2. **Explicit Invocation**: Use phrases like "Use the ui-designer to..." or "Have ui-designer handle this"
-3. **Agent Organizer**: For complex multi-agent workflows, the agent-organizer can coordinate multiple specialists
+1. **@-Mention (Recommended)**: `@agent-name` with task description
+2. **Explicit Request**: "Use the [agent-name] to..." 
+3. **Auto-Activation**: Describe task naturally - appropriate agent activates
 
 ### Examples
 
 ```bash
-# Direct invocation
-"Use the code-reviewer to analyze this pull request"
-"Have the security-auditor scan for vulnerabilities"
+# @-mention usage (primary method)
+@code-reviewer analyze this pull request
+@debugger investigate the authentication error
+@agent-organizer coordinate backend and frontend teams
+
+# Explicit invocation
+Use the ui-designer to create a responsive navigation component
+Have the security-auditor scan for vulnerabilities
 
 # Multi-agent coordination
-"Use backend-architect to design the API, then have security-auditor review it"
+@agent-organizer: Use backend-architect for API design, then security-auditor for review
 ```
 
 ### Agent Categories
 
-- **business**: Product management and business analysis
-- **data-ai**: Data engineering, AI/ML, and database optimization
-- **development**: Frontend, backend, and full-stack development
-- **infrastructure**: Cloud, DevOps, and performance engineering
+- **general**: Core utilities and analysis tools
+- **development**: Frontend, backend, and full-stack specialists  
 - **quality-testing**: Code review, QA, and testing automation
-- **security**: Security auditing and vulnerability assessment
-- **specialization**: API documentation and specialized expertise
+- **infrastructure**: Cloud, DevOps, and deployment engineering
+- **specialization**: API documentation and domain expertise
 
 ### Best Practices
 
-- Trust automatic delegation for optimal agent selection
-- Provide rich context about your requirements
-- Use explicit invocation when you need specific expertise
-- For complex projects, consider using the agent-organizer for multi-agent coordination
+- **Use @-mentions** for direct, efficient agent invocation
+- **Leverage agent-organizer** for complex multi-agent workflows
+- **Provide rich context** about your requirements and constraints
+- **Trust auto-activation** for optimal agent selection based on task descriptions
 
 ---
-*Agents installed via claude-code-sub-agents repository*
+*Agents sourced from claude-code-sub-agents repository via install-agents command*
 
 
 # important-instruction-reminders

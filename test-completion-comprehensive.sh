@@ -28,41 +28,54 @@ test_completion() {
     fi
 }
 
-# Test 1: Basic options
+# NEW DEFAULTS TESTS
+
+# Test 1: NEW DEFAULT - Simple agent completion (current directory, symlinks)
+test_completion "NEW DEFAULT: Simple agent completion" "install-agents" ""
+
+# Test 2: NEW DEFAULT - Profile completion (current directory, symlinks)  
+test_completion "NEW DEFAULT: Profile completion" "install-agents" "--profile" ""
+
+# Test 3: NEW DEFAULT - Partial agent name (current directory)
+test_completion "NEW DEFAULT: Partial agent name" "install-agents" "code"
+
+# STANDARD TESTS
+
+# Test 4: Basic options
 test_completion "Basic options with --" "install-agents" "--"
 
-# Test 2: Profile completion
-test_completion "Profile names after --profile" "install-agents" "--profile" ""
-
-# Test 3: Partial profile completion
+# Test 5: Partial profile completion
 test_completion "Partial profile name" "install-agents" "--profile" "dev"
 
-# Test 4: Agent names after target path
-test_completion "Agent names after target path" "install-agents" "/tmp" ""
+# Test 6: Agent names after explicit target path (legacy)
+test_completion "Agent names after target path (legacy)" "install-agents" "/tmp" ""
 
-# Test 5: Agent names with partial match
-test_completion "Partial agent name" "install-agents" "/tmp" "code"
+# Test 7: Agent names with partial match (legacy)
+test_completion "Partial agent name (legacy)" "install-agents" "/tmp" "code"
 
-# Test 6: Symlink global mode agent completion
-test_completion "Symlink global mode agents" "install-agents" "--symlink" "--global" ""
+# Test 8: Symlink global mode agent completion
+test_completion "Symlink global mode agents" "install-agents" "--global" ""
 
-# Test 7: Symlink project mode
-test_completion "Symlink project completion" "install-agents" "--symlink" "--project" ""
+# Test 9: Symlink project mode
+test_completion "Symlink project completion" "install-agents" "--project" ""
 
-# Test 8: Directory completion after --project
-test_completion "Directory after --project" "install-agents" "--symlink" "--project" "/ho"
+# Test 10: Directory completion after --project
+test_completion "Directory after --project" "install-agents" "--project" "/ho"
 
-# Test 9: Options after --symlink
+# Test 11: Options after explicit --symlink (redundant since it's default)
 test_completion "Options after --symlink" "install-agents" "--symlink" "--"
 
-# Test 10: No completion for --all mode
-test_completion "No agents with --all" "install-agents" "/tmp" "--all" ""
+# Test 12: No completion for --all mode
+test_completion "No agents with --all" "install-agents" "--all" ""
 
-# Test 11: No completion for --profile mode
-test_completion "No agents with --profile" "install-agents" "/tmp" "--profile" "core" ""
+# Test 13: No completion for --profile mode
+test_completion "No agents with --profile" "install-agents" "--profile" "core" ""
 
-# Test 12: Health check (no path needed)
-test_completion "Health check mode" "install-agents" "--symlink" "--health" ""
+# Test 14: Health check (no path needed, symlinks default)
+test_completion "Health check mode" "install-agents" "--health" ""
+
+# Test 15: Legacy copy mode
+test_completion "Copy mode (legacy)" "install-agents" "--copy" "/tmp" ""
 
 echo
 echo "=== Comprehensive test completed ==="

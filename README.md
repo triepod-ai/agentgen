@@ -2,7 +2,7 @@
 
 ## Overview
 
-This directory contains 33 optimized agents (25 general + 7 specialists + 1 meta-agent) with complexity-based model selection for maximum efficiency. Each agent is optimized for <400 characters and focuses on immediate execution.
+This directory contains 36+ optimized agents organized in 11 categories with complexity-based model selection for maximum efficiency. Each agent is optimized for <400 characters and focuses on immediate execution.
 
 ### 🌐 Global Agents Available
 22 specialist agents are configured as global agents via symbolic links in `~/.claude/agents/`, making them available across all projects. See [GLOBAL_AGENTS_SETUP.md](./GLOBAL_AGENTS_SETUP.md) for details.
@@ -87,6 +87,11 @@ Based on enterprise agent architecture patterns from Microsoft Azure, Speakeasy,
 
 ### Standard Agent Usage
 ```bash
+# Orchestration (Recommended for complex tasks)
+@orchestrate-tasks "Review code quality and fix security issues"
+@orchestrate-tasks "Build complete authentication system with testing"
+
+# Direct agent usage
 # Simple tasks (Green complexity)
 @analyze-screenshot extract-data-from-ui
 @update-status current-progress
@@ -108,12 +113,15 @@ Based on enterprise agent architecture patterns from Microsoft Azure, Speakeasy,
 - **Orange (Complex) - Sonnet 4 Model**: Enterprise coordination (7 agents)
 - **Red (Enterprise) - Opus Model**: Advanced reasoning and multi-agent orchestration (10 agents)
 
-## Orchestration Hierarchy
+## Orchestration Hierarchy (Context-Manager Integrated)
 
-1. **@general-request** (Sonnet 3.7/Yellow): Preliminary research and request analysis
-2. **@orchestrate-tasks** (Sonnet 3.7/Yellow): Intelligence layer with complexity analysis and routing
-3. **@orchestrate-agents** (Sonnet 4/Orange): Simple coordination for 1-3 agents
-4. **@orchestrate-agents-adv** (Opus/Red): Complex enterprise coordination for 4+ agents
+**Recommended Entry Point**: `@orchestrate-tasks` for all orchestration needs
+
+1. **@orchestrate-tasks** (Sonnet 3.7/Yellow): **Primary entry point** - Intelligence layer with automatic context-manager integration, complexity analysis, and intelligent routing
+2. **@orchestrate-agents** (Sonnet 4/Orange): Standard coordination for 1-3 agents with context awareness
+3. **@orchestrate-agents-adv** (Opus/Red): Complex enterprise coordination for 4+ agents with full context integration
+
+**Context-Manager Integration**: All orchestration agents automatically query the context-manager for project understanding before task execution, ensuring informed decision-making and avoiding redundant questions.
 
 ### Cost Benefits
 - **Up to 70-80% cost reduction** through intelligent model selection

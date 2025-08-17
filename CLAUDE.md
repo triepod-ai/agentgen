@@ -32,6 +32,40 @@ Documentation for globally available agents configured via symbolic links in `~/
 - Precedence rules (project agents override global)
 - Management best practices and troubleshooting
 
+## 🧠 Context-Manager System (OPERATIONAL)
+
+**Status**: ✅ **FULLY OPERATIONAL** - Context-manager is active with complete knowledge graph
+
+### **Knowledge Graph Location**: `/sub-agents/context/context-manager.json`
+- **Last Updated**: 2025-08-14T12:08:08Z
+- **Project Structure**: Complete directory tree with 36+ agents mapped
+- **Activity Tracking**: Real-time agent activity logging
+- **Cross-Agent Context**: Shared project understanding across all orchestration agents
+
+### **Automatic Integration**
+All orchestration agents integrate with context-manager:
+- **@orchestrate-tasks**: Primary entry point with automatic context query
+- **@orchestrate-agents**: Standard coordination with context awareness
+- **@orchestrate-agents-adv**: Enterprise coordination with full context integration
+- **Specialist Agents**: Many include mandatory context-manager communication protocols
+
+### **Communication Protocol**
+```json
+{
+  "requesting_agent": "agent-name",
+  "request_type": "get_task_briefing",
+  "payload": {
+    "query": "Context query for project understanding"
+  }
+}
+```
+
+### **Benefits**
+- **No Redundant Questions**: Agents understand project structure automatically
+- **Informed Decisions**: All orchestration based on current project state
+- **Cross-Agent Coordination**: Shared context enables better agent collaboration
+- **Activity Tracking**: Monitor and coordinate multi-agent operations
+
 ## 📚 Core Documentation
 
 ### **[README.md](./README.md)** - Main Agent System Overview
@@ -69,11 +103,23 @@ Technical details of the agent consolidation process:
 
 ### Recent Documentation Updates
 
-- **[COMPLETION_README.md](./COMPLETION_README.md)** - Bash completion for install-agents command with intelligent context-aware suggestions ⭐ (Added: 2025-01-11)
+- **@orchestrate-tasks Testing Complete** - Achieved 100% test success rate (25/25 scenarios) through systematic debugging, comprehensive test infrastructure, and quality improvements ⭐⭐⭐ (Completed: 2025-08-17)
+- **@install-agents-manager Agent Created** - New intelligent agent manager for automatic agent installation during sessions, integrated with all orchestration agents ⭐⭐⭐ (Added: 2025-08-17)
+- **Enhanced Orchestration Agents** - All three orchestration agents (@orchestrate-tasks, @orchestrate-agents, @orchestrate-agents-adv) now include automatic agent installation via @install-agents-manager integration ⭐⭐⭐ (Updated: 2025-08-17)
+- **Bash Completion System Complete** - Full bash completion for install-agents with NEW improved defaults and comprehensive documentation ⭐⭐ (Updated: 2025-08-17)
+- **[INSTALL_AGENTS_USER_GUIDE.md](./INSTALL_AGENTS_USER_GUIDE.md)** - Complete user guide for install-agents command with comprehensive examples ⭐⭐⭐ (Added: 2025-08-17)
+- **[INSTALL_AGENTS_QUICK_START.md](./INSTALL_AGENTS_QUICK_START.md)** - Quick start guide focusing on new improved defaults and 30-second setup ⭐⭐ (Added: 2025-08-17)
+- **[INSTALL_AGENTS_HELP.md](./INSTALL_AGENTS_HELP.md)** - Updated comprehensive help documentation reflecting symlink mode defaults and improved UX ⭐⭐ (Updated: 2025-08-17)
+- **install-agents --help** - Updated script help output with clear examples and improved defaults documentation (Updated: 2025-08-17)
+- **[ORCHESTRATION_TESTING_METHODOLOGY.md](./ORCHESTRATION_TESTING_METHODOLOGY.md)** - Comprehensive testing methodology and results for @orchestrate-tasks agent with 100% success rate achievement ⭐⭐⭐ (Added: 2025-08-17)
+- **[ORCHESTRATION_GUIDE.md](./ORCHESTRATION_GUIDE.md)** - Quick reference guide for orchestration system with operational context-manager integration ⭐⭐⭐ (Added: 2025-08-14)
+- **Context-Manager System Operational** - Context-manager now fully operational with knowledge graph and automatic integration across all orchestration agents ⭐⭐⭐ (Updated: 2025-08-14)
+- **@orchestrate-tasks Primary Entry Point** - Recommended orchestration entry point with intelligent routing and automatic context integration ⭐⭐ (Updated: 2025-08-14)
+- **[COMPLETION_SETUP_GUIDE.md](./COMPLETION_SETUP_GUIDE.md)** - Complete bash completion setup guide with NEW improved defaults (symlink mode, current directory, force enabled) ⭐⭐ (Added: 2025-08-17)
+- **[COMPLETION_README.md](./COMPLETION_README.md)** - Updated bash completion documentation reflecting improved UX defaults ⭐⭐ (Updated: 2025-08-17)
 - **[README_SYMLINK_HUB.md](./README_SYMLINK_HUB.md)** - Symlink-based agent hub documentation ⭐⭐⭐ (Added: 2025-01-11)
 - **[SYMLINK_HUB_IMPLEMENTATION_PLAN.md](./SYMLINK_HUB_IMPLEMENTATION_PLAN.md)** - Technical implementation plan for symlink system (Added: 2025-01-11)
 - **[README_UV.md](./README_UV.md)** - UV Wrapper Documentation ⭐ - Modern Python interface with 10-100x faster dependency management (Added: 2025-01-10)
-- **[INSTALL_AGENTS_HELP.md](./INSTALL_AGENTS_HELP.md)** - Comprehensive help documentation for install-agents command (Added: 2025-01-10)
 - **[DEFAULT_AGENTS.md](./DEFAULT_AGENTS.md)** - Default agent profiles and configurations (Added: 2025-01-10)
 - **[SIMPLE_AGENTS.md](./SIMPLE_AGENTS.md)** - Simple agent profiles for basic tasks (Added: 2025-01-10)
 - **[profiles/README.md](./profiles/README.md)** - Agent profiles organization and usage guide (Added: 2025-01-10)
@@ -163,16 +209,18 @@ agentgen install /path/to/project --all
 @secure-application audit-vulnerabilities
 ```
 
-### 3. Leverage Orchestration
+### 3. Leverage Orchestration (Context-Manager Integrated)
 ```bash
-# Sequential workflow
+# Primary orchestration entry point (RECOMMENDED)
+@orchestrate-tasks "comprehensive code review and security audit"
+@orchestrate-tasks "build authentication system with testing"
+
+# Direct orchestration (for specific coordination needs)
+@orchestrate-agents "review code quality and fix bugs"  # 1-3 agents
+@orchestrate-agents-adv "enterprise security audit with modernization"  # 4+ agents
+
+# Traditional single-agent workflows
 analyze-codebase → review-code → deploy-application
-
-# Concurrent processing
-Multiple agents analyze different aspects in parallel
-
-# Hierarchical coordination
-orchestrate-agents coordinates specialist teams
 ```
 
 ### 4. Follow Best Practices
@@ -185,10 +233,14 @@ orchestrate-agents coordinates specialist teams
 
 - **3x Faster Loading**: <400 character limit ensures rapid initialization
 - **Intelligent Routing**: Complexity-based model selection
-- **Better Context**: Optimized prompts preserve main conversation
+- **Better Context**: Optimized prompts preserve main conversation context
 - **Cost Optimization**: Tiered model usage minimizes token consumption
 - **Enterprise Patterns**: Based on Microsoft Azure, Speakeasy, Databricks research
-- **NEW: Symlink Efficiency**: Instant updates, no duplication, single source of truth
+- **Context-Manager Integration**: Automatic project understanding and cross-agent coordination
+- **Intelligent Orchestration**: @orchestrate-tasks provides smart routing and task breakdown
+- **Symlink Efficiency**: Instant updates, no duplication, single source of truth
+- **Proven Reliability**: 100% test success rate with comprehensive validation methodology
+- **Systematic Quality**: Evidence-based improvements with debugging infrastructure
 
 ## 🔧 Agent Categories
 
@@ -233,6 +285,12 @@ See `AGENT_CONSOLIDATION_STRATEGY.md` for detailed mapping of old agents to new 
 
 
 
+
+
+
+
+
+
 ## Installed Sub-Agents
 
 This project has the following specialized AI sub-agents available:
@@ -251,6 +309,8 @@ This project has the following specialized AI sub-agents available:
 - **code-reviewer** (quality-testing): Specialized agent for domain-specific tasks
 - **config-reader** (general): Specialized agent for domain-specific tasks
 - **context-manager** (general): Specialized agent for domain-specific tasks
+- **database-specialist** (general): Specialized agent for domain-specific tasks
+- **data-engineer** (data-ai): Specialized agent for domain-specific tasks
 - **debugger** (quality-testing): Specialized agent for domain-specific tasks
 - **deployment-engineer** (infrastructure): Specialized agent for domain-specific tasks
 - **documentation-expert** (specialization): Specialized agent for domain-specific tasks
@@ -259,12 +319,17 @@ This project has the following specialized AI sub-agents available:
 - **frontend-developer** (development): Specialized agent for domain-specific tasks
 - **full-stack-developer** (development): Specialized agent for domain-specific tasks
 - **log-reader** (general): Specialized agent for domain-specific tasks
+- **ml-specialist** (general): Specialized agent for domain-specific tasks
 - **nextjs-pro** (development): Specialized agent for domain-specific tasks
 - **orchestrate-tasks** (general): Specialized agent for domain-specific tasks
+- **performance-engineer** (infrastructure): Specialized agent for domain-specific tasks
 - **product-manager** (business): Specialized agent for domain-specific tasks
+- **python-specialist** (general): Specialized agent for domain-specific tasks
 - **qa-expert** (quality-testing): Specialized agent for domain-specific tasks
 - **react-pro** (development): Specialized agent for domain-specific tasks
+- **react-specialist** (general): Specialized agent for domain-specific tasks
 - **readme-reader** (general): Specialized agent for domain-specific tasks
+- **security-auditor** (security): Specialized agent for domain-specific tasks
 - **test-automator** (quality-testing): Specialized agent for domain-specific tasks
 - **ui-designer** (development): Specialized agent for domain-specific tasks
 - **ux-designer** (development): Specialized agent for domain-specific tasks
@@ -300,10 +365,12 @@ These agents can be invoked in three ways:
 
 ### Best Practices
 
+- **Start with @orchestrate-tasks** for complex, multi-step operations
 - Trust automatic delegation for optimal agent selection
-- Provide rich context about your requirements
+- All orchestration agents automatically integrate with context-manager for project awareness
 - Use explicit invocation when you need specific expertise
-- For complex projects, consider using the agent-organizer for multi-agent coordination
+- Context-manager eliminates need to re-explain project structure
+- For enterprise coordination, @orchestrate-tasks will route to appropriate orchestrator
 
 ---
 *Agents installed via claude-code-sub-agents repository*

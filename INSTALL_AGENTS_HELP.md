@@ -2,43 +2,95 @@
 
 ## Overview
 
-The `install-agents` command provides a powerful, flexible system for installing and managing Claude Code sub-agents across your development environment. With UV wrapper integration, this tool offers enhanced performance, rich terminal output, and multiple usage patterns.
+The `install-agents` command provides a powerful, flexible system for installing and managing Claude Code sub-agents across your development environment. The tool now features **symlink mode as default**, offering instant updates, space efficiency, and a single source of truth for all agents.
 
-### 🚀 Key Enhancements
-- **UV Wrapper**: 10-100x faster dependency resolution
+### 🚀 Key Features
+- **Symlink Mode (DEFAULT)**: Single source of truth with instant updates
+- **Improved Defaults**: Current directory, force enabled, simplified usage
+- **Space Efficient**: ~95% reduction in disk usage vs copying
+- **Instant Propagation**: Changes to agents hub immediately available everywhere
+- **Legacy Support**: Copy mode still available for backward compatibility
 - **Rich Terminal UI**: Beautiful, colored output with progress indicators
-- **Multiple Installation Methods**: 
-  - Standalone wrapper
-  - Installed CLI
-  - Traditional shell script
-- **Advanced Color Control**: Environment variable-based color management
-- **Comprehensive Error Handling**: Actionable error messages and system status checks
+- **Comprehensive Profiles**: Pre-configured agent sets for different teams
+- **Health Monitoring**: Built-in health checks and repair functionality
 
-## Installation Options
+## Quick Start
 
-### Basic Usage
+### ⚠️ IMPORTANT: Must run from agentgen directory
+The `install-agents` script must be run from `/home/bryan/agentgen/` directory.
+
 ```bash
-# Install all available agents
-install-agents --all
+# Navigate to agentgen first
+cd /home/bryan/agentgen
 
-# List available agents without installing
-install-agents --list
+# SIMPLE USAGE (NEW DEFAULTS - current directory, symlink mode, force enabled)
+./install-agents --profile development-team
+./install-agents --profile core
+./install-agents code-reviewer test-automator
 
-# Perform a dry run to see what would be installed
-install-agents --dry-run
+# EXPLICIT PROJECT PATH
+./install-agents --profile development-team /path/to/my-project
+./install-agents --project /path/to/my-project --profile core
+
+# LEGACY COPY MODE (for backward compatibility)
+./install-agents --copy --profile development-team /path/to/my-project
+
+# GLOBAL INSTALLATION (symlink mode only)
+./install-agents --symlink --global --profile core
 ```
 
-### Advanced Installation Flags
+### Installation Modes
+
+#### Symlink Mode (DEFAULT - Recommended)
+- **Single source of truth**: All agents maintained in one hub location
+- **Instant updates**: Changes propagate immediately to all projects
+- **Space efficient**: ~95% reduction in disk usage
+- **Easy maintenance**: Update once, deploy everywhere
+
+#### Copy Mode (Legacy)
+- **Independent files**: Each project has its own agent copies
+- **Isolation**: Projects don't affect each other
+- **Backup compatibility**: Works without central hub
+
+## Command Reference
+
+### Installation Mode Flags
 
 | Flag | Description | Example |
 |------|-------------|---------|
-| `--all` | Install all agents across categories | `install-agents --all` |
-| `--list` | Show available agents without installing | `install-agents --list` |
-| `--dry-run` | Simulate installation, show what would happen | `install-agents --dry-run` |
-| `--force` | Force reinstallation of existing agents | `install-agents --force` |
-| `--verbose` | Provide detailed installation logs | `install-agents --verbose` |
-| `--skip-speak-check` | Skip text-to-speech configuration check | `install-agents --skip-speak-check` |
-| `--profile` | Install agents from a predefined profile | `install-agents --profile development-team` |
+| `--symlink` | Use symlink-based installation (DEFAULT) | `./install-agents --symlink --profile core` |
+| `--copy` | Use copy-based installation (legacy) | `./install-agents --copy --profile core` |
+| `--project <path>` | Install to specific project directory | `./install-agents --project /path/to/project` |
+| `--global` | Install globally (symlink mode only) | `./install-agents --global --profile core` |
+
+### Content Selection Flags
+
+| Flag | Description | Example |
+|------|-------------|---------||
+| `--profile <name>` | Install agents from a predefined profile | `./install-agents --profile development-team` |
+| `--all` | Install all available agents | `./install-agents --all` |
+| `--simple` | Install all simple single-tool agents | `./install-agents --simple` |
+| `agent-names...` | Install specific named agents | `./install-agents code-reviewer test-automator` |
+
+### Utility Flags
+
+| Flag | Description | Example |
+|------|-------------|---------||
+| `--list` | Show available agents without installing | `./install-agents --list` |
+| `--list-profiles` | Show available profiles | `./install-agents --list-profiles` |
+| `--show-profile <name>` | Show details of specific profile | `./install-agents --show-profile development-team` |
+| `--list-installed <path>` | List agents in target project | `./install-agents --list-installed /path/to/project` |
+| `--dry-run` | Simulate installation, show what would happen | `./install-agents --dry-run --profile core` |
+| `--verbose` | Provide detailed installation logs | `./install-agents --verbose --profile core` |
+| `--force` | Force reinstallation (DEFAULT - enabled) | `./install-agents --profile core` |
+| `--skip-speak-check` | Skip text-to-speech configuration check | `./install-agents --skip-speak-check` |
+
+### Maintenance Flags (Symlink Mode Only)
+
+| Flag | Description | Example |
+|------|-------------|---------||
+| `--health` | Check health of existing symlinks | `./install-agents --health` |
+| `--repair` | Repair broken symlinks | `./install-agents --repair` |
 
 ### Color and Terminal Control
 
@@ -50,170 +102,312 @@ The `install-agents` system now supports advanced color and terminal output cont
 | `NO_COLOR` | Disable all colored output | `1` | Color Enabled |
 | `CLICOLOR_FORCE` | Force color in non-interactive environments | `1` | Automatic |
 
+## Available Profiles
+
+Profiles are pre-configured sets of agents designed for specific teams and workflows:
+
+### Core Profiles
+- **`core`**: Essential 15-agent profile for all development workflows
+- **`development-team`**: Complete team with architecture, development, QA, and coordination
+- **`simple-tools`**: Ultra-fast single-tool agents for specific tasks
+
+### Specialized Profiles
+- **`frontend-focus`**: UI/UX development and user experience optimization
+- **`backend-focus`**: API development, database optimization, and infrastructure
+- **`ai-ml-team`**: Data science, model development, and intelligent applications
+- **`security-audit`**: Vulnerability assessment and secure development
+
+### Profile Usage
+```bash
+# View all available profiles
+./install-agents --list-profiles
+
+# See what's in a specific profile
+./install-agents --show-profile development-team
+
+# Install a profile
+./install-agents --profile development-team
+```
+
 ## Agent Categories
 
-### 1. Development Agents
-- Analyze, build, debug, review, and document code
-- Best for software engineering workflows
-- **Example**: `@build-backend`, `@review-code`
+Agents are organized into logical categories for easy discovery:
 
-### 2. Infrastructure & DevOps
-- Manage deployments, databases, environments
-- Ideal for system configuration and monitoring
-- **Example**: `@deploy-application`, `@configure-environment`
-
-### 3. Data & AI
-- Process data, train models, extract insights
-- Perfect for data science and machine learning projects
-- **Example**: `@process-data`, `@train-model`
-
-### 4. Security Agents
-- Conduct security audits, vulnerability assessments
-- Critical for enterprise-level security compliance
-- **Example**: `@secure-application`, `@security-specialist`
-
-### 5. Specialized Tools
-- Screenshot analysis, Git management, context export
-- Targeted agents for specific technical tasks
-- **Example**: `@manage-git`, `@analyze-screenshot`
+- **business**: Product management and business analysis
+- **data-ai**: Data engineering, AI/ML, and database optimization
+- **development**: Frontend, backend, and full-stack development
+- **infrastructure**: Cloud, DevOps, and performance engineering
+- **quality-testing**: Code review, QA, and testing automation
+- **security**: Security auditing and vulnerability assessment
+- **specialization**: API documentation and specialized expertise
+- **simple**: Ultra-fast single-tool agents for specific tasks
 
 ## Real-World Usage Examples
 
 ### 1. New Project Setup
 ```bash
-# Install all agents for a comprehensive toolkit
-install-agents --all           # Traditional Method
-./uv-wrapper.py install /path/to/project --all    # UV Wrapper
-agentgen install /path/to/project --all           # Installed CLI
+# Navigate to agentgen directory
+cd /home/bryan/agentgen
+
+# Install core agents to current directory (NEW DEFAULT)
+./install-agents --profile core
+
+# Install to specific project
+./install-agents --profile development-team /path/to/my-project
+
+# Install all agents for comprehensive toolkit
+./install-agents --all
 ```
 
-### 2. Selective Installation
+### 2. Team-Specific Setups
 ```bash
-# Install only development and security agents
-install-agents --dev --security                   # Traditional Method
-agentgen install /path/to/project --profile development-team   # Profile-based
+# Frontend team setup
+./install-agents --profile frontend-focus /path/to/frontend-project
+
+# Backend team setup
+./install-agents --profile backend-focus /path/to/backend-project
+
+# AI/ML team setup
+./install-agents --profile ai-ml-team /path/to/ml-project
+
+# Security audit setup
+./install-agents --profile security-audit /path/to/secure-project
 ```
 
-### 3. Update Existing Agents
+### 3. Global Installation for Core Agents
 ```bash
-# Force update all installed agents
-install-agents --all --force                   # Traditional Method
-agentgen install /path/to/project --all --force   # UV Wrapper/CLI
+# Install core agents globally (available in all projects)
+./install-agents --global --profile core
 
-# Perform a dry run to preview updates
-install-agents --all --dry-run --verbose       # Traditional Method
-agentgen install /path/to/project --all --dry-run --verbose  # Enhanced Method
+# Check what's installed globally
+./install-agents --list-installed ~/.claude/agents
 ```
 
-### 4. Performance Optimization
+### 4. Maintenance and Updates
 ```bash
-# Enable parallel downloads (UV Wrapper)
-UV_CONCURRENT_DOWNLOADS=10 agentgen install /path/to/project --all
+# Health check for symlinks
+./install-agents --health
 
-# Disable color for CI/CD environments
-NO_COLOR=1 install-agents --all --force
+# Repair broken symlinks
+./install-agents --repair
+
+# Preview what would be updated
+./install-agents --dry-run --profile development-team
+
+# Force update existing agents
+./install-agents --profile development-team  # Force is enabled by default
+```
+
+### 5. Legacy Copy Mode
+```bash
+# Use copy mode for isolated installations
+./install-agents --copy --profile development-team /path/to/project
+
+# Copy mode with specific agents
+./install-agents --copy code-reviewer security-auditor /path/to/project
+```
+
+### 6. Simple Single-Tool Agents
+```bash
+# Install ultra-fast simple agents
+./install-agents --simple
+
+# Install specific simple agent categories
+./install-agents --simple-read --simple-bash
 ```
 
 ## Troubleshooting
 
 ### Common Issues
 
+#### Must Run from agentgen Directory
+- **Symptom**: Script fails or agents not found
+- **Solution**: Always run from `/home/bryan/agentgen/`
+  ```bash
+  cd /home/bryan/agentgen
+  ./install-agents --profile development-team
+  ```
+
 #### Agent Not Found
 - **Symptom**: Specific agent doesn't appear after installation
 - **Solutions**: 
-  1. Verify submodule is correctly initialized
+  1. Check if agents hub exists:
      ```bash
-     git submodule update --init --recursive
+     ls -la /home/bryan/agentgen/agents/
      ```
-  2. Check `/home/bryan/agentgen/submodules/claude-code-sub-agents`
-  3. Confirm agent availability:
+  2. List available agents:
      ```bash
-     install-agents --list       # Traditional Method
-     agentgen list                # UV Wrapper/CLI
+     ./install-agents --list
+     ```
+  3. Verify symlink health:
+     ```bash
+     ./install-agents --health
      ```
 
 #### Permission Errors
 - **Symptom**: Permission denied during installation
 - **Solutions**:
-  1. Use `sudo` for system-wide installation
+  1. Check script permissions:
      ```bash
-     sudo install-agents --all
-     sudo agentgen install /path/to/project --all
+     chmod +x /home/bryan/agentgen/install-agents
      ```
-  2. Check and fix file permissions
+  2. Verify target directory permissions:
      ```bash
-     chmod +x /home/bryan/bin/install-agents
-     chmod +x ./uv-wrapper.py
+     ls -la /path/to/project/.claude/
      ```
-  3. Verify script executability and Python environment
+  3. For global installation:
+     ```bash
+     mkdir -p ~/.claude/agents
+     ./install-agents --global --profile core
+     ```
 
-#### Dependency Issues
-- **Symptom**: Missing dependencies or environment problems
+#### Symlink Issues
+- **Symptom**: Broken symlinks or agents not updating
 - **Solutions**:
-  1. Install UV (recommended)
+  1. Check symlink health:
      ```bash
-     curl -LsSf https://astral.sh/uv/install.sh | sh
-     source ~/.bashrc
+     ./install-agents --health
      ```
-  2. Setup project environment
+  2. Repair broken symlinks:
      ```bash
-     ./uv-wrapper.py setup
-     agentgen setup --dev
+     ./install-agents --repair
+     ```
+  3. Reinstall with force:
+     ```bash
+     ./install-agents --profile development-team  # Force enabled by default
+     ```
+  4. Fall back to copy mode:
+     ```bash
+     ./install-agents --copy --profile development-team
      ```
 
 #### Text-to-Speech Configuration
-- **Symptom**: Speak integration issues
+- **Symptom**: Speak integration warnings or issues
 - **Solutions**: 
-  1. Skip TTS configuration
+  1. Skip TTS configuration:
      ```bash
-     install-agents --skip-speak-check
-     agentgen install --skip-speak-check
+     ./install-agents --skip-speak-check --profile core
      ```
-  2. Control TTS via environment variables
+  2. Install speak command:
      ```bash
-     TTS_ENABLED=false install-agents --all
-     TTS_PROVIDER=pyttsx3 agentgen install /path/to/project
+     # Check if speak is available
+     command -v speak
+     
+     # Install from speak-app if needed
+     ls /home/bryan/bin/speak-app/
      ```
-  3. Configure in `~/.bash_aliases`
 
 #### Color and Terminal Issues
 - **Symptom**: Incorrect terminal colors or display problems
 - **Solutions**:
-  1. Force color mode
+  1. Force color mode:
      ```bash
-     FORCE_COLOR=1 install-agents
+     FORCE_COLOR=1 ./install-agents --profile core
      ```
-  2. Disable color for CI/CD
+  2. Disable color for CI/CD:
      ```bash
-     NO_COLOR=1 agentgen install /path/to/project
+     NO_COLOR=1 ./install-agents --profile core
      ```
-  3. Debug terminal compatibility
+  3. Check terminal capabilities:
      ```bash
-     agentgen status --check-terminal
+     echo $TERM
      ```
 
 ## Best Practices
 
-1. **Regular Updates**: Keep agents updated for latest features
-2. **Selective Installation**: Install only necessary agents
-3. **Dry Run First**: Always preview changes with `--dry-run`
-4. **Force with Caution**: Use `--force` sparingly
-5. **Verbose Mode**: Enable detailed logging during complex installations
+### Installation Strategy
+1. **Start with Profiles**: Use predefined profiles rather than individual agents
+2. **Symlink Mode**: Prefer symlink mode for easier maintenance
+3. **Global Core Agents**: Install core agents globally for all projects
+4. **Project-Specific**: Install specialized profiles per project type
 
-## Configuration
+### Maintenance
+1. **Regular Health Checks**: Run `--health` periodically
+2. **Preview Changes**: Use `--dry-run` before major updates
+3. **Repair When Needed**: Use `--repair` if symlinks break
+4. **Update Hub**: Modify agents in `/home/bryan/agentgen/agents/` for instant updates
 
-Agents are managed via a git submodule at:
-`/home/bryan/agentgen/submodules/claude-code-sub-agents`
+### Team Collaboration
+1. **Document Profiles**: Record which profiles each project uses
+2. **Consistent Setup**: Use same profiles across team members
+3. **Version Control**: Include `.claude/` directory in project repos (for symlinks)
+4. **Share Configurations**: Document agent setup in project README
 
-Agent documentation is automatically updated in `CLAUDE.md` during installation.
+## System Architecture
 
-## Support
+### Symlink Hub System
+- **Central Hub**: `/home/bryan/agentgen/agents/` contains all agent source files
+- **Instant Updates**: Changes to hub files immediately available in all projects
+- **Space Efficiency**: ~95% reduction in disk usage vs copying files
+- **Single Source of Truth**: One location to maintain all agents
 
-For issues or agent suggestions:
-- Check GitHub repository
-- File an issue at support@claude.ai
-- Join our developer community slack
+### Directory Structure
+```
+/home/bryan/agentgen/
+├── install-agents              # Main installer script
+├── agents/                     # Central agents hub
+│   ├── core/                   # Core agents
+│   ├── development/            # Development agents
+│   ├── specialists/            # Specialist agents
+│   └── ...                     # Other categories
+├── profiles/                   # Profile configurations
+│   ├── core.profile           # Core profile
+│   ├── development-team.profile
+│   └── ...                     # Other profiles
+└── submodules/                 # Legacy support
+    └── claude-code-sub-agents/
+```
+
+### Project Integration
+- **Agents Directory**: `.claude/agents/` in each project
+- **CLAUDE.md**: Automatically updated with agent instructions
+- **Symlinks**: Point to central hub for instant updates
+- **Health Monitoring**: Built-in checks for symlink integrity
+
+## Advanced Configuration
+
+### Environment Variables
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `FORCE_COLOR` | Force colored output | Auto-detect |
+| `NO_COLOR` | Disable all colors | Disabled |
+| `TTS_ENABLED` | Enable text-to-speech | true |
+| `CLICOLOR_FORCE` | Force color in non-interactive | Auto-detect |
+
+### Custom Profiles
+Create custom profiles in `/home/bryan/agentgen/profiles/`:
+```yaml
+name: my-custom-profile
+description: Custom profile for my team
+agents:
+  - code-reviewer
+  - security-auditor
+  - performance-engineer
+```
+
+## Migration Guide
+
+### From Copy Mode to Symlink Mode
+```bash
+# 1. Remove existing copied agents
+rm -rf /path/to/project/.claude/agents/*
+
+# 2. Install with symlink mode
+./install-agents --profile development-team /path/to/project
+
+# 3. Verify installation
+./install-agents --list-installed /path/to/project
+```
+
+### Updating Legacy Installations
+```bash
+# Force update with new defaults
+./install-agents --profile development-team /path/to/project
+
+# Check health after update
+./install-agents --health
+```
 
 ---
 
-**Tip**: The `install-agents` command is designed to be flexible, fast, and developer-friendly. Experiment and find the workflow that suits your needs!
+**Note**: The `install-agents` command is designed for simplicity and efficiency. The new symlink-based approach provides instant updates and significant space savings while maintaining full backward compatibility.

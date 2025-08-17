@@ -106,12 +106,22 @@ _install_agents_completion() {
     fi
     
     # Check if we can complete with agent names
+    # NEW DEFAULT: Current directory is default target, so we can complete agents in simple mode
     if [[ -n "$has_target_path" || " ${COMP_WORDS[*]} " =~ --global ]]; then
+        can_complete_agents="true"
+    elif [[ -z "$has_target_path" ]] && 
+         [[ ! " ${COMP_WORDS[*]} " =~ --project ]] &&
+         [[ ! " ${COMP_WORDS[*]} " =~ --health ]] && 
+         [[ ! " ${COMP_WORDS[*]} " =~ --repair ]] &&
+         [[ ! " ${COMP_WORDS[*]} " =~ --list ]] &&
+         [[ ! " ${COMP_WORDS[*]} " =~ --list-profiles ]] &&
+         [[ ! " ${COMP_WORDS[*]} " =~ --show-profile ]]; then
+        # NEW DEFAULT: Simple mode - current directory is target
         can_complete_agents="true"
     fi
     
-    # If we need a directory and don't have a target path yet
-    if [[ -n "$needs_directory" && -z "$has_target_path" ]] && [[ ! " ${COMP_WORDS[*]} " =~ --symlink || " ${COMP_WORDS[*]} " =~ --project ]]; then
+    # If we need a directory and don't have a target path yet (project mode only)
+    if [[ -n "$needs_directory" && -z "$has_target_path" ]] && [[ " ${COMP_WORDS[*]} " =~ --project ]]; then
         COMPREPLY=($(compgen -d -- "$cur"))
         return 0
     fi

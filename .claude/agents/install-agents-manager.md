@@ -1,0 +1,1 @@
+/home/bryan/agentgen/agents/tools/install-agents-manager.md

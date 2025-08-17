@@ -1,0 +1,149 @@
+{
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --with requests /home/bryan/agentgen/.claude/hooks/send_event_async.py --source-app agentgen --event-type Notification --summarize"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --with requests /home/bryan/agentgen/.claude/hooks/post_tool_use.py"
+          },
+          {
+            "type": "command",
+            "command": "uv run --with requests /home/bryan/agentgen/.claude/hooks/send_event_async.py --source-app agentgen --event-type PostToolUse --summarize"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --with openai,requests /home/bryan/agentgen/.claude/hooks/pre_compact.py"
+          },
+          {
+            "type": "command",
+            "command": "uv run --with requests /home/bryan/agentgen/.claude/hooks/send_event_async.py --source-app agentgen --event-type PreCompact --summarize"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --with requests /home/bryan/agentgen/.claude/hooks/pre_tool_use.py"
+          },
+          {
+            "type": "command",
+            "command": "uv run --with requests /home/bryan/agentgen/.claude/hooks/send_event_async.py --source-app agentgen --event-type PreToolUse --summarize"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --with redis,psutil --with redis /home/bryan/agentgen/.claude/hooks/session_context_loader.py"
+          },
+          {
+            "type": "command",
+            "command": "uv run --with openai,pyttsx3 --with openai,pyttsx3 /home/bryan/agentgen/.claude/hooks/session_startup_notifier.py"
+          },
+          {
+            "type": "command",
+            "command": "uv run /home/bryan/agentgen/.claude/hooks/session_event_tracker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --with redis,psutil --with redis /home/bryan/agentgen/.claude/hooks/session_context_loader.py"
+          },
+          {
+            "type": "command",
+            "command": "uv run --with openai,pyttsx3 --with openai,pyttsx3 /home/bryan/agentgen/.claude/hooks/session_resume_detector.py"
+          },
+          {
+            "type": "command",
+            "command": "uv run /home/bryan/agentgen/.claude/hooks/session_event_tracker.py"
+          }
+        ]
+      },
+      {
+        "matcher": "clear",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run /home/bryan/agentgen/.claude/hooks/session_event_tracker.py"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --with openai,pyttsx3 /home/bryan/agentgen/.claude/hooks/stop.py --chat"
+          },
+          {
+            "type": "command",
+            "command": "uv run --with requests /home/bryan/agentgen/.claude/hooks/send_event_async.py --source-app agentgen --event-type Stop --summarize"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --with redis,requests,openai,pyttsx3,psutil /home/bryan/agentgen/.claude/hooks/subagent_stop.py"
+          },
+          {
+            "type": "command",
+            "command": "uv run --with requests /home/bryan/agentgen/.claude/hooks/send_event_async.py --source-app agentgen --event-type SubagentStop --summarize"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run /home/bryan/agentgen/.claude/hooks/user_prompt_submit.py --log-only"
+          },
+          {
+            "type": "command",
+            "command": "uv run --with requests /home/bryan/agentgen/.claude/hooks/send_event_async.py --source-app agentgen --event-type UserPromptSubmit --summarize"
+          }
+        ]
+      }
+    ]
+  }
+}

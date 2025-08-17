@@ -81,14 +81,19 @@ fi
 echo
 print_success "Setup complete! Try typing 'install-agents <TAB>' to test completion"
 echo
+print_info "🎯 NEW DEFAULTS (Improved UX):"
+echo "  • Symlink mode enabled by default (was copy mode)"
+echo "  • Current directory as target (was explicit path required)"
+echo "  • Force mode enabled (was disabled)"
+echo
 print_info "Available completions:"
 echo "  • Command options: --help, --symlink, --profile, etc."
 echo "  • Profile names: development-team, core, backend-focus, etc."
 echo "  • Agent names: code-reviewer, debugger, test-automator, etc."
 echo "  • Directory paths for target projects"
 echo
-print_info "Examples to test:"
+print_info "Examples to test (NEW simplified defaults):"
+echo "  install-agents <TAB>             # Show agent names for current directory"
+echo "  install-agents --profile <TAB>   # Show available profiles"
 echo "  install-agents --<TAB>           # Show all options"
-echo "  install-agents --profile <TAB>   # Show available profiles"  
-echo "  install-agents --symlink --<TAB> # Show symlink options"
-echo "  install-agents /path/to/<TAB>    # Complete directory paths"
+echo "  install-agents --project /path/<TAB> # Complete directory paths"

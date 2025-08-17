@@ -31,8 +31,8 @@ if [[ "${NO_COLOR:-}" != "" ]]; then
     NC=''
 fi
 
-# Default values
-FORCE=false
+# Default values - NEW DEFAULTS for better UX
+FORCE=true              # Default to force for smoother updates
 DRY_RUN=false
 VERBOSE=false
 INSTALL_ALL=false
@@ -47,12 +47,13 @@ SIMPLE_WRITE=false
 SIMPLE_BASH=false
 SIMPLE_GREP=false
 SIMPLE_EDIT=false
-# New symlink mode variables
-SYMLINK_MODE=false
+# New symlink mode variables - defaults set after argument parsing
+SYMLINK_MODE=false      # Will be set to true as default after arg parsing
 GLOBAL_INSTALL=false
 HEALTH_CHECK=false
 REPAIR=false
 COPY_MODE=false
+PROJECT_PATH="."        # Default to current directory
 
 # Script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -68,13 +69,20 @@ show_help() {
 Claude Code Sub-Agents Installer
 
 USAGE:
-    install-agents [OPTIONS] <target-project-path> [agent-names...]
+    ./install-agents [OPTIONS] [target-project-path] [agent-names...]
 
-INSTALLATION MODES (project-level is default):
-    --copy              Use copy-based installation (default) - installs to project/.claude/agents/
-    --symlink           Use symlink-based installation (agents/hub) - single source of truth
-    --project <path>    Install agents to specific project (symlink mode) - PROJECT/.claude/agents/
+    ⚠️  MUST RUN FROM: /home/bryan/agentgen/ directory
+
+INSTALLATION MODES (symlink to current directory is default):
+    --symlink           Use symlink-based installation (DEFAULT) - single source of truth
+    --copy              Use copy-based installation (legacy) - installs independent copies
+    --project <path>    Install agents to specific project - PROJECT/.claude/agents/
     --global            Install agents globally (symlink mode only) - ~/.claude/agents/
+
+NEW IMPROVED DEFAULTS:
+    ✅ Symlink mode (was copy mode)
+    ✅ Current directory (was explicit path required)  
+    ✅ Force enabled (was disabled)
 
 MAINTENANCE (symlink mode only):
     --health            Check health of existing symlinks
@@ -82,7 +90,7 @@ MAINTENANCE (symlink mode only):
 
 OPTIONS:
     --help              Show this help message
-    --force             Force installation, overwrite existing agents
+    --force             Force installation, overwrite existing agents (DEFAULT - enabled by default)
     --all               Install all available agents
     --list              List all available agents
     --list-installed    List agents installed in target project
@@ -102,36 +110,41 @@ SIMPLE AGENTS OPTIONS:
     --simple-edit       Install Edit-based agents (comment remover, whitespace, sorter, typo fixer)
 
 ARGUMENTS:
-    target-project-path Path to the project where agents will be installed
+    target-project-path Path to the project where agents will be installed (default: current directory)
     agent-names         Specific agents to install (optional if --all is used)
 
 EXAMPLES:
-    # PROJECT-LEVEL INSTALLATION (default and recommended)
-    install-agents --profile core /path/to/my-project
-    install-agents --profile development-team /path/to/my-project
-    install-agents /path/to/my-project code-reviewer test-automator
+    ⚠️  IMPORTANT: Must run from agentgen directory: cd /home/bryan/agentgen
 
-    # SYMLINK MODE (single source of truth - advanced)
-    install-agents --symlink --project /path/to/my-project --profile core
-    install-agents --symlink --project /path/to/my-project --profile development-team
+    # SIMPLE USAGE (NEW DEFAULTS - symlink to current directory, force enabled)
+    ./install-agents --profile development-team
+    ./install-agents --profile core
+    ./install-agents code-reviewer test-automator
+
+    # EXPLICIT PROJECT PATH
+    ./install-agents --profile development-team /path/to/my-project
+    ./install-agents --project /path/to/my-project --profile core
+
+    # LEGACY COPY MODE (for backward compatibility)
+    ./install-agents --copy --profile development-team /path/to/my-project
     
     # GLOBAL INSTALLATION (symlink mode only - for core agents)
-    install-agents --symlink --global --profile core
+    ./install-agents --global --profile core
 
     # MAINTENANCE (symlink mode only)
-    install-agents --symlink --health
-    install-agents --symlink --project /path/to/my-project --repair
+    ./install-agents --health
+    ./install-agents --repair
 
     # SIMPLE AGENTS
-    install-agents --simple /path/to/my-project
-    install-agents --simple-read --simple-bash /path/to/my-project
+    ./install-agents --simple
+    ./install-agents --simple-read --simple-bash
 
     # INFORMATION
-    install-agents --list
-    install-agents --list-installed /path/to/my-project
-    install-agents --list-profiles
-    install-agents --show-profile development-team
-    install-agents --dry-run --profile development-team /path/to/my-project
+    ./install-agents --list
+    ./install-agents --list-installed /path/to/my-project
+    ./install-agents --list-profiles
+    ./install-agents --show-profile development-team
+    ./install-agents --dry-run --profile development-team
 
 AGENT CATEGORIES:
     - business:          Product management and business analysis
@@ -1259,22 +1272,24 @@ if [ "$LIST_INSTALLED" = true ]; then
     exit 0
 fi
 
-# Validate and setup installation modes
-if [[ "$SYMLINK_MODE" == "true" && "$COPY_MODE" == "true" ]]; then
+# Handle mode selection with new defaults (symlink is now default)
+if [[ "$COPY_MODE" == "true" && "$SYMLINK_MODE" == "true" ]]; then
+    # Both flags specified explicitly - error
     print_error "Cannot use both --symlink and --copy modes simultaneously"
     exit 1
+elif [[ "$COPY_MODE" == "true" ]]; then
+    # Copy mode explicitly requested
+    SYMLINK_MODE=false
+elif [[ "$SYMLINK_MODE" != "true" && "$COPY_MODE" != "true" ]]; then
+    # No mode specified - use new default (symlink)
+    SYMLINK_MODE=true
 fi
 
-# Validate global install requirements
+# Validate global install requirements (after mode selection)
 if [[ "$GLOBAL_INSTALL" == "true" && "$SYMLINK_MODE" != "true" ]]; then
     print_error "--global requires --symlink mode"
     print_info "Use: install-agents --symlink --global --profile <name>"
     exit 1
-fi
-
-# Set default mode if neither specified
-if [[ "$SYMLINK_MODE" != "true" && "$COPY_MODE" != "true" ]]; then
-    COPY_MODE=true  # Default to copy mode for backward compatibility
 fi
 
 # Validate hub exists for symlink mode
@@ -1300,11 +1315,9 @@ if [[ "$SYMLINK_MODE" == "true" ]]; then
         TARGET_AGENTS_DIR="$PROJECT_PATH/.claude/agents"
         print_info "Installing agents to project: $TARGET_AGENTS_DIR"
     else
-        print_error "Symlink mode requires either --global or --project PATH"
-        print_info "Examples:"
-        print_info "  install-agents --symlink --global --profile core"
-        print_info "  install-agents --symlink --project /path/to/project --profile development"
-        exit 1
+        # NEW: Use TARGET_PROJECT as fallback (supports current directory default)
+        TARGET_AGENTS_DIR="$TARGET_PROJECT/.claude/agents"
+        print_info "Installing agents to project: $TARGET_AGENTS_DIR"
     fi
 
     # Handle health check
@@ -1319,9 +1332,13 @@ if [[ "$SYMLINK_MODE" == "true" ]]; then
         exit 0
     fi
 
-    # For symlink mode, we need a profile
-    if [[ -z "$PROFILE_NAME" && "$INSTALL_ALL" != "true" && "$INSTALL_SIMPLE" != "true" ]]; then
-        print_error "Symlink mode requires a profile (--profile <name>) or --all"
+    # For symlink mode, we need a profile, --all, simple agents, or individual agents
+    if [[ -z "$PROFILE_NAME" && "$INSTALL_ALL" != "true" && "$INSTALL_SIMPLE" != "true" && $# -eq 0 ]]; then
+        print_error "Please specify what to install:"
+        print_info "  --profile <name>     Install agents from a profile"
+        print_info "  --all               Install all available agents"
+        print_info "  --simple            Install simple single-tool agents"
+        print_info "  agent-name1 agent-name2  Install specific agents"
         print_info "Use --list-profiles to see available profiles"
         exit 1
     fi
@@ -1374,11 +1391,53 @@ if [[ "$SYMLINK_MODE" == "true" ]]; then
         print_info "• Run health check: install-agents --symlink --health"
         print_info "• Update agents by modifying files in: $AGENTS_HUB"
         exit 0
+    elif [[ $# -gt 0 ]]; then
+        # Install specific agents via symlinks
+        print_info "Installing $# specific agents using symlinks"
+        
+        success_count=0
+        skip_count=0
+        
+        for agent_name in "$@"; do
+            set +e  # Temporarily disable exit on error for this loop iteration
+            
+            # Find agent file in hub
+            agent_file=""
+            for category in core development specialists infrastructure quality content data tools simple; do
+                candidate="$AGENTS_HUB/$category/$agent_name.md"
+                if [[ -f "$candidate" ]]; then
+                    agent_file="$candidate"
+                    break
+                fi
+            done
+            
+            if [[ -n "$agent_file" ]]; then
+                target_file="$TARGET_AGENTS_DIR/$agent_name.md"
+                if create_symlink "$agent_file" "$target_file"; then
+                    ((success_count++))
+                else
+                    ((skip_count++))
+                fi
+            else
+                print_error "Agent not found in hub: $agent_name"
+                ((skip_count++))
+            fi
+            
+            set -e  # Re-enable exit on error
+        done
+        
+        echo
+        print_success "Symlink installation complete: $success_count installed, $skip_count skipped"
+        print_info "Next steps:"
+        print_info "• Test agents with Claude Code"
+        print_info "• Run health check: install-agents --symlink --health"
+        print_info "• Update agents by modifying files in: $AGENTS_HUB"
+        exit 0
     fi
 fi
 
-# Check if submodule is initialized (for copy mode)
-if [ ! -d "$SUBMODULE_DIR" ]; then
+# Check if submodule is initialized (for copy mode only)
+if [[ "$COPY_MODE" == "true" ]] && [ ! -d "$SUBMODULE_DIR" ]; then
     print_error "Submodule not found at: $SUBMODULE_DIR"
     print_info "Initializing submodule..."
     git submodule update --init --recursive
@@ -1388,15 +1447,14 @@ if [ ! -d "$SUBMODULE_DIR" ]; then
     fi
 fi
 
-# Validate arguments
+# Handle arguments with new defaults (current directory if none specified)
 if [ $# -eq 0 ]; then
-    print_error "No target project path specified"
-    show_help
-    exit 1
+    # No arguments provided - use current directory as default
+    TARGET_PROJECT="."
+else
+    TARGET_PROJECT="$1"
+    shift
 fi
-
-TARGET_PROJECT="$1"
-shift
 
 # Convert to absolute path
 TARGET_PROJECT="$(cd "$TARGET_PROJECT" 2>/dev/null && pwd)" || {

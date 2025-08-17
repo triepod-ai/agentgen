@@ -1,0 +1,409 @@
+{
+  "projectName": "agentgen",
+  "lastFullScan": "2025-08-14T12:08:08Z",
+  "directoryTree": {
+    "path": "/",
+    "purpose": "Central hub for AI agent management system with symlink-based distribution and comprehensive agent library",
+    "lastScanned": "2025-08-14T12:08:08Z",
+    "files": [
+      "AGENT_BEST_PRACTICES.md",
+      "AGENT_CONSOLIDATION_STRATEGY.md",
+      "CLAUDE.md",
+      "COMPLETION_README.md",
+      "DEFAULT_AGENTS.md",
+      "EXAMPLE_PHP_STRUCTURE.md",
+      "GLOBAL_AGENTS_SETUP.md",
+      "INSTALL_AGENTS_HELP.md",
+      "install-agents",
+      "install-agents-completion.bash",
+      "install-agents-symlink",
+      "migrate-to-symlinks.sh",
+      "PROJECT_STATUS.md",
+      "README.md",
+      "README_SYMLINK_HUB.md",
+      "README_UV.md",
+      "requirements.txt",
+      "SIMPLE_AGENTS.md",
+      "setup.py",
+      "SYMLINK_HUB_IMPLEMENTATION_PLAN.md",
+      "test_install_agents.sh",
+      "test_symlinks.py",
+      "uv-wrapper.py"
+    ],
+    "subdirectories": {
+      "agents": {
+        "path": "/agents",
+        "purpose": "Main repository of all agent definitions organized by category (core, development, specialists, etc.)",
+        "lastScanned": "2025-08-14T12:08:08Z",
+        "files": [
+          "README.md"
+        ],
+        "subdirectories": {
+          "business": {
+            "path": "/agents/business",
+            "purpose": "Business-focused agents for product management and analysis",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [
+              "product-manager.md"
+            ],
+            "subdirectories": {}
+          },
+          "content": {
+            "path": "/agents/content",
+            "purpose": "Content creation and communication agents",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [
+              "create-lesson.md",
+              "translate-text.md",
+              "update-status.md",
+              "write-content.md"
+            ],
+            "subdirectories": {}
+          },
+          "core": {
+            "path": "/agents/core",
+            "purpose": "Essential core development agents for primary tasks",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [
+              "analyze-codebase.md",
+              "analyze-performance.md",
+              "build-backend.md",
+              "build-frontend.md",
+              "debug-issue.md",
+              "generate-documentation.md",
+              "review-code.md",
+              "test-automation.md"
+            ],
+            "subdirectories": {}
+          },
+          "data": {
+            "path": "/agents/data",
+            "purpose": "Data processing and AI/ML agents",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [
+              "extract-insights.md",
+              "process-data.md",
+              "query-database.md",
+              "train-model.md"
+            ],
+            "subdirectories": {}
+          },
+          "development": {
+            "path": "/agents/development",
+            "purpose": "Frontend and backend development specialist agents",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [
+              "frontend-developer.md",
+              "full-stack-developer.md",
+              "nextjs-pro.md",
+              "react-pro.md",
+              "ui-designer.md",
+              "ux-designer.md"
+            ],
+            "subdirectories": {}
+          },
+          "experimental": {
+            "path": "/agents/experimental",
+            "purpose": "Experimental and testing agents for new capabilities",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [
+              "agent-builder.md",
+              "agent-organizer.md",
+              "documentation-hub.md"
+            ],
+            "subdirectories": {}
+          },
+          "infrastructure": {
+            "path": "/agents/infrastructure",
+            "purpose": "Infrastructure, DevOps, and deployment agents",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [
+              "configure-environment.md",
+              "deploy-application.md",
+              "deployment-engineer.md",
+              "manage-database.md",
+              "monitor-system.md",
+              "performance-engineer.md",
+              "secure-application.md"
+            ],
+            "subdirectories": {}
+          },
+          "quality": {
+            "path": "/agents/quality",
+            "purpose": "Quality assurance, testing, and code review agents",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [
+              "code-reviewer.md",
+              "debugger.md",
+              "qa-expert.md",
+              "test-automator.md"
+            ],
+            "subdirectories": {}
+          },
+          "simple": {
+            "path": "/agents/simple",
+            "purpose": "Simplified utility agents for common tasks",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [
+              "config-reader.md",
+              "env-reader.md",
+              "log-reader.md",
+              "readme-reader.md"
+            ],
+            "subdirectories": {}
+          },
+          "specialists": {
+            "path": "/agents/specialists",
+            "purpose": "Domain-specific specialist agents with deep expertise",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [
+              "api-documenter.md",
+              "architect-specialist.md",
+              "cloud-architect-specialist.md",
+              "context-manager.md",
+              "database-specialist.md",
+              "data-engineer.md",
+              "documentation-expert.md",
+              "ml-specialist.md",
+              "python-specialist.md",
+              "react-specialist.md",
+              "security-auditor.md",
+              "security-specialist.md"
+            ],
+            "subdirectories": {}
+          },
+          "test": {
+            "path": "/agents/test",
+            "purpose": "Test agents for verification and validation",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [],
+            "subdirectories": {}
+          },
+          "tools": {
+            "path": "/agents/tools",
+            "purpose": "Tool and utility agents for specific operations",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [
+              "analyze-screenshot.md",
+              "build-runner.md",
+              "export-context.md",
+              "manage-git.md",
+              "orchestrate-agents.md",
+              "orchestrate-tasks.md"
+            ],
+            "subdirectories": {}
+          }
+        }
+      },
+      "agentgen": {
+        "path": "/agentgen",
+        "purpose": "Python package for agent generation and management utilities",
+        "lastScanned": "2025-08-14T12:08:08Z",
+        "files": [
+          "__init__.py",
+          "cli.py",
+          "core.py",
+          "installer.py",
+          "profiles.py",
+          "utils.py"
+        ],
+        "subdirectories": {}
+      },
+      "archive": {
+        "path": "/archive",
+        "purpose": "Archived versions and historical agent implementations",
+        "lastScanned": "2025-08-14T12:08:08Z",
+        "files": [
+          "README.md"
+        ],
+        "subdirectories": {}
+      },
+      "config": {
+        "path": "/config",
+        "purpose": "Configuration files for agent system settings",
+        "lastScanned": "2025-08-14T12:08:08Z",
+        "files": [
+          "settings.json"
+        ],
+        "subdirectories": {}
+      },
+      "deprecated": {
+        "path": "/deprecated",
+        "purpose": "Legacy agents preserved for migration and reference",
+        "lastScanned": "2025-08-14T12:08:08Z",
+        "files": [],
+        "subdirectories": {
+          "databases-&-data-management": {
+            "path": "/deprecated/databases-&-data-management",
+            "purpose": "Deprecated database and data management agents",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [],
+            "subdirectories": {}
+          },
+          "data-science-&-machine-learning": {
+            "path": "/deprecated/data-science-&-machine-learning",
+            "purpose": "Deprecated ML and data science agents",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [],
+            "subdirectories": {}
+          },
+          "infrastructure-&-devops": {
+            "path": "/deprecated/infrastructure-&-devops",
+            "purpose": "Deprecated infrastructure and DevOps agents",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [],
+            "subdirectories": {}
+          },
+          "services": {
+            "path": "/deprecated/services",
+            "purpose": "Deprecated service-related agents",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [],
+            "subdirectories": {}
+          },
+          "templates": {
+            "path": "/deprecated/templates",
+            "purpose": "Deprecated agent templates",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [],
+            "subdirectories": {}
+          }
+        }
+      },
+      "examples": {
+        "path": "/examples",
+        "purpose": "Example implementations and usage demonstrations",
+        "lastScanned": "2025-08-14T12:08:08Z",
+        "files": [],
+        "subdirectories": {}
+      },
+      "profiles": {
+        "path": "/profiles",
+        "purpose": "Agent profile configurations for different deployment scenarios",
+        "lastScanned": "2025-08-14T12:08:08Z",
+        "files": [
+          "core.txt",
+          "default.txt",
+          "development-team.txt",
+          "minimal.txt",
+          "README.md",
+          "simple.txt"
+        ],
+        "subdirectories": {}
+      },
+      "simple-agents": {
+        "path": "/simple-agents",
+        "purpose": "Collection of simplified agents for basic operations",
+        "lastScanned": "2025-08-14T12:08:08Z",
+        "files": [],
+        "subdirectories": {}
+      },
+      "specs": {
+        "path": "/specs",
+        "purpose": "Specifications and design documents for agent system",
+        "lastScanned": "2025-08-14T12:08:08Z",
+        "files": [],
+        "subdirectories": {}
+      },
+      "sub-agents": {
+        "path": "/sub-agents",
+        "purpose": "Agent context management and operational data storage",
+        "lastScanned": "2025-08-14T12:08:08Z",
+        "files": [],
+        "subdirectories": {
+          "context": {
+            "path": "/sub-agents/context",
+            "purpose": "Stores the master context file generated by the context-manager agent",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [
+              "context-manager.json"
+            ],
+            "subdirectories": {}
+          }
+        }
+      },
+      "submodules": {
+        "path": "/submodules",
+        "purpose": "Git submodules containing external agent repositories",
+        "lastScanned": "2025-08-14T12:08:08Z",
+        "files": [],
+        "subdirectories": {
+          "claude-code-sub-agents": {
+            "path": "/submodules/claude-code-sub-agents",
+            "purpose": "External repository of Claude Code sub-agents",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [],
+            "subdirectories": {}
+          }
+        }
+      },
+      "templates": {
+        "path": "/templates",
+        "purpose": "Agent templates organized by complexity levels (green, yellow, red)",
+        "lastScanned": "2025-08-14T12:08:08Z",
+        "files": [],
+        "subdirectories": {
+          "green": {
+            "path": "/templates/green",
+            "purpose": "Simple low-complexity agent templates",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [],
+            "subdirectories": {}
+          },
+          "yellow": {
+            "path": "/templates/yellow",
+            "purpose": "Moderate complexity agent templates",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [],
+            "subdirectories": {}
+          },
+          "red": {
+            "path": "/templates/red",
+            "purpose": "High complexity specialist agent templates",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [],
+            "subdirectories": {}
+          },
+          "patterns": {
+            "path": "/templates/patterns",
+            "purpose": "Agent design patterns and architectural templates",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [],
+            "subdirectories": {}
+          }
+        }
+      },
+      "tests": {
+        "path": "/tests",
+        "purpose": "Test suite for agent system functionality and validation",
+        "lastScanned": "2025-08-14T12:08:08Z",
+        "files": [],
+        "subdirectories": {}
+      },
+      ".claude": {
+        "path": "/.claude",
+        "purpose": "Claude Code configuration and installed agent symlinks",
+        "lastScanned": "2025-08-14T12:08:08Z",
+        "files": [],
+        "subdirectories": {
+          "agents": {
+            "path": "/.claude/agents",
+            "purpose": "Installed agent configurations for this project",
+            "lastScanned": "2025-08-14T12:08:08Z",
+            "files": [],
+            "subdirectories": {}
+          }
+        }
+      }
+    }
+  },
+  "agentActivityLog": {
+    "context-manager": {
+      "lastActionSummary": "Successfully bootstrapped project knowledge graph for agentgen repository",
+      "lastActivityTimestamp": "2025-08-14T12:13:18Z",
+      "filesModified": [
+        "/sub-agents/context/context-manager.json"
+      ]
+    }
+  }
+}

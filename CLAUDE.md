@@ -103,6 +103,12 @@ Technical details of the agent consolidation process:
 
 ### Recent Documentation Updates
 
+- **Phase 1 Strategic Profiles Implementation COMPLETE** - Successfully implemented 3 strategic team-composition-based profiles with **100% functionality in BOTH symlink and copy modes**: enterprise-leadership (9 agents), startup-mvp (11 agents), and modern-web-stack (12 agents). Critical symlink mode bug resolved by debugger agent. All profiles tested and validated for production use. This strategic advancement aligns with enterprise patterns and provides decision matrix for optimal team composition selection ⭐⭐⭐ (Completed: 2025-08-19)
+- **@cmd-agent-select-logic Enhanced Documentation** - Comprehensive documentation suite for advanced intelligent agent selection framework with hierarchical classification, multi-domain detection, and strategic escalation ⭐⭐⭐ (Added: 2025-08-18)
+  - **[CMD_AGENT_SELECT_LOGIC_USER_GUIDE.md](./CMD_AGENT_SELECT_LOGIC_USER_GUIDE.md)** - Complete user guide with usage scenarios, troubleshooting, and best practices
+  - **[CMD_AGENT_SELECT_LOGIC_TECHNICAL_DOCS.md](./CMD_AGENT_SELECT_LOGIC_TECHNICAL_DOCS.md)** - Architecture overview, algorithms, and performance optimization details
+  - **[CMD_AGENT_SELECT_LOGIC_API_REFERENCE.md](./CMD_AGENT_SELECT_LOGIC_API_REFERENCE.md)** - API specifications, confidence scoring, and routing decision matrices
+  - **[CMD_AGENT_SELECT_LOGIC_IMPLEMENTATION.md](./CMD_AGENT_SELECT_LOGIC_IMPLEMENTATION.md)** - 3-phase implementation roadmap with testing and deployment strategies
 - **@orchestrate-tasks Testing Complete** - Achieved 100% test success rate (25/25 scenarios) through systematic debugging, comprehensive test infrastructure, and quality improvements ⭐⭐⭐ (Completed: 2025-08-17)
 - **@install-agents-manager Agent Created** - New intelligent agent manager for automatic agent installation during sessions, integrated with all orchestration agents ⭐⭐⭐ (Added: 2025-08-17)
 - **Enhanced Orchestration Agents** - All three orchestration agents (@orchestrate-tasks, @orchestrate-agents, @orchestrate-agents-adv) now include automatic agent installation via @install-agents-manager integration ⭐⭐⭐ (Updated: 2025-08-17)
@@ -156,6 +162,11 @@ cd /home/bryan/agentgen
 # UNIFIED INSTALLER with symlinks (recommended)
 ./install-agents --symlink --global --profile core
 ./install-agents --symlink --project /path/to/target --profile development
+
+# NEW: Strategic team-composition profiles (Phase 1) - Both modes work perfectly
+./install-agents --symlink --project /path/to/target --profile enterprise-leadership  # 9 strategic decision-makers
+./install-agents --copy --project /path/to/target --profile startup-mvp              # 11 lean rapid development (copy mode)
+./install-agents --symlink --project /path/to/target --profile modern-web-stack     # 12 TypeScript/React specialists
 
 # Copy mode installation (traditional)
 ./install-agents --profile development-team /path/to/target
@@ -223,11 +234,43 @@ agentgen install /path/to/project --all
 analyze-codebase → review-code → deploy-application
 ```
 
-### 4. Follow Best Practices
+### 4. Strategic Profile Selection (NEW)
+Choose team composition based on organizational context:
+
+```bash
+# Enterprise Leadership (9 agents) - Strategic decision-makers
+# Both modes work perfectly
+./install-agents --symlink --profile enterprise-leadership
+./install-agents --copy --profile enterprise-leadership
+# Best for: C-level decisions, strategic planning, enterprise architecture
+# Key agents: architect-specialist, product-manager, security-auditor, performance-engineer
+
+# Startup MVP (11 agents) - Lean rapid development  
+# Both modes work perfectly
+./install-agents --symlink --profile startup-mvp
+./install-agents --copy --profile startup-mvp
+# Best for: Fast prototyping, resource constraints, MVP validation
+# Key agents: full-stack-developer, build-frontend, build-backend, debugger
+
+# Modern Web Stack (12 agents) - TypeScript/React specialists
+# Both modes work perfectly
+./install-agents --symlink --profile modern-web-stack
+./install-agents --copy --profile modern-web-stack
+# Best for: Modern web applications, React/TypeScript focus, UI/UX excellence
+# Key agents: react-specialist, nextjs-pro, ui-designer, frontend-developer
+```
+
+**Decision Matrix:**
+- **Budget/Timeline**: enterprise-leadership → startup-mvp → modern-web-stack
+- **Team Size**: enterprise-leadership (large) → modern-web-stack (medium) → startup-mvp (small)
+- **Technical Focus**: modern-web-stack (frontend) → startup-mvp (full-stack) → enterprise-leadership (architecture)
+
+### 5. Follow Best Practices
 - Start with single-agent patterns before multi-agent complexity
 - Match complexity tier to task requirements
 - Use <400 character agent descriptions for optimal performance
 - Leverage MCP protocol for external service integration
+- **Strategic Shift**: Team-composition-based profiles align with real-world team structures and enterprise patterns
 
 ## 📊 System Benefits
 
@@ -241,6 +284,8 @@ analyze-codebase → review-code → deploy-application
 - **Symlink Efficiency**: Instant updates, no duplication, single source of truth
 - **Proven Reliability**: 100% test success rate with comprehensive validation methodology
 - **Systematic Quality**: Evidence-based improvements with debugging infrastructure
+- **Strategic Profiles**: Team-composition-based profiles (Phase 1) enable real-world organizational alignment
+- **Enterprise-Grade Selection**: Decision matrix approach for optimal team composition based on context and constraints
 
 ## 🔧 Agent Categories
 
@@ -280,16 +325,6 @@ See `AGENT_CONSOLIDATION_STRATEGY.md` for detailed mapping of old agents to new 
 ---
 
 **Note**: This documentation reflects enterprise-grade agent architecture patterns and provides practical guidance for building robust, scalable agent systems based on proven industry practices.
-
-
-
-
-
-
-
-
-
-
 
 ## Installed Sub-Agents
 

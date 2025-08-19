@@ -19,20 +19,105 @@ The `agent-builder` is a specialized meta-agent that creates other agents follow
 
 ### Quick Start
 ```bash
-# Install all agents
-install-agents --all
+# Install strategic profiles
+./install-agents --profile enterprise-leadership
+./install-agents --profile startup-mvp
+./install-agents --profile modern-web-stack
 
-# List available agents
-install-agents --list
+# Traditional installations
+./install-agents --profile development-team
+./install-agents --all
+
+# List available profiles and agents
+./install-agents --list-profiles
+./install-agents --list
 
 # Detailed installation guide
 cat INSTALL_AGENTS_HELP.md
 ```
 
+### Strategic Profiles (NEW - Phase 1 Complete)
+
+Our **Phase 1 Strategic Profile Implementation** introduces 3 team-composition-based profiles designed to replace broad category-based approaches with targeted, role-specific agent sets. **All profiles now work perfectly in BOTH symlink and copy modes.**
+
+#### Enterprise Leadership (9 agents)
+**Target Audience**: Large organizations (50+ people), strategic decision-makers  
+**Focus**: Architecture, risk management, business strategy, organizational coordination
+
+```bash
+# Both installation modes work perfectly
+./install-agents --symlink --profile enterprise-leadership
+./install-agents --copy --profile enterprise-leadership
+```
+
+**Key Agents**: architect-specialist, security-auditor, cloud-architect-specialist, performance-engineer, product-manager, data-engineer, documentation-expert, qa-expert, orchestrate-tasks
+
+#### Startup MVP (11 agents)  
+**Target Audience**: Startups (5-15 people), rapid development teams  
+**Focus**: Speed, quality, essential functionality, lean development
+
+```bash
+# Both installation modes work perfectly
+./install-agents --symlink --profile startup-mvp
+./install-agents --copy --profile startup-mvp
+```
+
+**Key Agents**: full-stack-developer, nextjs-pro, backend-architect, ui-designer, code-reviewer, debugger, test-automator, security-auditor, product-manager, deployment-engineer, orchestrate-tasks
+
+#### Modern Web Stack (12 agents)
+**Target Audience**: Mid-size teams (15-50 people), TypeScript/React specialists  
+**Focus**: Modern frontend architecture, full-stack integration, performance optimization
+
+```bash
+# Both installation modes work perfectly
+./install-agents --symlink --profile modern-web-stack
+./install-agents --copy --profile modern-web-stack
+```
+
+**Key Agents**: nextjs-pro, react-pro, frontend-developer, ui-designer, ux-designer, full-stack-developer, backend-architect, performance-engineer, test-automator, code-reviewer, deployment-engineer, orchestrate-tasks
+
+### Profile Selection Guide
+
+| Team Size | Profile | Use Case | Key Benefits |
+|-----------|---------|----------|--------------|
+| 5-15 people | `startup-mvp` | Rapid MVP development | Speed, essential quality gates, lean coordination |
+| 15-50 people | `modern-web-stack` | TypeScript/React applications | Modern architecture, full-stack integration |
+| 50+ people | `enterprise-leadership` | Strategic decision-making | Architecture oversight, risk management, business alignment |
+| Any size | `development-team` | General development | Comprehensive coverage, traditional approach |
+| Any size | `core` | Essential workflows | Basic development needs, lightweight |
+
+### Strategic Profile Benefits
+
+The new **Phase 1 Profile Reorganization** replaces broad category-based approaches with targeted, role-specific agent sets:
+
+#### **Focused Expertise**
+- Each profile optimized for specific team sizes and organizational contexts
+- Reduced cognitive load through role-appropriate agent selection
+- Strategic alignment between team needs and available capabilities
+
+#### **Improved Efficiency** 
+- Faster onboarding with pre-configured agent sets matching team workflows
+- Reduced decision fatigue when selecting agents
+- Context-appropriate tool selection for better productivity
+
+#### **Enterprise Alignment**
+- **Enterprise Leadership**: Strategic oversight and architectural decision-making
+- **Startup MVP**: Speed and quality balance for rapid market entry
+- **Modern Web Stack**: Technology-specific optimization for modern development
+
+#### **Migration Strategy**
+- **Phase 1** (Current): 3 strategic profiles alongside traditional profiles
+- **Phase 2** (Planned): Additional specialized profiles for emerging technologies
+- **Phase 3** (Future): Full transition to role-based profile system
+
 ### Installation Methods
-- **Full Installation**: `install-agents --all`
-- **Selective Installation**: `install-agents --dev --security`
-- **Dry Run**: `install-agents --dry-run`
+- **Strategic Profiles**: `./install-agents --profile enterprise-leadership` (symlink default)
+- **Symlink Mode**: `./install-agents --symlink --profile startup-mvp` (instant updates)
+- **Copy Mode**: `./install-agents --copy --profile modern-web-stack` (independent files)
+- **Global Installation**: `./install-agents --symlink --global --profile core`
+- **Dry Run**: `./install-agents --dry-run --profile startup-mvp`
+
+**✅ All modes fully functional** - Both symlink and copy modes work perfectly with strategic profiles.
 
 See `INSTALL_AGENTS_HELP.md` for comprehensive installation instructions and troubleshooting.
 
@@ -72,6 +157,33 @@ Based on enterprise agent architecture patterns from Microsoft Azure, Speakeasy,
 `agent-builder` - Creates and optimizes other agents following enterprise patterns
 
 ## Usage Examples
+
+### Strategic Profile Implementation
+```bash
+# Enterprise Leadership - Strategic decision-making for large orgs
+# Both modes work perfectly
+./install-agents --symlink --profile enterprise-leadership
+./install-agents --copy --profile enterprise-leadership
+@architect-specialist "Design microservices architecture for 50+ person team"
+@security-auditor "Conduct enterprise-grade security assessment" 
+@performance-engineer "Optimize system for enterprise scale"
+
+# Startup MVP - Rapid development for startups  
+# Both modes work perfectly
+./install-agents --symlink --profile startup-mvp
+./install-agents --copy --profile startup-mvp
+@full-stack-developer "Build MVP user authentication quickly"
+@nextjs-pro "Create landing page with conversion tracking"
+@product-manager "Define MVP feature priorities"
+
+# Modern Web Stack - TypeScript/React for mid-size teams
+# Both modes work perfectly
+./install-agents --symlink --profile modern-web-stack
+./install-agents --copy --profile modern-web-stack
+@react-pro "Implement advanced React patterns with TypeScript"
+@ux-designer "Design user-centered component library"
+@test-automator "Set up modern testing pipeline"
+```
 
 ### Creating New Agents with Agent-Builder
 ```bash

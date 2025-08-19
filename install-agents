@@ -227,6 +227,60 @@ get_profile_agents_symlink() {
     local profile="$1"
     local agents=()
     
+    # FIRST: Check if it's a custom .profile file
+    local profile_file="$PROFILES_DIR/$profile.profile"
+    if [[ -f "$profile_file" ]]; then
+        # Parse custom profile file like copy mode does
+        while IFS= read -r line; do
+            # Skip comments and empty lines
+            if [[ "$line" =~ ^[[:space:]]*# ]] || [[ "$line" =~ ^[[:space:]]*$ ]] || [[ "$line" =~ ^name: ]] || [[ "$line" =~ ^description: ]] || [[ "$line" =~ ^agents: ]]; then
+                continue
+            fi
+            
+            # Extract agent name
+            if [[ "$line" =~ ^[[:space:]]*-[[:space:]]*(.+)$ ]]; then
+                local agent_name="${BASH_REMATCH[1]}"
+                # Find the agent file in the hub
+                local found_agent=""
+                for category in core development specialists infrastructure quality content data tools simple; do
+                    local candidate="$AGENTS_HUB/$category/$agent_name.md"
+                    if [[ -f "$candidate" ]]; then
+                        found_agent="$candidate"
+                        break
+                    fi
+                done
+                if [[ -n "$found_agent" ]]; then
+                    agents+=("$found_agent")
+                else
+                    print_warning "Agent not found in hub: $agent_name (from profile: $profile)"
+                fi
+            elif [[ ! "$line" =~ ^[[:space:]]*# ]] && [[ ! "$line" =~ ^[[:space:]]*$ ]]; then
+                # Handle simple list format (one agent per line)
+                local agent_name=$(echo "$line" | xargs)  # trim whitespace
+                if [ -n "$agent_name" ]; then
+                    # Find the agent file in the hub
+                    local found_agent=""
+                    for category in core development specialists infrastructure quality content data tools simple; do
+                        local candidate="$AGENTS_HUB/$category/$agent_name.md"
+                        if [[ -f "$candidate" ]]; then
+                            found_agent="$candidate"
+                            break
+                        fi
+                    done
+                    if [[ -n "$found_agent" ]]; then
+                        agents+=("$found_agent")
+                    else
+                        print_warning "Agent not found in hub: $agent_name (from profile: $profile)"
+                    fi
+                fi
+            fi
+        done < "$profile_file"
+        
+        printf "%s\n" "${agents[@]}"
+        return 0
+    fi
+    
+    # FALLBACK: Handle built-in profiles
     case "$profile" in
         "core")
             agents+=($(get_category_agents "core"))

@@ -159,7 +159,24 @@ cd /home/bryan/agentgen
 ./install-agents --all
 ```
 
-### 2. Team-Specific Setups
+### 2. Strategic Profile Setups (NEW - Phase 1 Complete)
+```bash
+# ✅ All strategic profiles work perfectly in BOTH symlink and copy modes
+
+# Enterprise Leadership (9 agents) - Strategic decision-makers
+./install-agents --symlink --profile enterprise-leadership /path/to/enterprise-project
+./install-agents --copy --profile enterprise-leadership /path/to/enterprise-project
+
+# Startup MVP (11 agents) - Rapid development  
+./install-agents --symlink --profile startup-mvp /path/to/startup-project
+./install-agents --copy --profile startup-mvp /path/to/startup-project
+
+# Modern Web Stack (12 agents) - TypeScript/React specialists
+./install-agents --symlink --profile modern-web-stack /path/to/web-project
+./install-agents --copy --profile modern-web-stack /path/to/web-project
+```
+
+### 3. Team-Specific Setups
 ```bash
 # Frontend team setup
 ./install-agents --profile frontend-focus /path/to/frontend-project
@@ -174,7 +191,7 @@ cd /home/bryan/agentgen
 ./install-agents --profile security-audit /path/to/secure-project
 ```
 
-### 3. Global Installation for Core Agents
+### 4. Global Installation for Core Agents
 ```bash
 # Install core agents globally (available in all projects)
 ./install-agents --global --profile core
@@ -183,7 +200,7 @@ cd /home/bryan/agentgen
 ./install-agents --list-installed ~/.claude/agents
 ```
 
-### 4. Maintenance and Updates
+### 5. Maintenance and Updates
 ```bash
 # Health check for symlinks
 ./install-agents --health

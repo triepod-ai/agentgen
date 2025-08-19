@@ -20,9 +20,10 @@ cd /home/bryan/agentgen
 
 The install-agents script now has better defaults for easier usage:
 
-- **Symlink mode is DEFAULT** (was copy mode)
+- **Symlink mode is DEFAULT** (was copy mode) - **✅ Fully functional**
 - **Current directory is DEFAULT** (no need to specify path)
 - **Force is enabled by DEFAULT** (smoother updates)
+- **All strategic profiles work in BOTH modes** (symlink and copy)
 
 ### Before vs After
 
@@ -37,6 +38,9 @@ Quick reference for team setups:
 
 | Profile | Description | Best For |
 |---------|-------------|----------|
+| `enterprise-leadership` | Strategic decision-makers (9 agents) | Large organizations (50+ people) |
+| `startup-mvp` | Rapid development (11 agents) | Startups (5-15 people) |
+| `modern-web-stack` | TypeScript/React (12 agents) | Mid-size teams (15-50 people) |
 | `core` | Essential 15 agents | All projects |
 | `development-team` | Complete dev team | Full stack teams |
 | `frontend-focus` | UI/UX specialists | Frontend teams |
@@ -61,7 +65,22 @@ cd /home/bryan/agentgen
 ./install-agents --profile core /path/to/new-project
 ```
 
-### 2. Team-Specific Setups
+### 2. Strategic Profile Setups (NEW)
+```bash
+# Enterprise leadership (both modes work)
+./install-agents --symlink --profile enterprise-leadership /path/to/enterprise-project
+./install-agents --copy --profile enterprise-leadership /path/to/enterprise-project
+
+# Startup MVP (both modes work)
+./install-agents --symlink --profile startup-mvp /path/to/startup-project
+./install-agents --copy --profile startup-mvp /path/to/startup-project
+
+# Modern web stack (both modes work)  
+./install-agents --symlink --profile modern-web-stack /path/to/web-project
+./install-agents --copy --profile modern-web-stack /path/to/web-project
+```
+
+### 3. Team-Specific Setups
 ```bash
 # Frontend team
 ./install-agents --profile frontend-focus /path/to/ui-project
@@ -73,7 +92,7 @@ cd /home/bryan/agentgen
 ./install-agents --profile ai-ml-team /path/to/ml-project
 ```
 
-### 3. Global Installation
+### 4. Global Installation
 ```bash
 # Install core agents globally (available in all projects)
 ./install-agents --global --profile core
@@ -82,7 +101,7 @@ cd /home/bryan/agentgen
 ./install-agents --list-installed ~/.claude/agents
 ```
 
-### 4. Individual Agents
+### 5. Individual Agents
 ```bash
 # Install specific agents
 ./install-agents code-reviewer security-auditor

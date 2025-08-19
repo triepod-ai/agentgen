@@ -104,11 +104,12 @@ Technical details of the agent consolidation process:
 ### Recent Documentation Updates
 
 - **Phase 1 Strategic Profiles Implementation COMPLETE** - Successfully implemented 3 strategic team-composition-based profiles with **100% functionality in BOTH symlink and copy modes**: enterprise-leadership (9 agents), startup-mvp (11 agents), and modern-web-stack (12 agents). Critical symlink mode bug resolved by debugger agent. All profiles tested and validated for production use. This strategic advancement aligns with enterprise patterns and provides decision matrix for optimal team composition selection ⭐⭐⭐ (Completed: 2025-08-19)
-- **@cmd-agent-select-logic Enhanced Documentation** - Comprehensive documentation suite for advanced intelligent agent selection framework with hierarchical classification, multi-domain detection, and strategic escalation ⭐⭐⭐ (Added: 2025-08-18)
+- **@cmd-agent-select-logic Agent OPERATIONAL** - Advanced intelligent agent selection framework with hierarchical classification, multi-domain detection, and strategic escalation now fully operational ⭐⭐⭐ (Operational: 2025-08-19)
   - **[CMD_AGENT_SELECT_LOGIC_USER_GUIDE.md](./CMD_AGENT_SELECT_LOGIC_USER_GUIDE.md)** - Complete user guide with usage scenarios, troubleshooting, and best practices
   - **[CMD_AGENT_SELECT_LOGIC_TECHNICAL_DOCS.md](./CMD_AGENT_SELECT_LOGIC_TECHNICAL_DOCS.md)** - Architecture overview, algorithms, and performance optimization details
   - **[CMD_AGENT_SELECT_LOGIC_API_REFERENCE.md](./CMD_AGENT_SELECT_LOGIC_API_REFERENCE.md)** - API specifications, confidence scoring, and routing decision matrices
   - **[CMD_AGENT_SELECT_LOGIC_IMPLEMENTATION.md](./CMD_AGENT_SELECT_LOGIC_IMPLEMENTATION.md)** - 3-phase implementation roadmap with testing and deployment strategies
+  - **[CMD_AGENT_CATEGORY_MAPPING.md](./CMD_AGENT_CATEGORY_MAPPING.md)** - Category alignment mapping between cmd-agent-select-logic domains and install-agents categories
 - **@orchestrate-tasks Testing Complete** - Achieved 100% test success rate (25/25 scenarios) through systematic debugging, comprehensive test infrastructure, and quality improvements ⭐⭐⭐ (Completed: 2025-08-17)
 - **@install-agents-manager Agent Created** - New intelligent agent manager for automatic agent installation during sessions, integrated with all orchestration agents ⭐⭐⭐ (Added: 2025-08-17)
 - **Enhanced Orchestration Agents** - All three orchestration agents (@orchestrate-tasks, @orchestrate-agents, @orchestrate-agents-adv) now include automatic agent installation via @install-agents-manager integration ⭐⭐⭐ (Updated: 2025-08-17)
@@ -217,7 +218,7 @@ agentgen install /path/to/project --all
 
 # Complex reasoning (Red complexity)
 @analyze-performance optimize-system-bottlenecks
-@secure-application audit-vulnerabilities
+@security-auditor audit-vulnerabilities
 ```
 
 ### 3. Leverage Orchestration (Context-Manager Integrated)

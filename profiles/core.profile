@@ -2,7 +2,7 @@
 # Essential agents available globally - matches ~/.claude/agents/ setup
 
 name: core
-description: Core 15-agent profile matching global agent setup - essential agents for all development workflows
+description: Core 16-agent profile matching global agent setup - essential agents for all development workflows with intelligent routing
 
 agents:
   # Core Development
@@ -16,6 +16,7 @@ agents:
   # Management & Orchestration
   - orchestrate-tasks
   - orchestrate-agents
+  - cmd-agent-select-logic
   - agent-builder
   - product-manager
 

@@ -28,6 +28,7 @@ agents:
   - documentation-expert
   - agent-organizer
   - orchestrate-tasks
+  - cmd-agent-select-logic
   
   # Tools & Management
   - agent-builder

@@ -214,7 +214,7 @@ Based on enterprise agent architecture patterns from Microsoft Azure, Speakeasy,
 
 # Complex reasoning (Red complexity)
 @analyze-performance optimize-system-bottlenecks
-@secure-application audit-vulnerabilities
+@security-auditor audit-vulnerabilities
 ```
 
 ## Complexity System

@@ -378,7 +378,7 @@ api_development:
     - confidence: ≥ 0.7
   targets:
     primary: "@build-backend"
-    alternatives: ["@full-stack-developer", "@api-specialist"]
+    alternatives: ["@full-stack-developer", "@api-documenter"]
 
 database_work:
   patterns: ["database", "sql", "query", "schema"]

@@ -2,8 +2,8 @@
 name: agent-builder
 description: Creates optimized agents following enterprise patterns. Use for agent generation, optimization, batch creation, and validation. Auto-activates for "create agent", "build agent", "optimize agent" requests.
 tools: Read, Write, Grep, Glob, LS, TodoWrite, Task
-model: haiku
-color: green
+model: sonnet
+color: yellow
 ---
 
 # Agent Builder

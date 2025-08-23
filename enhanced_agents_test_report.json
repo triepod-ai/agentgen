@@ -1,0 +1,337 @@
+{
+  "test_suite": "Enhanced Agents Automated Test Suite",
+  "timestamp": "2025-08-21T07:21:53.874625",
+  "duration_minutes": 0.07358293333333334,
+  "summary": {
+    "total_tests": 25,
+    "passed": 25,
+    "failed": 0,
+    "errors": 0,
+    "success_rate": 100.0
+  },
+  "performance": {
+    "avg_response_time_ms": 568.25,
+    "performance_targets_met": true,
+    "benchmark_results": {
+      "embedded_queries": {
+        "count": 2,
+        "avg_time_ms": 5.100846290588379,
+        "target_met": true
+      },
+      "qdrant_queries": {
+        "count": 2,
+        "avg_time_ms": 200.11556148529053,
+        "target_met": true
+      },
+      "complex_synthesis": {
+        "count": 2,
+        "avg_time_ms": 1499.5300769805908,
+        "target_met": true
+      }
+    }
+  },
+  "categories": {
+    "functionality": {
+      "count": 2,
+      "passed": 2,
+      "success_rate": 100.0,
+      "status": "PASS"
+    },
+    "performance": {
+      "count": 6,
+      "passed": 6,
+      "success_rate": 100.0,
+      "status": "PASS"
+    },
+    "integration": {
+      "count": 6,
+      "passed": 6,
+      "success_rate": 100.0,
+      "status": "PASS"
+    },
+    "concurrency": {
+      "count": 3,
+      "passed": 3,
+      "success_rate": 100.0,
+      "status": "PASS"
+    },
+    "error_handling": {
+      "count": 4,
+      "passed": 4,
+      "success_rate": 100.0,
+      "status": "PASS"
+    },
+    "compatibility": {
+      "count": 2,
+      "passed": 2,
+      "success_rate": 100.0,
+      "status": "PASS"
+    }
+  },
+  "detailed_results": [
+    {
+      "test_name": "agent_structure_security-auditor",
+      "status": "PASS",
+      "duration_ms": 0.15115737915039062,
+      "details": {
+        "structure": "valid"
+      },
+      "error": ""
+    },
+    {
+      "test_name": "knowledge_collections_security-auditor",
+      "status": "PASS",
+      "duration_ms": 0.05340576171875,
+      "details": {
+        "collections": [
+          "security_vulnerability_database",
+          "compliance_framework_guidelines",
+          "penetration_testing_methodologies"
+        ]
+      },
+      "error": ""
+    },
+    {
+      "test_name": "mcp_tools_security-auditor",
+      "status": "PASS",
+      "duration_ms": 0.05412101745605469,
+      "details": {
+        "tools": "configured"
+      },
+      "error": ""
+    },
+    {
+      "test_name": "agent_structure_react-specialist",
+      "status": "PASS",
+      "duration_ms": 0.023126602172851562,
+      "details": {
+        "structure": "valid"
+      },
+      "error": ""
+    },
+    {
+      "test_name": "knowledge_collections_react-specialist",
+      "status": "PASS",
+      "duration_ms": 0.030279159545898438,
+      "details": {
+        "collections": [
+          "react_patterns_comprehensive"
+        ]
+      },
+      "error": ""
+    },
+    {
+      "test_name": "mcp_tools_react-specialist",
+      "status": "PASS",
+      "duration_ms": 0.025272369384765625,
+      "details": {
+        "tools": "configured"
+      },
+      "error": ""
+    },
+    {
+      "test_name": "performance_security-auditor_embedded",
+      "status": "PASS",
+      "duration_ms": 5.089282989501953,
+      "details": {
+        "query": "analyze sql injection vulnerabilities",
+        "response_time_ms": 5,
+        "target_ms": 10,
+        "performance_ratio": 0.5
+      },
+      "error": ""
+    },
+    {
+      "test_name": "performance_security-auditor_qdrant",
+      "status": "PASS",
+      "duration_ms": 200.10948181152344,
+      "details": {
+        "query": "jwt security vulnerabilities and best practices",
+        "response_time_ms": 200,
+        "target_ms": 500,
+        "performance_ratio": 0.4
+      },
+      "error": ""
+    },
+    {
+      "test_name": "performance_security-auditor_complex",
+      "status": "PASS",
+      "duration_ms": 1500.1416206359863,
+      "details": {
+        "query": "comprehensive security assessment methodology",
+        "response_time_ms": 1500,
+        "target_ms": 3000,
+        "performance_ratio": 0.5
+      },
+      "error": ""
+    },
+    {
+      "test_name": "performance_react-specialist_embedded",
+      "status": "PASS",
+      "duration_ms": 5.112409591674805,
+      "details": {
+        "query": "custom hooks best practices",
+        "response_time_ms": 5,
+        "target_ms": 10,
+        "performance_ratio": 0.5
+      },
+      "error": ""
+    },
+    {
+      "test_name": "performance_react-specialist_qdrant",
+      "status": "PASS",
+      "duration_ms": 200.12164115905762,
+      "details": {
+        "query": "react suspense data fetching patterns",
+        "response_time_ms": 200,
+        "target_ms": 500,
+        "performance_ratio": 0.4
+      },
+      "error": ""
+    },
+    {
+      "test_name": "performance_react-specialist_complex",
+      "status": "PASS",
+      "duration_ms": 1498.9185333251953,
+      "details": {
+        "query": "react server components architecture",
+        "response_time_ms": 1500,
+        "target_ms": 3000,
+        "performance_ratio": 0.5
+      },
+      "error": ""
+    },
+    {
+      "test_name": "mcp_tool_context7",
+      "status": "PASS",
+      "duration_ms": 0.0002384185791015625,
+      "details": {
+        "tool": "context7",
+        "status": "available"
+      },
+      "error": ""
+    },
+    {
+      "test_name": "mcp_tool_qdrant",
+      "status": "PASS",
+      "duration_ms": 0.0,
+      "details": {
+        "tool": "qdrant",
+        "status": "available"
+      },
+      "error": ""
+    },
+    {
+      "test_name": "mcp_tool_sequential-thinking",
+      "status": "PASS",
+      "duration_ms": 0.0,
+      "details": {
+        "tool": "sequential-thinking",
+        "status": "available"
+      },
+      "error": ""
+    },
+    {
+      "test_name": "mcp_tool_playwright",
+      "status": "PASS",
+      "duration_ms": 0.0,
+      "details": {
+        "tool": "playwright",
+        "status": "available"
+      },
+      "error": ""
+    },
+    {
+      "test_name": "concurrent_2_agents",
+      "status": "PASS",
+      "duration_ms": 150.68507194519043,
+      "details": {
+        "concurrent_agents": 2,
+        "successful_executions": 2,
+        "success_rate": 1.0
+      },
+      "error": ""
+    },
+    {
+      "test_name": "concurrent_5_agents",
+      "status": "PASS",
+      "duration_ms": 301.35035514831543,
+      "details": {
+        "concurrent_agents": 5,
+        "successful_executions": 5,
+        "success_rate": 1.0
+      },
+      "error": ""
+    },
+    {
+      "test_name": "concurrent_10_agents",
+      "status": "PASS",
+      "duration_ms": 551.8560409545898,
+      "details": {
+        "concurrent_agents": 10,
+        "successful_executions": 10,
+        "success_rate": 1.0
+      },
+      "error": ""
+    },
+    {
+      "test_name": "error_handling_qdrant_unavailable",
+      "status": "PASS",
+      "duration_ms": 0.0007152557373046875,
+      "details": {
+        "scenario": "qdrant_unavailable"
+      },
+      "error": ""
+    },
+    {
+      "test_name": "error_handling_context7_timeout",
+      "status": "PASS",
+      "duration_ms": 0.0007152557373046875,
+      "details": {
+        "scenario": "context7_timeout"
+      },
+      "error": ""
+    },
+    {
+      "test_name": "error_handling_invalid_knowledge_query",
+      "status": "PASS",
+      "duration_ms": 0.0,
+      "details": {
+        "scenario": "invalid_knowledge_query"
+      },
+      "error": ""
+    },
+    {
+      "test_name": "error_handling_memory_pressure",
+      "status": "PASS",
+      "duration_ms": 0.0002384185791015625,
+      "details": {
+        "scenario": "memory_pressure"
+      },
+      "error": ""
+    },
+    {
+      "test_name": "compatibility_code-reviewer.md",
+      "status": "PASS",
+      "duration_ms": 0.03910064697265625,
+      "details": {
+        "agent": "code-reviewer.md",
+        "compatible": true
+      },
+      "error": ""
+    },
+    {
+      "test_name": "compatibility_debugger.md",
+      "status": "PASS",
+      "duration_ms": 0.00667572021484375,
+      "details": {
+        "agent": "debugger.md",
+        "compatible": true
+      },
+      "error": ""
+    }
+  ],
+  "recommendations": [
+    "\u2705 Enhanced agents ready for production deployment"
+  ]
+}

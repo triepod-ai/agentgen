@@ -1,0 +1,355 @@
+# Knowledge Refresh Schedules Configuration
+# Defines automated refresh cycles for enhanced agents
+
+# Agent Refresh Configurations
+agents:
+  security-auditor-enhanced:
+    agent_id: "security-auditor-enhanced"
+    knowledge_collections:
+      - "security_vulnerability_database"
+      - "compliance_framework_guidelines"
+      - "penetration_testing_methodologies"
+    refresh_schedule:
+      frequency: "weekly"
+      priority: "critical"
+      quality_threshold: 0.95
+      preferred_time: "02:00"  # UTC
+      max_duration_hours: 2
+    sources:
+      - "owasp_top_10"
+      - "nist_cybersecurity"
+      - "cve_database"
+      - "security_advisories"
+    performance_targets:
+      max_refresh_time_minutes: 120
+      min_quality_score: 0.95
+      max_rollback_rate: 0.05
+    notifications:
+      on_failure: true
+      on_rollback: true
+      on_quality_degradation: true
+
+  react-specialist-enhanced:
+    agent_id: "react-specialist-enhanced"
+    knowledge_collections:
+      - "react_patterns_comprehensive"
+      - "react_testing_strategies"
+      - "frontend_performance_optimization"
+    refresh_schedule:
+      frequency: "bi-weekly"
+      priority: "high"
+      quality_threshold: 0.90
+      preferred_time: "03:00"  # UTC
+      max_duration_hours: 1
+    sources:
+      - "react_docs"
+      - "react_blog"
+      - "community_patterns"
+      - "github_react_examples"
+    performance_targets:
+      max_refresh_time_minutes: 60
+      min_quality_score: 0.90
+      max_rollback_rate: 0.10
+    notifications:
+      on_failure: true
+      on_rollback: true
+      on_quality_degradation: false
+
+  container-orchestration-specialist:
+    agent_id: "container-orchestration-specialist"
+    knowledge_collections:
+      - "kubernetes_patterns"
+      - "docker_best_practices"
+      - "container_security"
+      - "orchestration_troubleshooting"
+    refresh_schedule:
+      frequency: "weekly"
+      priority: "high"
+      quality_threshold: 0.88
+      preferred_time: "04:00"  # UTC
+      max_duration_hours: 1.5
+    sources:
+      - "kubernetes_docs"
+      - "docker_docs"
+      - "cncf_resources"
+      - "container_security_guides"
+    performance_targets:
+      max_refresh_time_minutes: 90
+      min_quality_score: 0.88
+      max_rollback_rate: 0.08
+    notifications:
+      on_failure: true
+      on_rollback: true
+      on_quality_degradation: true
+
+  api-security-specialist:
+    agent_id: "api-security-specialist"
+    knowledge_collections:
+      - "api_security_patterns"
+      - "oauth_implementation_guides"
+      - "api_threat_models"
+      - "authentication_frameworks"
+    refresh_schedule:
+      frequency: "weekly"
+      priority: "critical"
+      quality_threshold: 0.93
+      preferred_time: "01:30"  # UTC
+      max_duration_hours: 1.5
+    sources:
+      - "owasp_api_security"
+      - "oauth_specifications"
+      - "api_security_research"
+      - "authentication_standards"
+    performance_targets:
+      max_refresh_time_minutes: 90
+      min_quality_score: 0.93
+      max_rollback_rate: 0.05
+    notifications:
+      on_failure: true
+      on_rollback: true
+      on_quality_degradation: true
+
+# Global Refresh Settings
+global_settings:
+  # Scheduling Configuration
+  scheduling:
+    timezone: "UTC"
+    max_concurrent_refreshes: 2
+    stagger_delay_minutes: 15
+    retry_failed_jobs: true
+    max_retry_attempts: 3
+    retry_delay_minutes: 30
+
+  # Performance Limits
+  performance:
+    max_total_refresh_time_hours: 6
+    max_memory_usage_gb: 4
+    max_cpu_usage_percent: 80
+    network_timeout_seconds: 300
+    rate_limit_requests_per_minute: 60
+
+  # Quality Assurance
+  quality_gates:
+    min_overall_score: 0.85
+    min_accuracy_score: 0.90
+    min_freshness_score: 0.70
+    min_credibility_score: 0.80
+    min_completeness_score: 0.75
+    max_failed_rules: 2
+
+  # Rollback Configuration
+  rollback:
+    auto_rollback_on_quality_failure: true
+    rollback_timeout_minutes: 10
+    preserve_rollback_snapshots_days: 7
+    alert_on_rollback: true
+
+  # Monitoring and Alerting
+  monitoring:
+    enable_real_time_monitoring: true
+    monitoring_interval_seconds: 30
+    metrics_retention_days: 30
+    alert_cooldown_minutes: 15
+
+  # Notifications
+  notifications:
+    enable_notifications: true
+    notification_channels:
+      - type: "webhook"
+        url: "${WEBHOOK_URL}"
+        enabled: true
+      - type: "email" 
+        recipients: ["admin@example.com"]
+        enabled: false
+      - type: "slack"
+        webhook_url: "${SLACK_WEBHOOK_URL}"
+        enabled: false
+
+# Source Configurations
+sources:
+  owasp_top_10:
+    url: "https://owasp.org/www-project-top-ten/"
+    source_type: "documentation"
+    credibility_score: 1.0
+    update_frequency: "monthly"
+    monitor_changes: true
+    timeout_seconds: 30
+
+  nist_cybersecurity:
+    url: "https://www.nist.gov/cyberframework"
+    source_type: "documentation"
+    credibility_score: 0.99
+    update_frequency: "quarterly"
+    monitor_changes: true
+    timeout_seconds: 45
+
+  cve_database:
+    url: "https://cve.mitre.org/"
+    source_type: "database"
+    credibility_score: 1.0
+    update_frequency: "daily"
+    monitor_changes: true
+    timeout_seconds: 60
+    api_key_required: false
+
+  react_docs:
+    url: "https://react.dev/"
+    source_type: "documentation"
+    credibility_score: 0.98
+    update_frequency: "weekly"
+    monitor_changes: true
+    timeout_seconds: 30
+
+  kubernetes_docs:
+    url: "https://kubernetes.io/docs/"
+    source_type: "documentation"
+    credibility_score: 0.95
+    update_frequency: "weekly"
+    monitor_changes: true
+    timeout_seconds: 45
+
+  docker_docs:
+    url: "https://docs.docker.com/"
+    source_type: "documentation"
+    credibility_score: 0.94
+    update_frequency: "bi-weekly"
+    monitor_changes: true
+    timeout_seconds: 30
+
+# Infrastructure Configuration
+infrastructure:
+  # BRAINPOD Configuration
+  brainpod:
+    chroma:
+      host: "localhost"
+      port: 8000
+      persist_directory: "./chroma_data"
+      embedding_model: "all-minilm-l6-v2"
+      
+    qdrant:
+      host: "localhost"
+      port: 6333
+      timeout: 60
+      collection_config:
+        default_vector_size: 768
+        distance_metric: "cosine"
+        
+    redis:
+      host: "localhost"
+      port: 6379
+      database: 0
+      default_ttl: 3600
+      performance_ttl: 7200
+
+  # Processing Configuration
+  processing:
+    max_workers: 4
+    batch_size: 100
+    chunk_size: 1000
+    embedding_batch_size: 50
+    max_content_length: 10000
+
+# Environment-Specific Overrides
+environments:
+  development:
+    global_settings:
+      scheduling:
+        max_concurrent_refreshes: 1
+      performance:
+        max_memory_usage_gb: 2
+        max_cpu_usage_percent: 60
+      monitoring:
+        monitoring_interval_seconds: 60
+        
+  staging:
+    global_settings:
+      scheduling:
+        max_concurrent_refreshes: 2
+      performance:
+        max_memory_usage_gb: 3
+        max_cpu_usage_percent: 70
+      notifications:
+        enable_notifications: false
+        
+  production:
+    global_settings:
+      scheduling:
+        max_concurrent_refreshes: 3
+        stagger_delay_minutes: 10
+      performance:
+        max_memory_usage_gb: 8
+        max_cpu_usage_percent: 90
+      monitoring:
+        monitoring_interval_seconds: 15
+        metrics_retention_days: 90
+      notifications:
+        enable_notifications: true
+
+# Custom Refresh Patterns
+custom_patterns:
+  security_critical:
+    description: "Critical security updates requiring immediate refresh"
+    triggers:
+      - "new_cve_published"
+      - "security_advisory_released"
+      - "vulnerability_disclosed"
+    max_delay_hours: 2
+    priority: "critical"
+    quality_threshold: 0.98
+    
+  framework_updates:
+    description: "Major framework version updates"
+    triggers:
+      - "react_major_version"
+      - "kubernetes_minor_version"
+      - "api_breaking_changes"
+    max_delay_hours: 24
+    priority: "high"
+    quality_threshold: 0.90
+    
+  routine_maintenance:
+    description: "Regular maintenance and cleanup"
+    triggers:
+      - "scheduled_maintenance"
+      - "content_optimization"
+      - "performance_tuning"
+    max_delay_hours: 168  # 1 week
+    priority: "normal"
+    quality_threshold: 0.85
+
+# Validation Rules
+validation_rules:
+  - rule_id: "source_credibility"
+    rule_type: "credibility"
+    threshold: 0.80
+    weight: 0.25
+    description: "Source must have high credibility score"
+    enabled: true
+    
+  - rule_id: "content_freshness"
+    rule_type: "freshness"
+    threshold: 0.70
+    weight: 0.20
+    description: "Content must be reasonably fresh"
+    enabled: true
+    
+  - rule_id: "content_accuracy"
+    rule_type: "accuracy"
+    threshold: 0.85
+    weight: 0.30
+    description: "Content must pass accuracy validation"
+    enabled: true
+    
+  - rule_id: "knowledge_completeness"
+    rule_type: "completeness"
+    threshold: 0.75
+    weight: 0.15
+    description: "Knowledge coverage must be comprehensive"
+    enabled: true
+    
+  - rule_id: "content_consistency"
+    rule_type: "consistency"
+    threshold: 0.80
+    weight: 0.10
+    description: "Content must be internally consistent"
+    enabled: true

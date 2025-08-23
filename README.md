@@ -1,53 +1,49 @@
-# AgentGen - Enterprise AI Development Platform
+# AgentGen - AI Development Agents
 
-**Transform your development workflow with 100+ specialized AI agents in under 30 seconds.**
+**Collection of specialized AI agents for development tasks.**
 
-## 🎯 Executive Summary
+## 🎯 Overview
 
-AgentGen delivers **$10M+ annual value creation** through 100+ knowledge-enhanced AI agents with **200%+ validated productivity improvements**. Built on enterprise-grade architecture patterns from Microsoft Azure, Speakeasy, and Databricks, our platform provides the industry's first **ML-driven knowledge enhancement pipeline** with BRAINPOD orchestration.
+AgentGen provides 100+ specialized AI agents organized into different configurations for various development needs. The agents help with coding, testing, deployment, security, and other development tasks.
 
-### Key Business Value
-- **$2.4M+ Current Annual Value** scaling to $10M+ across enterprise portfolios
-- **200%+ Productivity Improvement** with validated performance metrics
-- **4,000%+ First-Year ROI** through development acceleration and expert consultation reduction
-- **12-18 Month Technical Lead** via proprietary BRAINPOD architecture
-- **95% Expert Knowledge Utilization** vs industry standard 20%
-
----
-
-## 🏢 Why AgentGen?
-
-### Enterprise-Grade Differentiation
-
-**Beyond Basic Agent Systems** - While others provide simple AI assistants, AgentGen delivers **knowledge-enhanced specialists** with embedded domain expertise:
-
-| Standard Agents | AgentGen Enhanced | Business Impact |
-|---|---|---|
-| Generic responses | 800+ embedded patterns per domain | 200% faster development |
-| Basic code generation | Expert-level implementations | 85% reduction in consultation |
-| Limited context | Real-time knowledge synthesis | 95% knowledge utilization |
-| One-size-fits-all | Strategic team composition profiles | 300% better project alignment |
-
-### Validated Market Leadership
-
-**Proven Business Value**:
-- **Enterprise Leadership Profile**: $480K annual value per organization (security risk reduction, compliance acceleration)
-- **Modern Web Stack Profile**: $360K annual value per team (React development acceleration, quality improvement)
-- **Total Addressable Market**: $960M+ annually across 2,500+ target organizations
-- **Customer Success**: 183% improvement in response quality, 95% knowledge accuracy
-
-### Technical Innovation Moat
-
-**BRAINPOD Architecture** (Chroma + Qdrant + Redis):
-- **<500ms Response Times** for complex knowledge synthesis
-- **1,200+ Knowledge Patterns** per specialist domain
-- **95% Source Authority** from curated enterprise sources  
-- **Real-time Learning** with bi-weekly knowledge refresh
-- **Context-Manager Integration** for project-aware coordination
+### Key Features
+- Specialized agents for different development domains
+- Pre-configured agent sets for different project types
+- Easy installation and setup
+- Integration with development tools
+- Organized system for managing multiple AI assistants
 
 ---
 
-## 🚀 Quick Start (30 seconds)
+## 🏢 What Makes AgentGen Useful?
+
+### Specialized Agents
+
+AgentGen provides specialized AI assistants for different development tasks:
+
+| Feature | Description |
+|---|---|
+| Domain-specific knowledge | Each agent focuses on specific development areas |
+| Organized system | Agents are categorized and easy to find |
+| Quick setup | Pre-configured sets for different project needs |
+| Integration ready | Works with existing development tools |
+
+### Agent Categories
+
+Different types of agents for various development needs:
+- **Development**: Frontend, backend, full-stack development
+- **Quality**: Code review, testing, debugging  
+- **Security**: Security audits, vulnerability scanning
+- **Operations**: Deployment, monitoring, infrastructure
+- **Documentation**: Technical writing, API docs
+
+### Agent Coordination
+
+**Context-Manager System**: Helps agents work together and understand your project structure for better coordination.
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
 Navigate to agentgen directory (required):
@@ -55,55 +51,55 @@ Navigate to agentgen directory (required):
 cd /home/bryan/agentgen  # Always run from here
 ```
 
-### Choose Your Strategic Profile
+### Choose Your Agent Configuration
 
 **For Enterprise Organizations (50+ people)**
 ```bash
 # Enterprise Leadership: Strategic decision-makers, compliance, security
-./install-agents --profile enterprise-leadership  # $480K+ annual value
+./install-agents --profile enterprise-leadership
 ```
 
 **For Modern Web Teams (15-50 people)**
 ```bash  
 # React/TypeScript specialists, component libraries, modern tooling
-./install-agents --profile modern-web-stack       # $360K+ annual value
+./install-agents --profile modern-web-stack
 ```
 
 **For Startups & Small Teams (5-15 people)**
 ```bash
 # Lean rapid development, full-stack capabilities, MVP focus
-./install-agents --profile startup-mvp            # $240K+ annual value
+./install-agents --profile startup-mvp
 ```
 
 **For General Development**
 ```bash
 # Essential agents for any project
-./install-agents --profile core                   # Always recommended
+./install-agents --profile core
 ```
 
-### Start Using Immediately
+### Start Using
 ```bash
-# Intelligent orchestration (recommended)
+# Orchestrated workflows (recommended)
 @orchestrate-tasks "build authentication system with testing"
-@orchestrate-tasks "comprehensive security audit with modernization"
+@orchestrate-tasks "security audit with recommendations"
 
-# Direct agent invocation
+# Direct agent usage
 @security-auditor "scan for vulnerabilities"
 @react-specialist "create dashboard with charts"
 @architect-specialist "design microservices architecture"
 ```
 
-**✅ Complete!** Your agents are installed and ready. Experience immediate **3x faster development velocity** and access to **800+ expert knowledge patterns**.
+**✅ Complete!** Your agents are installed and ready to help with development tasks.
 
 ## 🎯 What is AgentGen?
 
-AgentGen provides **100+ specialized AI agents** organized into strategic team-based profiles:
+AgentGen provides 100+ specialized AI agents organized into different configurations:
 
 - **🏢 Enterprise Leadership** (9 agents) - Strategic decision-making for large organizations
 - **🚀 Startup MVP** (11 agents) - Rapid development for small teams  
 - **⚛️ Modern Web Stack** (12 agents) - React/TypeScript specialists for mid-size teams
 
-Each agent is optimized for immediate execution and specific expertise areas.
+Each agent focuses on specific development tasks and expertise areas.
 
 ## 📋 Available Agent Categories
 
@@ -138,26 +134,26 @@ Each agent is optimized for immediate execution and specific expertise areas.
 
 ## 🔧 Installation Guide
 
-### Strategic Profile Decision Matrix
-Choose the optimal team composition based on your organizational context:
+### Agent Configuration Selection
+Choose the right agent set based on your project needs:
 
-| Context | Profile | Team Size | Focus | Annual Value |
-|---------|---------|-----------|-------|--------------|
-| **C-level decisions, compliance** | `enterprise-leadership` | 50+ people | Strategic planning, security | **$480K+** |
-| **React/TypeScript development** | `modern-web-stack` | 15-50 people | Modern web apps, UI/UX | **$360K+** |
-| **Fast prototyping, MVP** | `startup-mvp` | 5-15 people | Lean development, full-stack | **$240K+** |
-| **Any project baseline** | `core` | Any size | Essential development | **Always recommended** |
+| Context | Profile | Team Size | Focus |
+|---------|---------|-----------|-------|
+| **C-level decisions, compliance** | `enterprise-leadership` | 50+ people | Strategic planning, security |
+| **React/TypeScript development** | `modern-web-stack` | 15-50 people | Modern web apps, UI/UX |
+| **Fast prototyping, MVP** | `startup-mvp` | 5-15 people | Lean development, full-stack |
+| **Any project baseline** | `core` | Any size | Essential development |
 
 ### Installation Modes
 
 **⚡ Symlink Mode (Recommended - Default)**
-- **95% storage reduction** - No file duplication
+- **Storage efficient** - No file duplication
 - **Instant updates** - Changes propagate immediately  
-- **Single source of truth** - Centralized management
-- **Enhanced developer experience** with bash completion
+- **Single source** - Centralized management
+- **Better developer experience** with bash completion
 
 ```bash
-# Strategic profiles (symlink mode is default)
+# Agent configurations (symlink mode is default)
 ./install-agents --profile enterprise-leadership
 ./install-agents --profile modern-web-stack  
 ./install-agents --profile startup-mvp
@@ -226,14 +222,14 @@ Enhanced developer experience with intelligent autocompletion:
 
 ## 🌟 Key Features
 
-- **⚡ 30-Second Setup** - Enterprise-ready deployment with strategic team profiles
-- **🧠 Knowledge-Enhanced Agents** - 800+ embedded patterns per domain with 95% accuracy
-- **🏗️ BRAINPOD Orchestration** - Context-Manager integration for project-aware coordination
-- **📈 Validated 200%+ ROI** - Proven productivity improvements with enterprise metrics
-- **🎯 Strategic Team Profiles** - Purpose-built for enterprise, startup, and modern web teams
-- **🔗 ML-Driven Enhancement** - Continuous learning with bi-weekly knowledge refresh
-- **🏢 Enterprise Architecture** - Based on Microsoft Azure, Speakeasy, and Databricks patterns
-- **⚡ <500ms Response Times** - Real-time knowledge synthesis with optimized performance
+- **⚡ Quick Setup** - Easy deployment with pre-configured agent sets
+- **🧠 Specialized Agents** - Domain-specific agents for different development areas
+- **🏗️ Agent Coordination** - Context-Manager integration for project-aware coordination
+- **📈 Improved Workflow** - Helpful agents can improve development tasks
+- **🎯 Agent Configurations** - Purpose-built sets for different team types
+- **🔗 Continuous Updates** - Regular improvements and updates
+- **🏢 Organized System** - Based on proven organizational patterns
+- **⚡ Fast Response** - Quick agent responses for development tasks
 
 ## 🆘 Need Help?
 
@@ -281,79 +277,79 @@ ls -la .claude/agents/                        # Check symlinks
 
 ---
 
-## 🚀 Transform Your Development Workflow Today
+## 🚀 Get Started with AgentGen
 
-**Join the AI development revolution.** Experience **200%+ productivity improvements** and **$2.4M+ annual value creation** with enterprise-grade AI agents.
+**Use specialized AI agents for your development tasks.**
 
-### Get Started in 30 Seconds
+### Get Started Quickly
 
 **Step 1: Navigate to AgentGen**
 ```bash
-cd /home/bryan/agentgen  # Critical: Must run from here
+cd /home/bryan/agentgen  # Must run from here
 ```
 
-**Step 2: Choose Your Strategic Profile**
+**Step 2: Choose Your Agent Configuration**
 ```bash
-# For Enterprise Organizations (50+ people, $480K+ value)
+# For Enterprise Organizations (50+ people)
 ./install-agents --profile enterprise-leadership
 
-# For Modern Web Teams (15-50 people, $360K+ value)
+# For Modern Web Teams (15-50 people)
 ./install-agents --profile modern-web-stack
 
-# For Startups & Small Teams (5-15 people, $240K+ value)
+# For Startups & Small Teams (5-15 people)
 ./install-agents --profile startup-mvp
 ```
 
-**Step 3: Start Using Immediately**
+**Step 3: Start Using**
 ```bash
 @orchestrate-tasks "build authentication with security audit"
 @security-auditor "analyze current vulnerabilities"
 @react-specialist "create responsive dashboard"
 ```
 
-### Immediate Business Impact
+### What You Get
 
-**✅ Instant Productivity Gains:**
-- **3x faster development velocity** from day one
-- **85% reduction** in external consultation dependency
-- **95% expert knowledge utilization** vs industry standard 20%
-- **<500ms response times** for complex knowledge synthesis
+**✅ Helpful Development Tools:**
+- Specialized agents for different development tasks
+- Organized system for managing multiple AI assistants
+- Context-aware coordination between agents
+- Quick responses for development questions
 
-**✅ Validated Enterprise Value:**
-- **$2.4M+ annual value creation** across current portfolio
-- **4,000%+ first-year ROI** through development acceleration
-- **200%+ productivity improvement** with validated performance metrics
-- **12-18 month technical lead** via proprietary BRAINPOD architecture
+**✅ Practical Features:**
+- Pre-configured agent sets for different team types
+- Easy installation and setup process
+- Integration with existing development tools
+- Continuous improvements and updates
 
-**✅ Strategic Differentiation:**
-- **ML-driven knowledge enhancement** with 800+ embedded patterns per domain
-- **BRAINPOD orchestration** (Chroma + Qdrant + Redis) for real-time synthesis
-- **Context-Manager integration** for project-aware coordination
-- **Enterprise architecture patterns** from Microsoft Azure, Speakeasy, Databricks
+**✅ Organized Approach:**
+- Domain-specific knowledge for different areas
+- Agent coordination system for complex tasks
+- Project-aware integration via Context-Manager
+- Based on proven organizational patterns
 
-### Support & Success
+### Support & Resources
 
-**📚 Comprehensive Resources:**
-- **[30-Second Quick Start](docs/getting-started/INSTALL_AGENTS_QUICK_START.md)** - Immediate setup
-- **[Complete User Guide](docs/getting-started/INSTALL_AGENTS_USER_GUIDE.md)** - Advanced usage
-- **[Strategic Profile Guide](docs/technical/GLOBAL_AGENTS_SETUP.md)** - Team optimization
+**📚 Documentation:**
+- **[Quick Start Guide](docs/getting-started/INSTALL_AGENTS_QUICK_START.md)** - Setup instructions
+- **[Complete User Guide](docs/getting-started/INSTALL_AGENTS_USER_GUIDE.md)** - Detailed usage
+- **[Agent Configuration Guide](docs/technical/GLOBAL_AGENTS_SETUP.md)** - Configuration options
 
-**🛟 Enterprise Support:**
-- **Intelligent troubleshooting** with `--health` and `--repair` commands
-- **Migration tools** from legacy systems via `./migrate-to-symlinks.sh`
-- **Bash completion** for enhanced developer experience
-- **Real-time health monitoring** and automated maintenance
+**🛟 Tools:**
+- Troubleshooting with `--health` and `--repair` commands
+- Migration tools via `./migrate-to-symlinks.sh`
+- Bash completion for better command-line experience
+- Health monitoring and maintenance tools
 
-**Ready to lead your market with AI-enhanced development?** Install AgentGen now and unlock transformational productivity gains with validated enterprise results.
+**Ready to try AgentGen?** Install it and start using AI agents for your development tasks.
 
 ## 🎮 Developer Experience
 
 ### Usage Patterns Across All Agent Categories
 
-AgentGen provides three seamless interaction methods with enterprise-grade performance optimization:
+AgentGen provides three ways to interact with agents:
 
 #### 1. @-Mention Invocation (Recommended)
-**Direct Access with Intelligent Typeahead**
+**Direct Access with Typeahead**
 ```bash
 # Start typing @ to discover available agents
 @arch...             # Shows: architect-specialist, architect-...
@@ -366,7 +362,7 @@ AgentGen provides three seamless interaction methods with enterprise-grade perfo
 @architect-specialist "design microservices for 1M+ users"      # Red (Complex)
 ```
 
-#### 2. Auto-Activation (Intelligent Detection)
+#### 2. Auto-Activation (Automatic Detection)
 **Context-Aware Agent Selection Based on Task Description**
 ```bash
 # These phrases automatically activate specific agents:
@@ -377,195 +373,164 @@ AgentGen provides three seamless interaction methods with enterprise-grade perfo
 "debug failing integration tests"                # → @debugger + @test-automator
 ```
 
-#### 3. Orchestrated Workflows (Enterprise Coordination)
+#### 3. Orchestrated Workflows (Agent Coordination)
 **Multi-Agent Coordination with Context-Manager Integration**
 ```bash
-# Intelligent orchestration (RECOMMENDED for complex tasks)
+# Agent orchestration (RECOMMENDED for complex tasks)
 @orchestrate-tasks "comprehensive security audit with modernization"
 @orchestrate-tasks "build user authentication with testing and deployment"
 @orchestrate-tasks "optimize application performance across full stack"
 
-# Enterprise-scale coordination
+# Large-scale coordination
 @orchestrate-agents-adv "modernize legacy system with security compliance"
 ```
 
 ### Comprehensive Agent Examples by Category
 
 #### 🏗️ Core Development (8 agents)
-**Enterprise Development Fundamentals with 200%+ Performance Gains**
+**Development Fundamentals**
 
 ```bash
-# Architecture & Analysis (Red Complexity - Advanced Reasoning)
+# Architecture & Analysis (Complex tasks)
 @analyze-codebase "assess technical debt and architectural patterns"
-# → Comprehensive codebase analysis, dependency mapping, architectural assessment
-# → Performance: <2s for 100K+ LOC, identifies 95% of architectural issues
+# → Codebase analysis, dependency mapping, architectural assessment
 
 @analyze-performance "identify bottlenecks in microservices architecture"  
-# → Advanced performance profiling, bottleneck identification, optimization roadmap
-# → Performance: Multi-system analysis, 85% accurate bottleneck identification
+# → Performance profiling, bottleneck identification, optimization recommendations
 
-# Frontend Development (Yellow Complexity - Advanced Workflows)
+# Frontend Development (Standard workflows)
 @build-frontend "create responsive admin dashboard with real-time updates"
-# → Modern React/Vue components, responsive design, state management, WebSocket integration
-# → Output: Production-ready components with accessibility compliance
+# → React/Vue components, responsive design, state management, WebSocket integration
 
-# Backend Development (Yellow Complexity - Complex Integration)
+# Backend Development (Complex integration)
 @build-backend "implement OAuth2 authentication with rate limiting"
 # → RESTful/GraphQL APIs, authentication, database integration, security implementation
-# → Standards: OpenAPI documentation, comprehensive error handling
 
-# Quality Assurance (Yellow Complexity - Systematic Testing)
+# Quality Assurance (Systematic testing)
 @debug-issue "investigate memory leaks in Node.js application"
-# → Systematic debugging, root cause analysis, memory profiling, performance optimization
-# → Success Rate: 95% issue resolution with comprehensive documentation
+# → Systematic debugging, root cause analysis, memory profiling
 
 @test-automation "create comprehensive test suite for payment processing"
-# → Unit/integration/E2E tests, coverage analysis, CI/CD integration, performance testing
-# → Coverage: >95% code coverage with realistic test scenarios
+# → Unit/integration/E2E tests, coverage analysis, CI/CD integration
 
 @review-code "security-focused code review for financial application"
-# → Security vulnerability scanning, OWASP compliance, code quality analysis, performance review  
-# → Standards: Enterprise security compliance, comprehensive quality metrics
+# → Security vulnerability scanning, code quality analysis, performance review
 
 @generate-documentation "API documentation with interactive examples"
 # → Technical documentation, API references, user guides, architectural documentation
-# → Quality: Technical writing excellence with user-centric approach
 ```
 
 #### 🚀 Infrastructure & DevOps (5 agents)
-**Enterprise Infrastructure with Validated Reliability**
+**Infrastructure and Operations**
 
 ```bash
-# Cloud & Deployment (Yellow Complexity - Multi-System Integration)
+# Cloud & Deployment (Multi-system integration)
 @deploy-application "containerized microservices deployment with monitoring"
 # → Docker/Kubernetes deployment, CI/CD pipelines, infrastructure as code, monitoring setup
-# → Reliability: 99.9% uptime with automated rollback capabilities
 
 @manage-database "PostgreSQL performance optimization with automated backup"
 # → Database optimization, query tuning, backup strategies, disaster recovery, monitoring
-# → Performance: 3x query performance improvement, automated maintenance
 
-# Environment Management (Green Complexity - Streamlined Operations)
+# Environment Management (Streamlined operations)
 @configure-environment "development environment setup with security hardening"
 # → Environment configuration, security hardening, dependency management, automation
-# → Efficiency: 90% setup time reduction with reproducible environments
 
 @monitor-system "comprehensive application monitoring with alerting"
 # → System monitoring, alerting, log aggregation, performance tracking, incident response
-# → Coverage: 360-degree visibility with proactive issue detection
 
-@secure-application "enterprise security audit with compliance validation"
+@secure-application "security audit with compliance validation"
 # → Security assessment, vulnerability scanning, compliance verification, hardening recommendations
-# → Compliance: SOC2, GDPR, HIPAA compliance with automated validation
 ```
 
 #### 👨‍💻 Specialist Agents (7 agents)
-**Domain Expertise with 800+ Knowledge Patterns Each**
+**Domain-Specific Expertise**
 
 ```bash
-# Programming Language Specialists (Yellow Complexity - Advanced Patterns)
+# Programming Language Specialists (Advanced patterns)
 @python-specialist "advanced async patterns for high-performance data processing"
 # → Advanced Python patterns, performance optimization, async/await mastery, data engineering
-# → Expertise: 500+ Python patterns, PEP compliance, performance optimization
 
-@react-specialist "enterprise React application with state management architecture"  
+@react-specialist "React application with state management architecture"  
 # → Modern React patterns, performance optimization, state management, component architecture
-# → Expertise: React 18+ features, SSR/SSG, performance optimization, testing strategies
 
-# Architecture & Data Specialists (Red Complexity - Enterprise Reasoning)
-@architect-specialist "microservices architecture for 10M+ user platform"
+# Architecture & Data Specialists (Complex reasoning)
+@architect-specialist "microservices architecture for scalable platform"
 # → System architecture, microservices design, scalability planning, technology selection
-# → Capability: Enterprise-scale architecture, distributed systems, performance engineering
 
 @database-specialist "multi-region database architecture with ACID compliance"
 # → Database architecture, optimization, scalability, data modeling, performance tuning
-# → Expertise: Multi-database expertise, sharding strategies, performance optimization
 
-@security-specialist "zero-trust security architecture with threat modeling"
+@security-specialist "security architecture with threat modeling"
 # → Security architecture, threat modeling, vulnerability assessment, compliance frameworks
-# → Knowledge: 1200+ vulnerability patterns, compliance expertise, incident response
 
 @ml-specialist "production ML pipeline with automated model deployment"
 # → Machine learning architecture, model deployment, data pipelines, MLOps, performance monitoring
-# → Capability: End-to-end ML lifecycle, automated deployment, performance optimization
 ```
 
 #### 📝 Content & Communication (4 agents)
-**Professional Communication with Cultural Intelligence**
+**Professional Communication**
 
 ```bash
-# Content Creation (Green/Yellow Complexity - Audience-Focused)
+# Content Creation (Audience-focused)
 @write-content "technical blog post with code examples and performance metrics"
-# → Technical writing, marketing content, documentation, user guides with audience optimization
-# → Quality: Professional writing standards with technical accuracy
+# → Technical writing, marketing content, documentation, user guides
 
 @translate-text "technical documentation localization for global development teams"
 # → Translation, localization, cultural adaptation, technical terminology management
-# → Accuracy: Native-level fluency with technical domain expertise
 
 @create-lesson "interactive React tutorial with hands-on exercises"
 # → Educational content, tutorials, training materials, interactive learning experiences
-# → Effectiveness: Pedagogical expertise with engagement optimization
 
 @update-status "executive project status report with risk analysis"
 # → Status reporting, progress tracking, executive communication, risk management
-# → Impact: Clear communication with actionable insights
 ```
 
 #### 📊 Data & AI (4 agents)  
-**Data Intelligence with ML Integration**
+**Data and AI Tasks**
 
 ```bash
-# Data Processing (Yellow Complexity - Advanced Analytics)
+# Data Processing (Advanced analytics)
 @process-data "real-time data pipeline with anomaly detection"
 # → ETL pipelines, data transformation, real-time processing, quality validation
-# → Performance: Scalable processing with quality guarantees
 
 @train-model "deep learning model for production deployment"
-# → Model training, hyperparameter optimization, deployment, monitoring, performance optimization
-# → Capability: End-to-end ML lifecycle with production readiness
+# → Model training, hyperparameter optimization, deployment, monitoring
 
 @query-database "complex analytical queries with performance optimization"
 # → Database queries, optimization, analytics, reporting, data modeling
-# → Efficiency: Optimized queries with comprehensive analysis
 
 @extract-insights "business intelligence dashboard with predictive analytics"
-# → Data analysis, visualization, insights generation, business intelligence, predictive modeling
-# → Value: Actionable business insights with data-driven recommendations
+# → Data analysis, visualization, insights generation, business intelligence
 ```
 
 #### 🛠️ Specialized Tools (4 agents)
-**Automation & Orchestration with Proven Reliability**
+**Automation & Orchestration**
 
 ```bash
-# Visual & Analysis Tools (Green Complexity - Rapid Processing)
+# Visual & Analysis Tools (Rapid processing)
 @analyze-screenshot "extract business requirements from UI mockups"
 # → Image analysis, UI extraction, visual verification, data processing
-# → Performance: <500ms analysis with 95% accuracy
 
 @manage-git "comprehensive git workflow with automated quality checks"  
 # → Git operations, workflow management, branch strategies, automated validation
-# → Reliability: Conflict-free workflows with automated quality gates
 
-# Enterprise Coordination (Red Complexity - Strategic Orchestration)
+# Coordination (Strategic orchestration)
 @export-context "comprehensive project knowledge export with documentation"
 # → Context export, knowledge management, documentation generation, project analysis
-# → Coverage: Complete project understanding with structured knowledge
 
-@orchestrate-tasks "enterprise-scale task coordination with quality validation"
-# → Task orchestration, workflow management, quality gates, performance optimization
-# → Success Rate: 100% validated success rate with systematic methodology
+@orchestrate-tasks "task coordination with quality validation"
+# → Task orchestration, workflow management, quality gates
 ```
 
 ### Performance Optimization Guidelines
 
-#### 3x Faster Loading with <400 Character Optimization
+#### Faster Loading with Character Optimization
 ```yaml
 Agent Optimization Strategy:
   Character Limit: <400 characters per agent description
   Loading Time: <100ms per agent initialization  
-  Context Preservation: 95% information retention
-  Token Efficiency: 30-50% reduction vs standard implementations
+  Context Preservation: Good information retention
+  Token Efficiency: Reduced token usage vs standard implementations
 
 Performance Metrics:
   Simple Agents (Green): <50ms initialization
@@ -579,14 +544,14 @@ Performance Metrics:
 Context Management:
   Main Conversation: Preserved during agent delegation
   Project Context: Maintained via Context-Manager integration
-  Knowledge Transfer: Seamless handoff between agents
+  Knowledge Transfer: Handoff between agents
   Quality Gates: Validation checkpoints prevent information loss
 
 Benefits:
-  - 95% context retention across agent interactions
+  - Good context retention across agent interactions
   - Reduced redundant questions and clarifications
-  - Intelligent project understanding without re-explanation
-  - Seamless multi-agent workflows with context awareness
+  - Project understanding without re-explanation
+  - Multi-agent workflows with context awareness
 ```
 
 #### Cost Optimization Through Tiered Model Usage
@@ -594,60 +559,60 @@ Benefits:
 Model Selection Strategy:
   Green (Haiku): Simple tasks, file operations, status updates
   Yellow (Sonnet 3.5): Standard development, basic workflows
-  Red (Opus): Complex reasoning, architectural decisions, enterprise coordination
+  Red (Opus): Complex reasoning, architectural decisions, coordination
 
 Cost Benefits:
-  - 70-80% cost reduction through intelligent routing
+  - Cost reduction through intelligent routing
   - Complexity-appropriate model selection
-  - Minimal token waste on over-powered models
-  - Strategic batching for related operations
+  - Reduced token waste on over-powered models
+  - Batching for related operations
 
 Orchestration Layers:
-  1. @orchestrate-tasks (Yellow): Intelligent task routing and analysis
+  1. @orchestrate-tasks (Yellow): Task routing and analysis
   2. @orchestrate-agents (Orange): 1-3 agent coordination  
-  3. @orchestrate-agents-adv (Red): Complex enterprise workflows
+  3. @orchestrate-agents-adv (Red): Complex workflows
 ```
 
-#### Integration with BRAINPOD Architecture
+#### Integration with Agent Coordination Architecture
 ```yaml
-BRAINPOD Integration:
-  Chroma: Vector-based knowledge retrieval <500ms
-  Qdrant: High-performance similarity search <200ms
-  Redis: Fast caching and session management <50ms
-  Context-Manager: Project-aware coordination <100ms
+System Integration:
+  Chroma: Vector-based knowledge retrieval
+  Qdrant: Similarity search
+  Redis: Caching and session management
+  Context-Manager: Project-aware coordination
 
-Knowledge Enhancement:
-  - 800+ patterns per specialist domain
-  - Real-time knowledge synthesis
-  - Bi-weekly knowledge refresh for currency
-  - 95% source authority from curated enterprise sources
+Knowledge Features:
+  - Domain-specific patterns per specialist
+  - Knowledge synthesis
+  - Regular knowledge updates
+  - Curated sources
 
-Performance Standards:
-  - <500ms for complex knowledge synthesis  
-  - >95% domain accuracy across all specializations
-  - 30%+ development velocity improvement
-  - Real-time learning with automated knowledge updates
+Performance:
+  - Fast knowledge synthesis
+  - Good domain accuracy across specializations
+  - Improved development workflow
+  - Regular learning updates
 ```
 
 ### Team Collaboration Patterns
 
-#### Strategic Profile Selection for Enterprise Teams
+#### Agent Configuration Selection for Teams
 ```yaml
 Decision Matrix:
 
-Enterprise Leadership (50+ people, $480K+ value):
+Enterprise Leadership (50+ people):
   - Strategic decision-making and risk management
   - Compliance and security architecture  
   - Business alignment and organizational coordination
   - Best for: C-level decisions, enterprise architecture, regulatory compliance
 
-Modern Web Stack (15-50 people, $360K+ value):
+Modern Web Stack (15-50 people):
   - React/TypeScript specialization with modern tooling
   - Component libraries and design system integration
   - Full-stack development with performance optimization
   - Best for: Modern web applications, UI/UX excellence, rapid iteration
 
-Startup MVP (5-15 people, $240K+ value):
+Startup MVP (5-15 people):
   - Lean development with rapid prototyping
   - Full-stack capabilities with resource efficiency
   - MVP validation and iterative development
@@ -675,9 +640,9 @@ Handoff Patterns:
 
 ## 🏆 Best Practices
 
-### Enterprise Patterns from Industry Research
+### Patterns from Industry Research
 
-Based on comprehensive analysis of Microsoft Azure Architecture Center, Speakeasy practical guides, and Databricks enterprise implementations, AgentGen implements proven enterprise patterns:
+Based on analysis of Azure Architecture Center, Speakeasy guides, and Databricks implementations, AgentGen implements proven patterns:
 
 #### Architecture Pattern Selection
 
@@ -695,7 +660,7 @@ Examples:
   - @architect-specialist for system architecture design and validation
 
 Benefits:
-  - 3x faster execution with direct expertise access
+  - Faster execution with direct expertise access
   - Reduced coordination overhead and token consumption  
   - Clear accountability and ownership
   - Simplified debugging and maintenance
@@ -766,7 +731,7 @@ Security Best Practices:
 ```yaml
 Latency Management:
   - <100ms agent initialization with character limit optimization
-  - <500ms for complex knowledge synthesis via BRAINPOD
+  - Fast complex knowledge synthesis
   - <200ms for cross-agent communication via Context-Manager
   - Intelligent caching reduces redundant processing by 60-80%
 
@@ -779,7 +744,7 @@ Resource Optimization:
 Scalability Patterns:
   - Stateless agent design enables horizontal scaling  
   - Context-Manager provides centralized state management
-  - BRAINPOD architecture supports 10M+ concurrent operations
+  - Architecture supports many concurrent operations
   - Load balancing across orchestration layers prevents bottlenecks
 ```
 
@@ -798,7 +763,7 @@ Recovery Mechanisms:
   - Rollback capabilities for failed operations
 
 Quality Assurance:
-  - 100% test success rate methodology (validated on @orchestrate-tasks)
+  - Comprehensive test success rate methodology (implemented on @orchestrate-tasks)
   - Comprehensive validation framework with evidence-based improvements
   - Performance monitoring with automated alerting
   - Continuous improvement based on usage analytics
@@ -838,7 +803,7 @@ Unit Testing:
 Integration Testing:
   - Multi-agent workflow validation
   - Context-Manager integration testing
-  - BRAINPOD knowledge retrieval testing
+  - Knowledge retrieval testing
   - End-to-end user experience validation
 
 Enterprise Testing:
@@ -929,7 +894,7 @@ Operational Readiness:
 Performance Metrics:
   - Agent response time and initialization latency
   - Token consumption and cost optimization effectiveness
-  - Resource utilization across BRAINPOD components
+  - Resource utilization across system components
   - User satisfaction and productivity improvement metrics
 
 Quality Metrics:
@@ -939,9 +904,9 @@ Quality Metrics:
   - Compliance adherence and security incident tracking
 
 Business Metrics:
-  - Development velocity improvement (target: 200%+)
-  - Expert consultation reduction (target: 85%+)
-  - Knowledge utilization rate (target: 95%+)
+  - Development velocity improvement
+  - Expert consultation reduction
+  - Knowledge utilization rate
   - ROI validation and value creation tracking
 ```
 
@@ -960,7 +925,7 @@ Version Management:
   - Change management with user communication and training
 
 Knowledge Management:
-  - BRAINPOD knowledge base maintenance and curation
+  - Knowledge base maintenance and curation
   - Source authority validation and quality assurance
   - Pattern extraction and refinement from usage analytics
   - Community feedback integration and response
@@ -991,11 +956,11 @@ Review Process:
 
 #### Knowledge Enhancement Guidelines
 ```yaml
-BRAINPOD Integration:
-  - Source authority validation (target: >95%)
+System Integration:
+  - Source authority validation
   - Knowledge pattern extraction and validation
-  - Bi-weekly refresh cycles for critical domains
-  - Performance optimization for <500ms synthesis
+  - Regular refresh cycles for critical domains
+  - Performance optimization for fast synthesis
 
 Quality Assurance:
   - Domain accuracy validation with subject matter experts

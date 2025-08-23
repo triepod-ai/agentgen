@@ -10,3 +10,4 @@ deprecated/
 .claude/hooks/
 __pycache__/
 .env
+.pytest_cache

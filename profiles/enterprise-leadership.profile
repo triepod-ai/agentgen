@@ -8,7 +8,7 @@ description: Strategic decision-makers: architecture, security, infrastructure, 
 agents:
   # Strategic Leadership
   - architect-specialist
-  - security-auditor
+  - security-auditor-enhanced
   - cloud-architect-specialist
   - performance-engineer
   

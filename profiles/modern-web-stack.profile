@@ -9,7 +9,7 @@ description: Complete modern web development stack for TypeScript/React applicat
 agents:
   # Modern Frontend Architecture (5 agents)
   - nextjs-pro
-  - react-pro
+  - react-specialist-enhanced
   - frontend-developer
   - ui-designer
   - ux-designer

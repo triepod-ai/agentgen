@@ -61,11 +61,13 @@ PROJECT_PATH="."        # Default to current directory
 # Script directory with symlink resolution
 REAL_SCRIPT="$(readlink -f "${BASH_SOURCE[0]}")"
 SCRIPT_DIR="$(cd "$(dirname "$REAL_SCRIPT")" && pwd)"
-SUBMODULE_DIR="$SCRIPT_DIR/submodules/claude-code-sub-agents"
+# SUBMODULE_DIR removed - using agents hub only
 PROFILES_DIR="$SCRIPT_DIR/profiles"
 SIMPLE_AGENTS_DIR="$SCRIPT_DIR/simple-agents"
 ARCHIVE_AGENTS_DIR="$SCRIPT_DIR/archive/agents"
 AGENTS_HUB="${AGENTS_HUB:-$SCRIPT_DIR/agents}"
+# Define all agent categories (single source of truth)
+AGENT_CATEGORIES="business content core data development experimental infrastructure quality simple specialists test tools"
 
 # Function to display help
 show_help() {
@@ -298,7 +300,7 @@ get_profile_agents_symlink() {
             agents+=($(get_category_agents "simple"))
             ;;
         "all")
-            for category in core development specialists infrastructure quality content data tools simple; do
+            for category in $AGENT_CATEGORIES; do
                 agents+=($(get_category_agents "$category"))
             done
             ;;
@@ -414,7 +416,7 @@ repair_links() {
             
             # Try to find the agent in the hub
             local found_agent=""
-            for category in core development specialists infrastructure quality content data tools simple; do
+            for category in $AGENT_CATEGORIES; do
                 local candidate="$AGENTS_HUB/$category/$agent_name.md"
                 if [[ -f "$candidate" ]]; then
                     found_agent="$candidate"
@@ -649,36 +651,13 @@ list_agents() {
         [ -f "$category_dir/$agent_name-enhanced.md" ]
     }
     
-    # Check if submodule exists and list from it first
-    if [ -d "$SUBMODULE_DIR" ]; then
-        # List by category from submodule
-        for category in business data-ai development infrastructure quality-testing security specialization; do
-            if [ -d "$SUBMODULE_DIR/$category" ]; then
-                echo -e "${GREEN}$category:${NC}"
-                get_unique_agents "$SUBMODULE_DIR/$category" | while read -r agent; do
-                    echo "  - $agent"
-                done
-                echo ""
-            fi
-        done
-        
-        # List root-level agents from submodule
-        echo -e "${GREEN}general:${NC}"
-        for agent in "$SUBMODULE_DIR"/*.md; do
-            if [ -f "$agent" ] && [ "$(basename "$agent")" != "README.md" ] && [ "$(basename "$agent")" != "CLAUDE.md" ]; then
-                basename "$agent" .md | sed 's/^/  - /'
-            fi
-        done
-    fi
-    
-    # Also list from agents hub (local agents)
+    # List agents from the agents hub
     if [ -d "$AGENTS_HUB" ]; then
-        echo ""
-        print_info "Additional agents from local hub:"
+        print_info "Available agents from hub:"
         echo ""
         
         # List by category from hub with enhanced prioritization
-        for category in core development specialists infrastructure quality content data tools simple; do
+        for category in $AGENT_CATEGORIES; do
             if [ -d "$AGENTS_HUB/$category" ]; then
                 local agents_in_category=()
                 while IFS= read -r agent; do
@@ -838,7 +817,7 @@ find_agent_file() {
     # First check for enhanced versions, then fallback to regular versions
     if [[ -d "$AGENTS_HUB" ]]; then
         # Check for enhanced version first (agent_name-enhanced.md)
-        for category in core development specialists infrastructure quality content data tools simple; do
+        for category in $AGENT_CATEGORIES; do
             if [[ -f "$AGENTS_HUB/$category/$agent_name-enhanced.md" ]]; then
                 echo "$AGENTS_HUB/$category/$agent_name-enhanced.md"
                 return 0
@@ -846,7 +825,7 @@ find_agent_file() {
         done
         
         # Fallback to regular version (agent_name.md)
-        for category in core development specialists infrastructure quality content data tools simple; do
+        for category in $AGENT_CATEGORIES; do
             if [[ -f "$AGENTS_HUB/$category/$agent_name.md" ]]; then
                 echo "$AGENTS_HUB/$category/$agent_name.md"
                 return 0
@@ -854,24 +833,7 @@ find_agent_file() {
         done
     fi
     
-    # PRIORITY 2: Check in submodule (legacy support)
-    if [[ -d "$SUBMODULE_DIR" ]]; then
-        # Check in each category
-        for category in business data-ai development infrastructure quality-testing security specialization; do
-            if [ -f "$SUBMODULE_DIR/$category/$agent_name.md" ]; then
-                echo "$SUBMODULE_DIR/$category/$agent_name.md"
-                return 0
-            fi
-        done
-        
-        # Check in root
-        if [ -f "$SUBMODULE_DIR/$agent_name.md" ]; then
-            echo "$SUBMODULE_DIR/$agent_name.md"
-            return 0
-        fi
-    fi
-    
-    # PRIORITY 3: Check in simple agents directory
+    # PRIORITY 2: Check in simple agents directory
     if [ -f "$SIMPLE_AGENTS_DIR/$agent_name.md" ]; then
         echo "$SIMPLE_AGENTS_DIR/$agent_name.md"
         return 0
@@ -1152,10 +1114,10 @@ This project has the following specialized AI sub-agents available:
     
     # Add each agent with proper categorization
     for agent in "${installed_agents[@]}"; do
-        # Try to determine category
+        # Try to determine category from agents hub
         local category="general"
-        for cat in business data-ai development infrastructure quality-testing security specialization; do
-            if [ -f "$SUBMODULE_DIR/$cat/$agent.md" ]; then
+        for cat in $AGENT_CATEGORIES; do
+            if [ -f "$AGENTS_HUB/$cat/$agent.md" ] || [ -f "$AGENTS_HUB/$cat/$agent-enhanced.md" ]; then
                 category="$cat"
                 break
             fi
@@ -1221,11 +1183,11 @@ install_all_agents() {
     
     print_info "Installing all available agents..."
     
-    # Install from each category
-    for category in business data-ai development infrastructure quality-testing security specialization; do
-        if [ -d "$SUBMODULE_DIR/$category" ]; then
+    # Install from each category in agents hub
+    for category in $AGENT_CATEGORIES; do
+        if [ -d "$AGENTS_HUB/$category" ]; then
             [ "$VERBOSE" = true ] && print_info "Processing category: $category"
-            for agent_file in "$SUBMODULE_DIR/$category"/*.md; do
+            for agent_file in "$AGENTS_HUB/$category"/*.md; do
                 if [ -f "$agent_file" ]; then
                     set +e  # Temporarily disable exit on error
                     install_agent "$agent_file" "$target_dir"
@@ -1241,20 +1203,7 @@ install_all_agents() {
         fi
     done
     
-    # Install root-level agents
-    for agent_file in "$SUBMODULE_DIR"/*.md; do
-        if [ -f "$agent_file" ] && [ "$(basename "$agent_file")" != "README.md" ] && [ "$(basename "$agent_file")" != "CLAUDE.md" ]; then
-            set +e  # Temporarily disable exit on error
-            install_agent "$agent_file" "$target_dir"
-            install_result=$?
-            if [ $install_result -eq 0 ]; then
-                ((count++))
-            else
-                ((skipped++))
-            fi
-            set -e  # Re-enable exit on error
-        fi
-    done
+    # Root-level agents removed - all agents are now categorized in agents hub
     
     print_success "Installation complete: $count agents installed, $skipped skipped"
 }
@@ -1559,16 +1508,7 @@ if [[ "$SYMLINK_MODE" == "true" ]]; then
     fi
 fi
 
-# Check if submodule is initialized (for copy mode only)
-if [[ "$COPY_MODE" == "true" ]] && [ ! -d "$SUBMODULE_DIR" ]; then
-    print_error "Submodule not found at: $SUBMODULE_DIR"
-    print_info "Initializing submodule..."
-    git submodule update --init --recursive
-    if [ ! -d "$SUBMODULE_DIR" ]; then
-        print_error "Failed to initialize submodule"
-        exit 1
-    fi
-fi
+# Submodule initialization removed - using agents hub only
 
 # Handle arguments with new defaults (current directory if none specified)
 # Check if --project flag was used first

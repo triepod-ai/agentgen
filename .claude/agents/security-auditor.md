@@ -1,1 +1,1 @@
-/home/bryan/agentgen/agents/specialists/security-auditor.md
+/home/bryan/agentgen/agents/specialists/security-auditor-enhanced.md

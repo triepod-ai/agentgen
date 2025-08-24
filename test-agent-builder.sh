@@ -7,7 +7,7 @@ echo
 
 # Test 1: Check if agent-builder file exists
 echo "Test 1: Checking agent-builder.md existence..."
-if [ -f "/home/bryan/agentgen/submodules/claude-code-sub-agents/specialization/agent-builder.md" ]; then
+if [ -f "/home/bryan/agentgen/agents/specialists/agent-builder.md" ]; then
     echo "✅ agent-builder.md exists"
 else
     echo "❌ agent-builder.md not found"
@@ -17,7 +17,7 @@ echo
 
 # Test 2: Validate YAML frontmatter
 echo "Test 2: Validating YAML frontmatter..."
-head -n 6 /home/bryan/agentgen/submodules/claude-code-sub-agents/specialization/agent-builder.md | grep -q "name: agent-builder"
+head -n 6 /home/bryan/agentgen/agents/specialists/agent-builder.md | grep -q "name: agent-builder"
 if [ $? -eq 0 ]; then
     echo "✅ YAML frontmatter is valid"
 else
@@ -28,7 +28,7 @@ echo
 
 # Test 3: Check character count
 echo "Test 3: Checking character count (<400 chars)..."
-PROMPT_CONTENT=$(sed -n '/^---$/,/^---$/!p' /home/bryan/agentgen/submodules/claude-code-sub-agents/specialization/agent-builder.md | tail -n +2)
+PROMPT_CONTENT=$(sed -n '/^---$/,/^---$/!p' /home/bryan/agentgen/agents/specialists/agent-builder.md | tail -n +2)
 CHAR_COUNT=$(echo -n "$PROMPT_CONTENT" | wc -c)
 echo "Character count: $CHAR_COUNT"
 if [ $CHAR_COUNT -lt 400 ]; then
@@ -104,7 +104,7 @@ echo
 
 # Display agent info
 echo "=== Agent-Builder Info ==="
-echo "Location: /home/bryan/agentgen/submodules/claude-code-sub-agents/specialization/agent-builder.md"
+echo "Location: /home/bryan/agentgen/agents/specialists/agent-builder.md"
 echo "Templates: /home/bryan/agentgen/templates/"
 echo "Config: /home/bryan/agentgen/config/agent-builder.yaml"
 echo "Character count: $CHAR_COUNT/400"

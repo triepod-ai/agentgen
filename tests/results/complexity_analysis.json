@@ -1,0 +1,1797 @@
+{
+  "readme-updater": {
+    "current_tier": "content",
+    "target_tier": "core",
+    "complexity_score": 0.19,
+    "score_breakdown": {
+      "context_requirements": 0.1,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.19
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/content/readme-updater.md",
+    "description": "Update README files with current project info. Use for documentation updates and professional content.",
+    "tool_count": 4,
+    "mcp_tools": [],
+    "content_length": 388
+  },
+  "create-lesson": {
+    "current_tier": "content",
+    "target_tier": "core",
+    "complexity_score": 0.29000000000000004,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.29000000000000004
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/content/create-lesson.md",
+    "description": "Create educational content, tutorials, learning materials. Use for lesson creation and knowledge transfer.",
+    "tool_count": 3,
+    "mcp_tools": [],
+    "content_length": 323
+  },
+  "changelog-writer": {
+    "current_tier": "content",
+    "target_tier": "core",
+    "complexity_score": 0.24,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.24
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/content/changelog-writer.md",
+    "description": "Generate CHANGELOG.md with semantic versioning. Use for release notes.",
+    "tool_count": 1,
+    "mcp_tools": [],
+    "content_length": 250
+  },
+  "test-automation": {
+    "current_tier": "quality",
+    "target_tier": "core",
+    "complexity_score": 0.29000000000000004,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.29000000000000004
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/quality/test-automation.md",
+    "description": "Create tests, automate testing, test coverage analysis. Use for unit tests, integration tests, test suites.",
+    "tool_count": 4,
+    "mcp_tools": [],
+    "content_length": 323
+  },
+  "test-automator": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 1.0,
+    "score_breakdown": {
+      "context_requirements": 0.3,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 1.0
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/test-automator.md",
+    "description": "A Test Automation Specialist responsible for designing, implementing, and maintaining a comprehensive automated testing strategy. This role focuses on building robust test suites, setting up and managing CI/CD pipelines for testing, and ensuring high standards of quality and reliability across the software development lifecycle. Use PROACTIVELY for improving test coverage, setting up test automation from scratch, or optimizing testing processes.",
+    "tool_count": 18,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_type",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_take_screenshot"
+    ],
+    "content_length": 11478
+  },
+  "qa-expert": {
+    "current_tier": "quality",
+    "target_tier": "specialists",
+    "complexity_score": 1.0,
+    "score_breakdown": {
+      "context_requirements": 0.3,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 1.0
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/quality/qa-expert.md",
+    "description": "A sophisticated AI Quality Assurance (QA) Expert for designing, implementing, and managing comprehensive QA processes to ensure software products meet the highest standards of quality, reliability, and user satisfaction. Use PROACTIVELY for developing testing strategies, executing detailed test plans, and providing data-driven feedback to development teams.",
+    "tool_count": 19,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_type",
+      "mcp__playwright__browser_take_screenshot"
+    ],
+    "content_length": 10582
+  },
+  "test-generator": {
+    "current_tier": "quality",
+    "target_tier": "core",
+    "complexity_score": 0.24,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.24
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/quality/test-generator.md",
+    "description": "Generate test scenarios and cases. Use for discovering critical bugs and novel testing approaches.",
+    "tool_count": 3,
+    "mcp_tools": [],
+    "content_length": 368
+  },
+  "code-reviewer-pro": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 1.0,
+    "score_breakdown": {
+      "context_requirements": 0.3,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 1.0
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/code-reviewer.md",
+    "description": "An AI-powered senior engineering lead that conducts comprehensive code reviews. It analyzes code for quality, security, maintainability, and adherence to best practices, providing clear, actionable, and educational feedback. Use immediately after writing or modifying code.",
+    "tool_count": 11,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 13299
+  },
+  "debug-issue": {
+    "current_tier": "quality",
+    "target_tier": "core",
+    "complexity_score": 0.24,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.24
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/quality/debug-issue.md",
+    "description": "Debug errors, investigate failures, root cause analysis. Use for bugs, exceptions, unexpected behavior.",
+    "tool_count": 4,
+    "mcp_tools": [],
+    "content_length": 327
+  },
+  "database-manager": {
+    "current_tier": "infrastructure",
+    "target_tier": "development",
+    "complexity_score": 0.6,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.05,
+      "system_impact": 0.1,
+      "total": 0.6
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/infrastructure/database-manager.md",
+    "description": "Database operations and environment specialist for local business directory. Handles bulletproof path resolution, database initialization, Flask app context, and SQLAlchemy setup. Use this agent PROACTIVELY when database operations are needed or environment setup is required.",
+    "tool_count": 3,
+    "mcp_tools": [],
+    "content_length": 5796
+  },
+  "manage-database": {
+    "current_tier": "infrastructure",
+    "target_tier": "core",
+    "complexity_score": 0.32,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.1,
+      "total": 0.32
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/infrastructure/manage-database.md",
+    "description": "Database operations, queries, optimization, migrations. Use for SQL, NoSQL, vector databases, data management.",
+    "tool_count": 3,
+    "mcp_tools": [],
+    "content_length": 326
+  },
+  "cloud-architect-specialist": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/cloud-architect-specialist.md",
+    "description": "A senior cloud architect AI that designs scalable, secure, and cost-efficient AWS, Azure, and GCP infrastructure. It specializes in Terraform for Infrastructure as Code (IaC), implements FinOps best practices for cost optimization, and architects multi-cloud and serverless solutions. PROACTIVELY engage for infrastructure planning, cost reduction analysis, or cloud migration strategies.",
+    "tool_count": 14,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 10718
+  },
+  "deploy-application": {
+    "current_tier": "infrastructure",
+    "target_tier": "core",
+    "complexity_score": 0.24,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.24
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/infrastructure/deploy-application.md",
+    "description": "Deploy applications, CI/CD setup, container deployment, cloud infrastructure. Use for deployment and DevOps tasks.",
+    "tool_count": 3,
+    "mcp_tools": [],
+    "content_length": 333
+  },
+  "deployment-engineer": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/deployment-engineer-specialist.md",
+    "description": "Designs and implements robust CI/CD pipelines, container orchestration, and cloud infrastructure automation. Proactively architects and secures scalable, production-grade deployment workflows using best practices in DevOps and GitOps.",
+    "tool_count": 14,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 9310
+  },
+  "env-reader": {
+    "current_tier": "core",
+    "target_tier": "core",
+    "complexity_score": 0.19,
+    "score_breakdown": {
+      "context_requirements": 0.1,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.19
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/core/env-reader.md",
+    "description": "Read environment variables and .env files. Use for environment inspection.",
+    "tool_count": 1,
+    "mcp_tools": [],
+    "content_length": 251
+  },
+  "analyze-screenshot": {
+    "current_tier": "core",
+    "target_tier": "core",
+    "complexity_score": 0.19,
+    "score_breakdown": {
+      "context_requirements": 0.1,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.19
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/core/analyze-screenshot.md",
+    "description": "Screenshot analysis, UI extraction, visual data processing. Use for image analysis and visual verification.",
+    "tool_count": 1,
+    "mcp_tools": [],
+    "content_length": 316
+  },
+  "log-reader": {
+    "current_tier": "core",
+    "target_tier": "core",
+    "complexity_score": 0.29000000000000004,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.29000000000000004
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/core/log-reader.md",
+    "description": "Read and analyze log files. Use for quick log inspection and error extraction.",
+    "tool_count": 1,
+    "mcp_tools": [],
+    "content_length": 258
+  },
+  "readme-reader": {
+    "current_tier": "core",
+    "target_tier": "core",
+    "complexity_score": 0.19,
+    "score_breakdown": {
+      "context_requirements": 0.1,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.19
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/core/readme-reader.md",
+    "description": "Read README files and extract key info. Use for project understanding.",
+    "tool_count": 1,
+    "mcp_tools": [],
+    "content_length": 255
+  },
+  "config-reader": {
+    "current_tier": "core",
+    "target_tier": "core",
+    "complexity_score": 0.19,
+    "score_breakdown": {
+      "context_requirements": 0.1,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.19
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/core/config-reader.md",
+    "description": "Read configuration files (json, yaml, env, ini). Use for quick config inspection.",
+    "tool_count": 1,
+    "mcp_tools": [],
+    "content_length": 254
+  },
+  "debugger": {
+    "current_tier": "development",
+    "target_tier": "specialists",
+    "complexity_score": 0.8499999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8499999999999999
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/development/debugger.md",
+    "description": "Debugging specialist for errors, test failures, and unexpected behavior. Use proactively when encountering any issues.",
+    "tool_count": 15,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 8752
+  },
+  "analyze-codebase": {
+    "current_tier": "core",
+    "target_tier": "development",
+    "complexity_score": 0.5,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.15,
+      "system_impact": 0.1,
+      "total": 0.5
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/core/analyze-codebase.md",
+    "description": "Analyze code architecture, quality, patterns. Use for code review, architecture analysis, technical debt assessment.",
+    "tool_count": 4,
+    "mcp_tools": [],
+    "content_length": 360
+  },
+  "context-manager": {
+    "current_tier": "core",
+    "target_tier": "specialists",
+    "complexity_score": 0.75,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.15,
+      "system_impact": 0.15,
+      "total": 0.75
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/core/context-manager.md",
+    "description": "Acts as the central nervous system for collaborative AI projects. It continuously audits the project's file system to maintain a real-time map of its structure and purpose, ensuring all agents operate with an accurate and shared understanding of the codebase and its context.",
+    "tool_count": 8,
+    "mcp_tools": [],
+    "content_length": 12861
+  },
+  "update-status": {
+    "current_tier": "core",
+    "target_tier": "core",
+    "complexity_score": 0.24,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.24
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/core/update-status.md",
+    "description": "Update project status, progress reports, status tracking. Use for PROJECT_STATUS.md updates and reporting.",
+    "tool_count": 4,
+    "mcp_tools": [],
+    "content_length": 317
+  },
+  "api-documenter": {
+    "current_tier": "development",
+    "target_tier": "specialists",
+    "complexity_score": 0.99,
+    "score_breakdown": {
+      "context_requirements": 0.3,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.19,
+      "total": 0.99
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/development/api-documenter.md",
+    "description": "A specialist agent that creates comprehensive, developer-first API documentation. It generates OpenAPI 3.0 specs, code examples, SDK usage guides, and full Postman collections.",
+    "tool_count": 13,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs"
+    ],
+    "content_length": 8012
+  },
+  "build-backend": {
+    "current_tier": "development",
+    "target_tier": "development",
+    "complexity_score": 0.5,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.15,
+      "system_impact": 0.1,
+      "total": 0.5
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/development/build-backend.md",
+    "description": "Build APIs, services, database integrations, backend architecture. Use for server-side development, API creation.",
+    "tool_count": 4,
+    "mcp_tools": [],
+    "content_length": 340
+  },
+  "ux-designer": {
+    "current_tier": "development",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/development/ux-designer.md",
+    "description": "A creative and empathetic professional focused on enhancing user satisfaction by improving the usability, accessibility, and pleasure provided in the interaction between the user and a product. Use PROACTIVELY to advocate for the user's needs throughout the entire design process, from initial research to final implementation.",
+    "tool_count": 17,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_snapshot"
+    ],
+    "content_length": 10553
+  },
+  "build-runner": {
+    "current_tier": "development",
+    "target_tier": "core",
+    "complexity_score": 0.29000000000000004,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.29000000000000004
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/development/build-runner.md",
+    "description": "Run build commands (make, npm, cargo, etc). Use for compilation and builds.",
+    "tool_count": 1,
+    "mcp_tools": [],
+    "content_length": 241
+  },
+  "full-stack-developer": {
+    "current_tier": "development",
+    "target_tier": "specialists",
+    "complexity_score": 0.7999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.1,
+      "total": 0.7999999999999999
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/development/full-stack-developer.md",
+    "description": "A versatile AI Full Stack Developer proficient in designing, building, and maintaining all aspects of web applications, from the user interface to the server-side logic and database management. Use PROACTIVELY for end-to-end application development.",
+    "tool_count": 12,
+    "mcp_tools": [],
+    "content_length": 3553
+  },
+  "react-pro": {
+    "current_tier": "development",
+    "target_tier": "specialists",
+    "complexity_score": 0.8499999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8499999999999999
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/development/react-pro.md",
+    "description": "An expert React developer specializing in creating modern, performant, and scalable web applications. Emphasizes a component-based architecture, clean code, and a seamless user experience. Leverages advanced React features like Hooks and the Context API, and is proficient in state management and performance optimization. Use PROACTIVELY for developing new React components, refactoring existing code, and solving complex UI challenges.",
+    "tool_count": 16,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__magic__21st_magic_component_builder",
+      "mcp__magic__21st_magic_component_inspiration",
+      "mcp__magic__21st_magic_component_refiner"
+    ],
+    "content_length": 10885
+  },
+  "ui-designer": {
+    "current_tier": "development",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/development/ui-designer.md",
+    "description": "A creative and detail-oriented AI UI Designer focused on creating visually appealing, intuitive, and user-friendly interfaces for digital products. Use PROACTIVELY for designing and prototyping user interfaces, developing design systems, and ensuring a consistent and engaging user experience across all platforms.",
+    "tool_count": 16,
+    "mcp_tools": [
+      "mcp__magic__21st_magic_component_builder",
+      "mcp__magic__21st_magic_component_refiner",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs"
+    ],
+    "content_length": 10791
+  },
+  "frontend-developer": {
+    "current_tier": "development",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/development/frontend-developer.md",
+    "description": "Acts as a senior frontend engineer and AI pair programmer. Builds robust, performant, and accessible React components with a focus on clean architecture and best practices. Use PROACTIVELY when developing new UI features, refactoring existing code, or addressing complex frontend challenges.",
+    "tool_count": 19,
+    "mcp_tools": [
+      "mcp__magic__21st_magic_component_builder",
+      "mcp__magic__21st_magic_component_refiner",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_click",
+      "mcp__magic__21st_magic_component_builder"
+    ],
+    "content_length": 8507
+  },
+  "build-frontend": {
+    "current_tier": "development",
+    "target_tier": "core",
+    "complexity_score": 0.39999999999999997,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.1,
+      "system_impact": 0.05,
+      "total": 0.39999999999999997
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/development/build-frontend.md",
+    "description": "Build UI components, responsive interfaces, React/Vue/Angular applications. Use for frontend development, component creation.",
+    "tool_count": 3,
+    "mcp_tools": [],
+    "content_length": 351
+  },
+  "documentation-expert": {
+    "current_tier": "development",
+    "target_tier": "specialists",
+    "complexity_score": 0.99,
+    "score_breakdown": {
+      "context_requirements": 0.3,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.19,
+      "total": 0.99
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/development/documentation-expert.md",
+    "description": "A sophisticated AI Software Documentation Expert for designing, creating, and maintaining comprehensive and user-friendly software documentation. Use PROACTIVELY for developing clear, consistent, and accessible documentation for various audiences, including developers, end-users, and stakeholders.",
+    "tool_count": 11,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs"
+    ],
+    "content_length": 10362
+  },
+  "import-finder": {
+    "current_tier": "tools",
+    "target_tier": "core",
+    "complexity_score": 0.22000000000000003,
+    "score_breakdown": {
+      "context_requirements": 0.1,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.05,
+      "total": 0.22000000000000003
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/tools/import-finder.md",
+    "description": "Find imports, requires, and dependencies. Use for dependency analysis.",
+    "tool_count": 1,
+    "mcp_tools": [],
+    "content_length": 242
+  },
+  "settings-fixer": {
+    "current_tier": "tools",
+    "target_tier": "core",
+    "complexity_score": 0.24,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.24
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/tools/settings-fixer.md",
+    "description": "Fix settings.local.json bloat issues. Use for invalid settings errors or file >15KB.",
+    "tool_count": 4,
+    "mcp_tools": [],
+    "content_length": 348
+  },
+  "error-finder": {
+    "current_tier": "tools",
+    "target_tier": "core",
+    "complexity_score": 0.19,
+    "score_breakdown": {
+      "context_requirements": 0.1,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.19
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/tools/error-finder.md",
+    "description": "Find errors, exceptions, and stack traces. Use for quick error location.",
+    "tool_count": 1,
+    "mcp_tools": [],
+    "content_length": 249
+  },
+  "install-agents-manager": {
+    "current_tier": "tools",
+    "target_tier": "development",
+    "complexity_score": 0.6699999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.02,
+      "total": 0.6699999999999999
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/tools/install-agents-manager.md",
+    "description": "Intelligent agent manager for installing and configuring Claude Code agents during sessions. Use proactively when missing agents are detected or specific agent capabilities are needed.",
+    "tool_count": 5,
+    "mcp_tools": [],
+    "content_length": 3032
+  },
+  "orchestrate-agents": {
+    "current_tier": "tools",
+    "target_tier": "specialists",
+    "complexity_score": 0.75,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.15,
+      "system_impact": 0.15,
+      "total": 0.75
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/tools/orchestrate-agents.md",
+    "description": "Standard agent orchestrator for Green/Yellow complexity tasks. Recommends simple utility agents and standard development specialists. Use for straightforward agent selection and basic coordination.",
+    "tool_count": 3,
+    "mcp_tools": [],
+    "content_length": 2229
+  },
+  "agent-builder": {
+    "current_tier": "specialists",
+    "target_tier": "development",
+    "complexity_score": 0.6,
+    "score_breakdown": {
+      "context_requirements": 0.3,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.15,
+      "system_impact": 0.1,
+      "total": 0.6
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/specialists/agent-builder.md",
+    "description": "Creates optimized agents following enterprise patterns. Use for agent generation, optimization, batch creation, and validation. Auto-activates for \"create agent\", \"build agent\", \"optimize agent\" requests.",
+    "tool_count": 7,
+    "mcp_tools": [],
+    "content_length": 645
+  },
+  "dependency-installer": {
+    "current_tier": "tools",
+    "target_tier": "core",
+    "complexity_score": 0.24,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.24
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/tools/dependency-installer.md",
+    "description": "Install dependencies (npm, pip, cargo, go). Use for package installation.",
+    "tool_count": 1,
+    "mcp_tools": [],
+    "content_length": 254
+  },
+  "gitignore-writer": {
+    "current_tier": "tools",
+    "target_tier": "core",
+    "complexity_score": 0.29000000000000004,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.29000000000000004
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/tools/gitignore-writer.md",
+    "description": "Create .gitignore files for any project type. Use for quick gitignore generation.",
+    "tool_count": 1,
+    "mcp_tools": [],
+    "content_length": 267
+  },
+  "workspace-manager": {
+    "current_tier": "tools",
+    "target_tier": "core",
+    "complexity_score": 0.24,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.24
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/tools/workspace-manager.md",
+    "description": "Manage workspace configuration and setup. Use for creating root-level package.json with workspace scripts.",
+    "tool_count": 4,
+    "mcp_tools": [],
+    "content_length": 380
+  },
+  "config-verifier": {
+    "current_tier": "tools",
+    "target_tier": "core",
+    "complexity_score": 0.29000000000000004,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.29000000000000004
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/tools/config-verifier.md",
+    "description": "Verify configuration files and patterns. Use for preventing documentation-implementation gaps.",
+    "tool_count": 3,
+    "mcp_tools": [],
+    "content_length": 348
+  },
+  "orchestrate-tasks": {
+    "current_tier": "tools",
+    "target_tier": "specialists",
+    "complexity_score": 0.85,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.15,
+      "total": 0.85
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/tools/orchestrate-tasks.md",
+    "description": "Master orchestration intelligence layer with automated agent provisioning. Analyzes complexity, installs missing agents, breaks down tasks, and routes to appropriate orchestrators. Use as primary entry point for all orchestration needs.",
+    "tool_count": 8,
+    "mcp_tools": [],
+    "content_length": 10371
+  },
+  "import-sorter": {
+    "current_tier": "tools",
+    "target_tier": "core",
+    "complexity_score": 0.24,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.24
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/tools/import-sorter.md",
+    "description": "Sort and organize imports/requires. Use for import organization.",
+    "tool_count": 1,
+    "mcp_tools": [],
+    "content_length": 222
+  },
+  "orchestrate-agents-adv": {
+    "current_tier": "tools",
+    "target_tier": "specialists",
+    "complexity_score": 0.9500000000000001,
+    "score_breakdown": {
+      "context_requirements": 0.3,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.15,
+      "total": 0.9500000000000001
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/tools/orchestrate-agents-adv.md",
+    "description": "Enterprise agent orchestrator for complex multi-agent workflows requiring 4+ specialists. Handles Red complexity tasks with automatic agent installation, dependency management, and sophisticated coordination patterns.",
+    "tool_count": 5,
+    "mcp_tools": [],
+    "content_length": 8563
+  },
+  "project-archiver": {
+    "current_tier": "tools",
+    "target_tier": "core",
+    "complexity_score": 0.32,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.1,
+      "total": 0.32
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/tools/project-archiver.md",
+    "description": "Archive project data to memory systems. Use for large PROJECT_STATUS.md files needing archiving.",
+    "tool_count": 3,
+    "mcp_tools": [],
+    "content_length": 368
+  },
+  "git-executor": {
+    "current_tier": "tools",
+    "target_tier": "core",
+    "complexity_score": 0.24,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.24
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/tools/git-executor.md",
+    "description": "Execute git commands (status, diff, log, branch). Use for version control ops.",
+    "tool_count": 1,
+    "mcp_tools": [],
+    "content_length": 237
+  },
+  "migration-helper": {
+    "current_tier": "tools",
+    "target_tier": "core",
+    "complexity_score": 0.37,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.15,
+      "total": 0.37
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/tools/migration-helper.md",
+    "description": "Help with project migrations and updates. Use for database migrations, code refactoring, and system upgrades.",
+    "tool_count": 4,
+    "mcp_tools": [],
+    "content_length": 387
+  },
+  "product-manager": {
+    "current_tier": "business",
+    "target_tier": "specialists",
+    "complexity_score": 0.8499999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8499999999999999
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/business/product-manager.md",
+    "description": "A strategic and customer-focused AI Product Manager for defining product vision, strategy, and roadmaps, and leading cross-functional teams to deliver successful products. Use PROACTIVELY for developing product strategies, prioritizing features, and ensuring alignment between business goals and user needs.",
+    "tool_count": 14,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 10250
+  },
+  "treepod-local-dir-import": {
+    "current_tier": "business",
+    "target_tier": "development",
+    "complexity_score": 0.6,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.05,
+      "system_impact": 0.1,
+      "total": 0.6
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/business/business-integrator.md",
+    "description": "Data integration and transaction specialist for business listings. Executes database insertions with duplicate detection, transaction safety, and rollback capability. Use this agent PROACTIVELY when integrating validated business data into the database.",
+    "tool_count": 4,
+    "mcp_tools": [],
+    "content_length": 8849
+  },
+  "business-data-validator": {
+    "current_tier": "business",
+    "target_tier": "development",
+    "complexity_score": 0.57,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.02,
+      "system_impact": 0.1,
+      "total": 0.57
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/business/business-data-validator.md",
+    "description": "Data parsing and validation specialist for business listings. Parses multiple input formats (JSON, CSV, structured text) and validates required fields. Use this agent PROACTIVELY when processing business data imports or staging business listings.",
+    "tool_count": 2,
+    "mcp_tools": [],
+    "content_length": 4368
+  },
+  "token-optimizer": {
+    "current_tier": "specialists",
+    "target_tier": "development",
+    "complexity_score": 0.52,
+    "score_breakdown": {
+      "context_requirements": 0.3,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.15,
+      "system_impact": 0.02,
+      "total": 0.52
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/specialists/token-optimizer.md",
+    "description": "Optimize token usage and MCP performance. Use for applying tool filtering and optimization frameworks.",
+    "tool_count": 2,
+    "mcp_tools": [],
+    "content_length": 356
+  },
+  "legacy-modernizer": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8499999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8499999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/legacy-modernizer.md",
+    "description": "A specialist agent for planning and executing the incremental modernization of legacy systems. It refactors aging codebases, migrates outdated frameworks, and decomposes monoliths safely. Use this to reduce technical debt, improve maintainability, and upgrade technology stacks without disrupting operations.",
+    "tool_count": 15,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 10085
+  },
+  "nextjs-pro": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/nextjs-pro.md",
+    "description": "An expert Next.js developer specializing in building high-performance, scalable, and SEO-friendly web applications.Leverages the full potential of Next.js, including Server-Side Rendering (SSR), Static Site Generation (SSG), and the App Router.Focuses on modern development practices, robust testing, and creating exceptional user experiences. Use PROACTIVELY for architecting new Next.js projects, performance optimization, or implementing complex features.",
+    "tool_count": 15,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__magic__21st_magic_component_builder",
+      "mcp__magic__21st_magic_component_inspiration",
+      "mcp__magic__21st_magic_component_refiner"
+    ],
+    "content_length": 10729
+  },
+  "dx-optimizer": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8499999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8499999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/dx-optimizer.md",
+    "description": "A specialist in Developer Experience (DX). My purpose is to proactively improve tooling, setup, and workflows, especially when initiating new projects, responding to team feedback, or when friction in the development process is identified.",
+    "tool_count": 14,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 9767
+  },
+  "full-stack-architect": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 1.0,
+    "score_breakdown": {
+      "context_requirements": 0.3,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 1.0
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/full-stack-architect.md",
+    "description": "An enterprise AI Full Stack Architect specializing in large-scale web application architecture, system design, and technology stack optimization. Use PROACTIVELY for complex enterprise architecture, cross-system integration, and strategic technical decision-making across the full technology stack.",
+    "tool_count": 16,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking",
+      "mcp__magic__21st_magic_component_builder"
+    ],
+    "content_length": 11470
+  },
+  "react-specialist": {
+    "current_tier": "specialists",
+    "target_tier": "development",
+    "complexity_score": 0.5,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.2,
+      "system_impact": 0.1,
+      "total": 0.5
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/specialists/react-specialist.md",
+    "description": "React expert for hooks, context, performance, SSR/SSG, state management. Use for complex React architectures.",
+    "tool_count": 5,
+    "mcp_tools": [],
+    "content_length": 588
+  },
+  "incident-responder": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8499999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8499999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/incident-responder.md",
+    "description": "A battle-tested Incident Commander persona for leading the response to critical production incidents with urgency, precision, and clear communication, based on Google SRE and other industry best practices. Use IMMEDIATELY when production issues occur.",
+    "tool_count": 14,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 10246
+  },
+  "ai-engineer": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/ai-engineer.md",
+    "description": "A highly specialized AI agent for designing, building, and optimizing LLM-powered applications, RAG systems, and complex prompt pipelines. This agent implements vector search, orchestrates agentic workflows, and integrates with various AI APIs. Use PROACTIVELY for developing and enhancing LLM features, chatbots, or any AI-driven application.",
+    "tool_count": 14,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 9778
+  },
+  "database-optimizer": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/database-optimizer.md",
+    "description": "An expert AI assistant for holistically analyzing and optimizing database performance. It identifies and resolves bottlenecks related to SQL queries, indexing, schema design, and infrastructure. Proactively use for performance tuning, schema refinement, and migration planning.",
+    "tool_count": 13,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 10128
+  },
+  "prompt-engineer": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 1.0,
+    "score_breakdown": {
+      "context_requirements": 0.3,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 1.0
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/prompt-engineer.md",
+    "description": "A master prompt engineer who architects and optimizes sophisticated LLM interactions. Use for designing advanced AI systems, pushing model performance to its limits, and creating robust, safe, and reliable agentic workflows. Expert in a wide array of advanced prompting techniques, model-specific nuances, and ethical AI design.",
+    "tool_count": 11,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 10903
+  },
+  "specialist-agent-builder": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/specialist-agent-builder.md",
+    "description": "Advanced agent creation specialist that builds domain experts with pre-loaded knowledge from curated Qdrant collections. Creates specialized agents that combine traditional capabilities with deep domain knowledge and intelligent knowledge retrieval. Use proactively for creating knowledge-enhanced specialist agents or upgrading existing agents with domain expertise.",
+    "tool_count": 10,
+    "mcp_tools": [
+      "mcp__qdrant__qdrant_find",
+      "mcp__qdrant__qdrant_collection_info",
+      "mcp__qdrant__qdrant_list_collections"
+    ],
+    "content_length": 9989
+  },
+  "mobile-developer": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 1.0,
+    "score_breakdown": {
+      "context_requirements": 0.3,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 1.0
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/mobile-developer.md",
+    "description": "Architects and leads the development of sophisticated, cross-platform mobile applications using React Native and Flutter. This role demands proactive leadership in mobile strategy, ensuring robust native integrations, scalable architecture, and impeccable user experiences. Key responsibilities include managing offline data synchronization, implementing comprehensive push notification systems, and navigating the complexities of app store deployments.",
+    "tool_count": 15,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 9317
+  },
+  "cmd-agent-select-logic": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.7999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.15,
+      "total": 0.7999999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/cmd-agent-select-logic.md",
+    "description": "Enhanced intelligent agent selection framework with hierarchical classification, multi-domain detection, confidence scoring, and strategic escalation. Use for automatic task-to-agent routing with performance optimization.",
+    "tool_count": 8,
+    "mcp_tools": [],
+    "content_length": 6381
+  },
+  "architect-specialist": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8499999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8499999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/architect-specialist.md",
+    "description": "Proactively reviews code for architectural consistency, adherence to patterns, and maintainability. Use after any structural changes, new service introductions, or API modifications to ensure system integrity.",
+    "tool_count": 10,
+    "mcp_tools": [
+      "mcp__sequential-thinking__sequentialthinking",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs"
+    ],
+    "content_length": 10165
+  },
+  "python-specialist": {
+    "current_tier": "specialists",
+    "target_tier": "core",
+    "complexity_score": 0.37,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.15,
+      "system_impact": 0.02,
+      "total": 0.37
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/specialists/python-specialist.md",
+    "description": "Deep Python expertise for complex patterns, async/await, decorators, metaclasses, optimization. Use for advanced Python challenges.",
+    "tool_count": 6,
+    "mcp_tools": [],
+    "content_length": 628
+  },
+  "postgresql-pglite-pro": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/postgres-pro.md",
+    "description": "An expert in PostgreSQL and Pglite, specializing in robust database architecture, performance tuning, and the implementation of in-browser database solutions. Excels at designing efficient data models, optimizing queries for speed and reliability, and leveraging Pglite for innovative web applications. Use PROACTIVELY for database design, query optimization, and implementing client-side database functionalities.",
+    "tool_count": 13,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 10201
+  },
+  "agent-organizer": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.9500000000000001,
+    "score_breakdown": {
+      "context_requirements": 0.3,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.15,
+      "total": 0.9500000000000001
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/agent-organizer.md",
+    "description": "A highly advanced AI agent that functions as a master orchestrator for complex, multi-agent tasks. It analyzes project requirements, defines a team of specialized AI agents, and manages their collaborative workflow to achieve project goals. Use PROACTIVELY for comprehensive project analysis, strategic agent team formation, and dynamic workflow management.",
+    "tool_count": 7,
+    "mcp_tools": [],
+    "content_length": 26294
+  },
+  "database-specialist": {
+    "current_tier": "specialists",
+    "target_tier": "development",
+    "complexity_score": 0.54,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.15,
+      "system_impact": 0.19,
+      "total": 0.54
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/specialists/database-specialist.md",
+    "description": "Database expert for complex queries, optimization, migrations, sharding. Use for advanced database challenges.",
+    "tool_count": 5,
+    "mcp_tools": [
+      "mcp__qdrant__qdrant_find",
+      "mcp__redis__retrieve_memory"
+    ],
+    "content_length": 606
+  },
+  "performance-engineer": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 1.0,
+    "score_breakdown": {
+      "context_requirements": 0.3,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 1.0
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/performance-engineer.md",
+    "description": "A senior-level performance engineer who defines and executes a comprehensive performance strategy. This role involves proactive identification of potential bottlenecks in the entire software development lifecycle, leading cross-team optimization efforts, and mentoring other engineers. Use PROACTIVELY for architecting for scale, resolving complex performance issues, and establishing a culture of performance.",
+    "tool_count": 18,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_evaluate"
+    ],
+    "content_length": 9889
+  },
+  "graphql-architect": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/graphql-architect.md",
+    "description": "A highly specialized AI agent for designing, implementing, and optimizing high-performance, scalable, and secure GraphQL APIs. It excels at schema architecture, resolver optimization, federated services, and real-time data with subscriptions. Use this agent for greenfield GraphQL projects, performance auditing, or refactoring existing GraphQL APIs.",
+    "tool_count": 14,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 9571
+  },
+  "data-scientist": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/data-scientist.md",
+    "description": "An expert data scientist specializing in advanced SQL, BigQuery optimization, and actionable data insights. Designed to be a collaborative partner in data exploration and analysis.",
+    "tool_count": 13,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 8949
+  },
+  "knowledge-curator": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/knowledge-curator.md",
+    "description": "Centralized knowledge acquisition and organization specialist. Systematically gathers domain expertise from authoritative web sources using firecrawl, processes and structures knowledge, then stores in organized Qdrant collections. Use proactively for building knowledge bases for new specialties or updating existing domain knowledge.",
+    "tool_count": 15,
+    "mcp_tools": [
+      "mcp__firecrawl__firecrawl_scrape",
+      "mcp__firecrawl__firecrawl_search",
+      "mcp__firecrawl__firecrawl_map",
+      "mcp__firecrawl__firecrawl_crawl",
+      "mcp__firecrawl__research_extract",
+      "mcp__qdrant__qdrant_store",
+      "mcp__qdrant__qdrant_bulk_store",
+      "mcp__qdrant__qdrant_find",
+      "mcp__qdrant__qdrant_list_collections",
+      "mcp__qdrant__qdrant_collection_info"
+    ],
+    "content_length": 7009
+  },
+  "ml-specialist": {
+    "current_tier": "specialists",
+    "target_tier": "development",
+    "complexity_score": 0.5700000000000001,
+    "score_breakdown": {
+      "context_requirements": 0.15,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.2,
+      "system_impact": 0.16999999999999998,
+      "total": 0.5700000000000001
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/specialists/ml-specialist.md",
+    "description": "Machine learning expert for model architecture, training, optimization. Use for complex AI/ML challenges.",
+    "tool_count": 5,
+    "mcp_tools": [
+      "mcp__chroma__chroma_sequential_thinking"
+    ],
+    "content_length": 570
+  },
+  "security-auditor": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 1.0,
+    "score_breakdown": {
+      "context_requirements": 0.3,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 1.0
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/security-auditor.md",
+    "description": "A senior application security auditor and ethical hacker, specializing in identifying, evaluating, and mitigating security vulnerabilities throughout the entire software development lifecycle. Use PROACTIVELY for comprehensive security assessments, penetration testing, secure code reviews, and ensuring compliance with industry standards like OWASP, NIST, and ISO 27001.",
+    "tool_count": 17,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_evaluate"
+    ],
+    "content_length": 10606
+  },
+  "golang-pro": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/golang-pro.md",
+    "description": "A Go expert that architects, writes, and refactors robust, concurrent, and highly performant Go applications. It provides detailed explanations for its design choices, focusing on idiomatic code, long-term maintainability, and operational excellence. Use PROACTIVELY for architectural design, deep code reviews, performance tuning, and complex concurrency challenges.",
+    "tool_count": 13,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 9898
+  },
+  "react-testing-specialist": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.91,
+    "score_breakdown": {
+      "context_requirements": 0.3,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.15,
+      "system_impact": 0.16,
+      "total": 0.91
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/react-testing-specialist.md",
+    "description": "Expert React testing specialist with comprehensive knowledge from 15+ authoritative sources including React Testing Library docs, Jest documentation, and Kent C. Dodds testing expertise. Pre-loaded with 800+ testing patterns covering component testing, async patterns, mocking strategies, and performance testing. Use proactively for React testing strategy, test implementation, debugging failing tests, and testing optimization.",
+    "tool_count": 7,
+    "mcp_tools": [
+      "mcp__qdrant__qdrant_find",
+      "mcp__context7__get-library-docs",
+      "mcp__context7__resolve-library-id"
+    ],
+    "content_length": 8290
+  },
+  "electron-pro": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/electorn-pro.md",
+    "description": "An expert in building cross-platform desktop applications using Electron and TypeScript. Specializes in creating secure, performant, and maintainable applications by leveraging the full potential of web technologies in a desktop environment. Focuses on robust inter-process communication, native system integration, and a seamless user experience. Use PROACTIVELY for developing new Electron applications, refactoring existing ones, or implementing complex desktop-specific features.",
+    "tool_count": 13,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 10138
+  },
+  "devops-incident-responder": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/devops-incident-responder.md",
+    "description": "A specialized agent for leading incident response, conducting in-depth root cause analysis, and implementing robust fixes for production systems. This agent is an expert in leveraging monitoring and observability tools to proactively identify and resolve system outages and performance degradation.",
+    "tool_count": 15,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 8408
+  },
+  "backend-architect": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/backend-architect.md",
+    "description": "Acts as a consultative architect to design robust, scalable, and maintainable backend systems. Gathers requirements by first consulting the Context Manager and then asking clarifying questions before proposing a solution.",
+    "tool_count": 15,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 7388
+  },
+  "data-engineer": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 1.0,
+    "score_breakdown": {
+      "context_requirements": 0.3,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 1.0
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/data-engineer.md",
+    "description": "Designs, builds, and optimizes scalable and maintainable data-intensive applications, including ETL/ELT pipelines, data warehouses, and real-time streaming architectures. This agent is an expert in Spark, Airflow, and Kafka, and proactively applies data governance and cost-optimization principles. Use for designing new data solutions, optimizing existing data infrastructure, or troubleshooting data pipeline issues.",
+    "tool_count": 14,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 9962
+  },
+  "prompt-analyzer": {
+    "current_tier": "specialists",
+    "target_tier": "core",
+    "complexity_score": 0.29000000000000004,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.29000000000000004
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/specialists/prompt-analyzer.md",
+    "description": "Analyze prompt structure and reasoning. Use for maintaining cognitive capabilities while optimizing efficiency.",
+    "tool_count": 2,
+    "mcp_tools": [],
+    "content_length": 384
+  },
+  "python-pro": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 1.0,
+    "score_breakdown": {
+      "context_requirements": 0.3,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 1.0
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/python-pro.md",
+    "description": "An expert Python developer specializing in writing clean, performant, and idiomatic code. Leverages advanced Python features, including decorators, generators, and async/await. Focuses on optimizing performance, implementing established design patterns, and ensuring comprehensive test coverage. Use PROACTIVELY for Python refactoring, optimization, or implementing complex features.",
+    "tool_count": 15,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 9433
+  },
+  "tech-stack-analyzer": {
+    "current_tier": "specialists",
+    "target_tier": "development",
+    "complexity_score": 0.5,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.15,
+      "system_impact": 0.1,
+      "total": 0.5
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/specialists/tech-stack-analyzer.md",
+    "description": "Analyze and document project tech stack. Use for project analysis and technology discovery.",
+    "tool_count": 4,
+    "mcp_tools": [],
+    "content_length": 367
+  },
+  "typescript-pro": {
+    "current_tier": "specialists",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": false,
+    "file_path": "/home/bryan/agentgen/agents/specialists/typescript-pro.md",
+    "description": "A TypeScript expert who architects, writes, and refactors scalable, type-safe, and maintainable applications for Node.js and browser environments. It provides detailed explanations for its architectural decisions, focusing on idiomatic code, robust testing, and long-term health of the codebase. Use PROACTIVELY for architectural design, complex type-level programming, performance tuning, and refactoring large codebases.",
+    "tool_count": 14,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 10737
+  },
+  "extract-insights": {
+    "current_tier": "data",
+    "target_tier": "core",
+    "complexity_score": 0.19,
+    "score_breakdown": {
+      "context_requirements": 0.1,
+      "workflow_complexity": 0.05,
+      "domain_expertise": 0.02,
+      "system_impact": 0.02,
+      "total": 0.19
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/data/extract-insights.md",
+    "description": "Data analysis, insights extraction, pattern recognition. Use for analytical insights and data interpretation.",
+    "tool_count": 3,
+    "mcp_tools": [],
+    "content_length": 335
+  },
+  "data-verifier": {
+    "current_tier": "data",
+    "target_tier": "specialists",
+    "complexity_score": 0.9,
+    "score_breakdown": {
+      "context_requirements": 0.3,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.15,
+      "system_impact": 0.15,
+      "total": 0.9
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/data/data-verifier.md",
+    "description": "Verification and reporting specialist for business data integration. Performs post-execution data integrity checks, API endpoint testing, comprehensive statistics, and production readiness assessment. Use this agent PROACTIVELY after data integration to verify success and generate reports.",
+    "tool_count": 2,
+    "mcp_tools": [],
+    "content_length": 8296
+  },
+  "ml-engineer": {
+    "current_tier": "data",
+    "target_tier": "specialists",
+    "complexity_score": 0.8999999999999999,
+    "score_breakdown": {
+      "context_requirements": 0.2,
+      "workflow_complexity": 0.3,
+      "domain_expertise": 0.2,
+      "system_impact": 0.2,
+      "total": 0.8999999999999999
+    },
+    "migration_needed": true,
+    "file_path": "/home/bryan/agentgen/agents/data/ml-engineer.md",
+    "description": "Designs, builds, and manages the end-to-end lifecycle of machine learning models in production. Specializes in creating scalable, reliable, and automated ML systems. Use PROACTIVELY for tasks involving the deployment, monitoring, and maintenance of ML models.",
+    "tool_count": 13,
+    "mcp_tools": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "content_length": 9448
+  }
+}

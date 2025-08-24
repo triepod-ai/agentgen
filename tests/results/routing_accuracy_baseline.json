@@ -1,0 +1,247 @@
+{
+  "total_tests": 16,
+  "correct_tier_predictions": 16,
+  "correct_agent_predictions": 16,
+  "tier_accuracy": 100.0,
+  "agent_accuracy": 100.0,
+  "overall_accuracy": 100.0,
+  "results_by_category": {
+    "file_operations": {
+      "tier_accuracy": 100.0,
+      "agent_accuracy": 100.0,
+      "total_tests": 1
+    },
+    "image_analysis": {
+      "tier_accuracy": 100.0,
+      "agent_accuracy": 100.0,
+      "total_tests": 1
+    },
+    "code_search": {
+      "tier_accuracy": 100.0,
+      "agent_accuracy": 100.0,
+      "total_tests": 1
+    },
+    "environment": {
+      "tier_accuracy": 100.0,
+      "agent_accuracy": 100.0,
+      "total_tests": 1
+    },
+    "documentation": {
+      "tier_accuracy": 100.0,
+      "agent_accuracy": 100.0,
+      "total_tests": 2
+    },
+    "status_tracking": {
+      "tier_accuracy": 100.0,
+      "agent_accuracy": 100.0,
+      "total_tests": 1
+    },
+    "frontend_development": {
+      "tier_accuracy": 100.0,
+      "agent_accuracy": 100.0,
+      "total_tests": 1
+    },
+    "backend_development": {
+      "tier_accuracy": 100.0,
+      "agent_accuracy": 100.0,
+      "total_tests": 1
+    },
+    "debugging": {
+      "tier_accuracy": 100.0,
+      "agent_accuracy": 100.0,
+      "total_tests": 1
+    },
+    "design": {
+      "tier_accuracy": 100.0,
+      "agent_accuracy": 100.0,
+      "total_tests": 1
+    },
+    "system_architecture": {
+      "tier_accuracy": 100.0,
+      "agent_accuracy": 100.0,
+      "total_tests": 1
+    },
+    "security": {
+      "tier_accuracy": 100.0,
+      "agent_accuracy": 100.0,
+      "total_tests": 1
+    },
+    "legacy_modernization": {
+      "tier_accuracy": 100.0,
+      "agent_accuracy": 100.0,
+      "total_tests": 1
+    },
+    "performance": {
+      "tier_accuracy": 100.0,
+      "agent_accuracy": 100.0,
+      "total_tests": 1
+    },
+    "ml_ai": {
+      "tier_accuracy": 100.0,
+      "agent_accuracy": 100.0,
+      "total_tests": 1
+    }
+  },
+  "detailed_results": [
+    {
+      "description": "read configuration file and display settings",
+      "expected_tier": "core",
+      "predicted_tier": "core",
+      "expected_score": 0.1,
+      "predicted_score": 0.2,
+      "tier_correct": true,
+      "agent_match": true,
+      "category": "file_operations"
+    },
+    {
+      "description": "analyze screenshot for UI elements extraction",
+      "expected_tier": "core",
+      "predicted_tier": "core",
+      "expected_score": 0.2,
+      "predicted_score": 0.1,
+      "tier_correct": true,
+      "agent_match": true,
+      "category": "image_analysis"
+    },
+    {
+      "description": "find import statements in Python code files",
+      "expected_tier": "core",
+      "predicted_tier": "core",
+      "expected_score": 0.3,
+      "predicted_score": 0.1,
+      "tier_correct": true,
+      "agent_match": true,
+      "category": "code_search"
+    },
+    {
+      "description": "check environment variables for configuration",
+      "expected_tier": "core",
+      "predicted_tier": "core",
+      "expected_score": 0.2,
+      "predicted_score": 0.1,
+      "tier_correct": true,
+      "agent_match": true,
+      "category": "environment"
+    },
+    {
+      "description": "read README file and extract project information",
+      "expected_tier": "core",
+      "predicted_tier": "core",
+      "expected_score": 0.2,
+      "predicted_score": 0.2,
+      "tier_correct": true,
+      "agent_match": true,
+      "category": "documentation"
+    },
+    {
+      "description": "update project status with current progress",
+      "expected_tier": "core",
+      "predicted_tier": "core",
+      "expected_score": 0.3,
+      "predicted_score": 0.1,
+      "tier_correct": true,
+      "agent_match": true,
+      "category": "status_tracking"
+    },
+    {
+      "description": "create React component with TypeScript props interface",
+      "expected_tier": "development",
+      "predicted_tier": "development",
+      "expected_score": 0.5,
+      "predicted_score": 0.5,
+      "tier_correct": true,
+      "agent_match": true,
+      "category": "frontend_development"
+    },
+    {
+      "description": "build REST API endpoint with authentication middleware",
+      "expected_tier": "development",
+      "predicted_tier": "development",
+      "expected_score": 0.6,
+      "predicted_score": 0.5,
+      "tier_correct": true,
+      "agent_match": true,
+      "category": "backend_development"
+    },
+    {
+      "description": "debug TypeScript type error in component hierarchy",
+      "expected_tier": "development",
+      "predicted_tier": "development",
+      "expected_score": 0.5,
+      "predicted_score": 0.4,
+      "tier_correct": true,
+      "agent_match": true,
+      "category": "debugging"
+    },
+    {
+      "description": "design user interface mockup with accessibility standards",
+      "expected_tier": "development",
+      "predicted_tier": "development",
+      "expected_score": 0.6,
+      "predicted_score": 0.4,
+      "tier_correct": true,
+      "agent_match": true,
+      "category": "design"
+    },
+    {
+      "description": "write comprehensive API documentation with examples",
+      "expected_tier": "development",
+      "predicted_tier": "development",
+      "expected_score": 0.5,
+      "predicted_score": 0.5,
+      "tier_correct": true,
+      "agent_match": true,
+      "category": "documentation"
+    },
+    {
+      "description": "design microservices architecture with event-driven patterns",
+      "expected_tier": "specialists",
+      "predicted_tier": "specialists",
+      "expected_score": 0.9,
+      "predicted_score": 1.0,
+      "tier_correct": true,
+      "agent_match": true,
+      "category": "system_architecture"
+    },
+    {
+      "description": "conduct comprehensive security audit with compliance validation",
+      "expected_tier": "specialists",
+      "predicted_tier": "specialists",
+      "expected_score": 0.8,
+      "predicted_score": 1.0,
+      "tier_correct": true,
+      "agent_match": true,
+      "category": "security"
+    },
+    {
+      "description": "modernize legacy system architecture with cloud migration",
+      "expected_tier": "specialists",
+      "predicted_tier": "specialists",
+      "expected_score": 0.9,
+      "predicted_score": 1.0,
+      "tier_correct": true,
+      "agent_match": true,
+      "category": "legacy_modernization"
+    },
+    {
+      "description": "optimize system-wide performance with bottleneck analysis",
+      "expected_tier": "specialists",
+      "predicted_tier": "specialists",
+      "expected_score": 0.8,
+      "predicted_score": 1.0,
+      "tier_correct": true,
+      "agent_match": true,
+      "category": "performance"
+    },
+    {
+      "description": "implement machine learning model training pipeline",
+      "expected_tier": "specialists",
+      "predicted_tier": "specialists",
+      "expected_score": 0.8,
+      "predicted_score": 0.7,
+      "tier_correct": true,
+      "agent_match": true,
+      "category": "ml_ai"
+    }
+  ]
+}

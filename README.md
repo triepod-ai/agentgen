@@ -4,7 +4,7 @@
 
 ## 🎯 Overview
 
-AgentGen provides 100+ specialized AI agents organized into different configurations for various development needs. The agents help with coding, testing, deployment, security, and other development tasks.
+AgentGen provides 102+ specialized AI agents organized into different configurations for various development needs. The agents help with coding, testing, deployment, security, and other development tasks.
 
 ### Key Features
 - Specialized agents for different development domains

@@ -1,8 +1,14 @@
 ---
-name: analyze-screenshot
-description: Screenshot analysis, UI extraction, visual data processing. Use for image analysis and visual verification.
+accessibility:
+  category_display: Quality/Testing
+  contrast_ratio: 4.7
+  icon: 🧪
+category: quality
+color: teal
+description: Screenshot analysis, UI extraction, visual data processing. Use for image
+  analysis and visual verification.
 model: haiku
-color: green
+name: analyze-screenshot
 tools: Read
 ---
 

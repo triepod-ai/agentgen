@@ -1,9 +1,15 @@
 ---
-name: database-specialist
-description: Database expert for complex queries, optimization, migrations, sharding. Use for advanced database challenges.
-tools: Read, Write, Bash, mcp__qdrant__qdrant_find, mcp__redis__retrieve_memory
+accessibility:
+  category_display: Data/AI
+  contrast_ratio: 4.7
+  icon: 🤖
+category: data-ai
+color: purple
+description: Database expert for complex queries, optimization, migrations, sharding.
+  Use for advanced database challenges.
 model: sonnet
-color: yellow
+name: database-specialist
+tools: Read, Write, Bash, mcp__qdrant__qdrant_find, mcp__redis__retrieve_memory
 ---
 
 # Database Specialist

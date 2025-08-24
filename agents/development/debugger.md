@@ -1,8 +1,16 @@
 ---
-name: debugger
-description: Debugging specialist for errors, test failures, and unexpected behavior. Use proactively when encountering any issues.
-tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, TodoWrite, Task, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
+accessibility:
+  category_display: Quality/Testing
+  contrast_ratio: 4.7
+  icon: 🧪
+category: quality
+color: teal
+description: Debugging specialist for errors, test failures, and unexpected behavior.
+  Use proactively when encountering any issues.
 model: sonnet
+name: debugger
+tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, TodoWrite,
+  Task, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
 ---
 
 # Debugger

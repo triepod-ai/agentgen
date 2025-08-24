@@ -1,9 +1,15 @@
 ---
-name: react-specialist
-description: React expert for hooks, context, performance, SSR/SSG, state management. Use for complex React architectures.
-tools: Read, Write, Edit, MultiEdit, Bash
-model: sonnet
+accessibility:
+  category_display: Development/Specialists
+  contrast_ratio: 4.7
+  icon: ⚛️
+category: development
 color: yellow
+description: React expert for hooks, context, performance, SSR/SSG, state management.
+  Use for complex React architectures.
+model: sonnet
+name: react-specialist
+tools: Read, Write, Edit, MultiEdit, Bash
 ---
 
 # React Specialist

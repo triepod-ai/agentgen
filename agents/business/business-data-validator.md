@@ -1,9 +1,17 @@
 ---
-name: business-data-validator
-description: Data parsing and validation specialist for business listings. Parses multiple input formats (JSON, CSV, structured text) and validates required fields. Use this agent PROACTIVELY when processing business data imports or staging business listings.
-tools: Read, Write
+accessibility:
+  category_display: Data/AI
+  contrast_ratio: 4.7
+  icon: 🤖
+category: data-ai
+color: purple
+description: Data parsing and validation specialist for business listings. Parses
+  multiple input formats (JSON, CSV, structured text) and validates required fields.
+  Use this agent PROACTIVELY when processing business data imports or staging business
+  listings.
 model: haiku
-color: green
+name: business-data-validator
+tools: Read, Write
 ---
 
 # Business Data Validator Sub-Agent

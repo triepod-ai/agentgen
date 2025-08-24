@@ -1,9 +1,18 @@
 ---
-name: product-manager
-description: A strategic and customer-focused AI Product Manager for defining product vision, strategy, and roadmaps, and leading cross-functional teams to deliver successful products. Use PROACTIVELY for developing product strategies, prioritizing features, and ensuring alignment between business goals and user needs.
-tools: Read, Write, Edit, Grep, Glob, Bash, LS, WebSearch, WebFetch, TodoWrite, Task, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
+accessibility:
+  category_display: Business/Content
+  contrast_ratio: 4.7
+  icon: 💼
+category: business
+color: brown
+description: A strategic and customer-focused AI Product Manager for defining product
+  vision, strategy, and roadmaps, and leading cross-functional teams to deliver successful
+  products. Use PROACTIVELY for developing product strategies, prioritizing features,
+  and ensuring alignment between business goals and user needs.
 model: sonnet
-color: yellow
+name: product-manager
+tools: Read, Write, Edit, Grep, Glob, Bash, LS, WebSearch, WebFetch, TodoWrite, Task,
+  mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
 ---
 
 # Product Manager

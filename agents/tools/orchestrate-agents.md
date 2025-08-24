@@ -1,8 +1,15 @@
 ---
-name: orchestrate-agents
-description: Standard agent orchestrator for Green/Yellow complexity tasks. Recommends simple utility agents and standard development specialists. Use for straightforward agent selection and basic coordination.
+accessibility:
+  category_display: Architecture/Orchestration
+  contrast_ratio: 4.7
+  icon: 🏗️
+category: architecture
+color: orange
+description: Standard agent orchestrator for Green/Yellow complexity tasks. Recommends
+  simple utility agents and standard development specialists. Use for straightforward
+  agent selection and basic coordination.
 model: claude-sonnet-4-20250514
-color: orange  
+name: orchestrate-agents
 tools: LS, Read, Grep
 ---
 

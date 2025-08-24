@@ -1,9 +1,18 @@
 ---
-name: agent-organizer
-description: A highly advanced AI agent that functions as a master orchestrator for complex, multi-agent tasks. It analyzes project requirements, defines a team of specialized AI agents, and manages their collaborative workflow to achieve project goals. Use PROACTIVELY for comprehensive project analysis, strategic agent team formation, and dynamic workflow management.
-tools: Read, Write, Edit, Grep, Glob, Bash, TodoWrite
-model: sonnet
+accessibility:
+  category_display: Architecture/Orchestration
+  contrast_ratio: 4.7
+  icon: 🏗️
+category: architecture
 color: orange
+description: A highly advanced AI agent that functions as a master orchestrator for
+  complex, multi-agent tasks. It analyzes project requirements, defines a team of
+  specialized AI agents, and manages their collaborative workflow to achieve project
+  goals. Use PROACTIVELY for comprehensive project analysis, strategic agent team
+  formation, and dynamic workflow management.
+model: sonnet
+name: agent-organizer
+tools: Read, Write, Edit, Grep, Glob, Bash, TodoWrite
 ---
 
 # Agent Organizer

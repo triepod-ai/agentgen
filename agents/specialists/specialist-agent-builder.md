@@ -1,8 +1,18 @@
 ---
+accessibility:
+  category_display: Development/Specialists
+  contrast_ratio: 4.7
+  icon: ⚛️
+category: development
+color: yellow
+description: Advanced agent creation specialist that builds domain experts with pre-loaded
+  knowledge from curated Qdrant collections. Creates specialized agents that combine
+  traditional capabilities with deep domain knowledge and intelligent knowledge retrieval.
+  Use proactively for creating knowledge-enhanced specialist agents or upgrading existing
+  agents with domain expertise.
 name: specialist-agent-builder
-description: Advanced agent creation specialist that builds domain experts with pre-loaded knowledge from curated Qdrant collections. Creates specialized agents that combine traditional capabilities with deep domain knowledge and intelligent knowledge retrieval. Use proactively for creating knowledge-enhanced specialist agents or upgrading existing agents with domain expertise.
-tools: mcp__qdrant__qdrant_find, mcp__qdrant__qdrant_collection_info, mcp__qdrant__qdrant_list_collections, Read, Write, Edit, MultiEdit, Glob, Grep, Task
-color: gold
+tools: mcp__qdrant__qdrant_find, mcp__qdrant__qdrant_collection_info, mcp__qdrant__qdrant_list_collections,
+  Read, Write, Edit, MultiEdit, Glob, Grep, Task
 ---
 
 # Specialist Agent Builder - Knowledge-Enhanced Agent Creation System
@@ -54,7 +64,7 @@ description: Expert {domain} specialist with comprehensive knowledge from {X} au
 knowledge_collections: ["{primary_collection}", "{secondary_collection}"]
 knowledge_refresh: {weekly|monthly|quarterly}
 tools: Read, Write, Edit, mcp__qdrant__qdrant_find, mcp__context7__*, {domain_specific_tools}
-color: {domain_color}
+color: yellow
 ---
 
 # {Domain} Specialist - Expert Knowledge System

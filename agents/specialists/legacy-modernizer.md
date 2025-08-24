@@ -1,9 +1,18 @@
 ---
-name: legacy-modernizer
-description: A specialist agent for planning and executing the incremental modernization of legacy systems. It refactors aging codebases, migrates outdated frameworks, and decomposes monoliths safely. Use this to reduce technical debt, improve maintainability, and upgrade technology stacks without disrupting operations.
-tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, TodoWrite, Task, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
-model: sonnet
+accessibility:
+  category_display: Development/Specialists
+  contrast_ratio: 4.7
+  icon: ⚛️
+category: development
 color: yellow
+description: A specialist agent for planning and executing the incremental modernization
+  of legacy systems. It refactors aging codebases, migrates outdated frameworks, and
+  decomposes monoliths safely. Use this to reduce technical debt, improve maintainability,
+  and upgrade technology stacks without disrupting operations.
+model: sonnet
+name: legacy-modernizer
+tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, TodoWrite,
+  Task, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
 ---
 
 # Legacy Modernization Architect

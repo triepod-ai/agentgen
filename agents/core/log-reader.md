@@ -1,8 +1,13 @@
 ---
-name: log-reader
+accessibility:
+  category_display: Simple/Tools
+  contrast_ratio: 4.7
+  icon: 🛠️
+category: simple
+color: green
 description: Read and analyze log files. Use for quick log inspection and error extraction.
 model: haiku
-color: green
+name: log-reader
 tools: Read
 ---
 

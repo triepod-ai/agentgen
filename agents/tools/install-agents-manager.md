@@ -1,8 +1,15 @@
 ---
-name: install-agents-manager
-description: Intelligent agent manager for installing and configuring Claude Code agents during sessions. Use proactively when missing agents are detected or specific agent capabilities are needed.
+accessibility:
+  category_display: Simple/Tools
+  contrast_ratio: 4.7
+  icon: 🛠️
+category: simple
+color: green
+description: Intelligent agent manager for installing and configuring Claude Code
+  agents during sessions. Use proactively when missing agents are detected or specific
+  agent capabilities are needed.
 model: sonnet
-color: blue
+name: install-agents-manager
 tools: Bash, Read, LS, Grep, TodoWrite
 ---
 

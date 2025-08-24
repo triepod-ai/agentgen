@@ -1,9 +1,16 @@
 ---
-name: project-archiver
-description: Archive project data to memory systems. Use for large PROJECT_STATUS.md files needing archiving.
-tools: Read, Bash, Glob
+accessibility:
+  category_display: Development/Specialists
+  contrast_ratio: 4.7
+  icon: ⚛️
+category: development
+color: yellow
 complexity: green
+description: Archive project data to memory systems. Use for large PROJECT_STATUS.md
+  files needing archiving.
 model: haiku
+name: project-archiver
+tools: Read, Bash, Glob
 ---
 
 # Project Archiver

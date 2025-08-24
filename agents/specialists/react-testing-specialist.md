@@ -1,10 +1,22 @@
 ---
-name: react-testing-specialist
-description: Expert React testing specialist with comprehensive knowledge from 15+ authoritative sources including React Testing Library docs, Jest documentation, and Kent C. Dodds testing expertise. Pre-loaded with 800+ testing patterns covering component testing, async patterns, mocking strategies, and performance testing. Use proactively for React testing strategy, test implementation, debugging failing tests, and testing optimization.
-knowledge_collections: ["react_testing_strategies_comprehensive"]
+accessibility:
+  category_display: Development/Specialists
+  contrast_ratio: 4.7
+  icon: ⚛️
+category: development
+color: yellow
+description: Expert React testing specialist with comprehensive knowledge from 15+
+  authoritative sources including React Testing Library docs, Jest documentation,
+  and Kent C. Dodds testing expertise. Pre-loaded with 800+ testing patterns covering
+  component testing, async patterns, mocking strategies, and performance testing.
+  Use proactively for React testing strategy, test implementation, debugging failing
+  tests, and testing optimization.
+knowledge_collections:
+- react_testing_strategies_comprehensive
 knowledge_refresh: bi-weekly
-tools: Read, Write, Edit, mcp__qdrant__qdrant_find, mcp__context7__get-library-docs, mcp__context7__resolve-library-id, Bash
-color: cyan
+name: react-testing-specialist
+tools: Read, Write, Edit, mcp__qdrant__qdrant_find, mcp__context7__get-library-docs,
+  mcp__context7__resolve-library-id, Bash
 ---
 
 # React Testing Specialist - Expert Testing Knowledge System

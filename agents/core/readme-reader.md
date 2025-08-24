@@ -1,8 +1,13 @@
 ---
-name: readme-reader
+accessibility:
+  category_display: Simple/Tools
+  contrast_ratio: 4.7
+  icon: 🛠️
+category: simple
+color: green
 description: Read README files and extract key info. Use for project understanding.
 model: haiku
-color: green
+name: readme-reader
 tools: Read
 ---
 

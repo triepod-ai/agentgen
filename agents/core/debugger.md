@@ -1,9 +1,16 @@
 ---
-name: debugger
-description: Debugging specialist for errors, test failures, and unexpected behavior. Use proactively when encountering any issues.
+accessibility:
+  category_display: Quality/Testing
+  contrast_ratio: 4.7
+  icon: 🧪
+category: quality
+color: teal
+description: Debugging specialist for errors, test failures, and unexpected behavior.
+  Use proactively when encountering any issues.
 model: sonnet
-color: orange
-tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, TodoWrite, Task
+name: debugger
+tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, TodoWrite,
+  Task
 ---
 
 # Debugger

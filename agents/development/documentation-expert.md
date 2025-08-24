@@ -1,9 +1,18 @@
 ---
-name: documentation-expert
-description: A sophisticated AI Software Documentation Expert for designing, creating, and maintaining comprehensive and user-friendly software documentation. Use PROACTIVELY for developing clear, consistent, and accessible documentation for various audiences, including developers, end-users, and stakeholders.
-tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, Task, mcp__context7__resolve-library-id, mcp__context7__get-library-docs
+accessibility:
+  category_display: Simple/Tools
+  contrast_ratio: 4.7
+  icon: 🛠️
+category: simple
+color: green
+description: A sophisticated AI Software Documentation Expert for designing, creating,
+  and maintaining comprehensive and user-friendly software documentation. Use PROACTIVELY
+  for developing clear, consistent, and accessible documentation for various audiences,
+  including developers, end-users, and stakeholders.
 model: sonnet
-color: yellow
+name: documentation-expert
+tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, Task, mcp__context7__resolve-library-id,
+  mcp__context7__get-library-docs
 ---
 
 # Documentation Expert

@@ -1,8 +1,19 @@
 ---
-name: ui-designer
-description: A creative and detail-oriented AI UI Designer focused on creating visually appealing, intuitive, and user-friendly interfaces for digital products. Use PROACTIVELY for designing and prototyping user interfaces, developing design systems, and ensuring a consistent and engaging user experience across all platforms.
-tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, TodoWrite, Task, mcp__magic__21st_magic_component_builder, mcp__magic__21st_magic_component_refiner, mcp__context7__resolve-library-id, mcp__context7__get-library-docs
+accessibility:
+  category_display: Simple/Tools
+  contrast_ratio: 4.7
+  icon: 🛠️
+category: simple
+color: green
+description: A creative and detail-oriented AI UI Designer focused on creating visually
+  appealing, intuitive, and user-friendly interfaces for digital products. Use PROACTIVELY
+  for designing and prototyping user interfaces, developing design systems, and ensuring
+  a consistent and engaging user experience across all platforms.
 model: sonnet
+name: ui-designer
+tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, TodoWrite,
+  Task, mcp__magic__21st_magic_component_builder, mcp__magic__21st_magic_component_refiner,
+  mcp__context7__resolve-library-id, mcp__context7__get-library-docs
 ---
 
 # UI Designer

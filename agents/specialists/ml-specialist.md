@@ -1,9 +1,15 @@
 ---
-name: ml-specialist
-description: Machine learning expert for model architecture, training, optimization. Use for complex AI/ML challenges.
-tools: Read, Write, Edit, Bash, mcp__chroma__chroma_sequential_thinking
+accessibility:
+  category_display: Data/AI
+  contrast_ratio: 4.7
+  icon: 🤖
+category: data-ai
+color: purple
+description: Machine learning expert for model architecture, training, optimization.
+  Use for complex AI/ML challenges.
 model: opus
-color: red
+name: ml-specialist
+tools: Read, Write, Edit, Bash, mcp__chroma__chroma_sequential_thinking
 ---
 
 # ML Specialist

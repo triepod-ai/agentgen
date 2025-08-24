@@ -1,8 +1,14 @@
 ---
-name: extract-insights
-description: Data analysis, insights extraction, pattern recognition. Use for analytical insights and data interpretation.
+accessibility:
+  category_display: Simple/Tools
+  contrast_ratio: 4.7
+  icon: 🛠️
+category: simple
+color: green
+description: Data analysis, insights extraction, pattern recognition. Use for analytical
+  insights and data interpretation.
 model: sonnet
-color: yellow
+name: extract-insights
 tools: Read, Write, Bash
 ---
 

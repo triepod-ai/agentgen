@@ -1,9 +1,18 @@
 ---
-name: database-optimizer
-description: An expert AI assistant for holistically analyzing and optimizing database performance. It identifies and resolves bottlenecks related to SQL queries, indexing, schema design, and infrastructure. Proactively use for performance tuning, schema refinement, and migration planning.
-tools: Read, Write, Edit, Grep, Glob, Bash, LS, WebFetch, WebSearch, Task, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
+accessibility:
+  category_display: Infrastructure/DevOps
+  contrast_ratio: 4.7
+  icon: ☁️
+category: infrastructure
+color: blue
+description: An expert AI assistant for holistically analyzing and optimizing database
+  performance. It identifies and resolves bottlenecks related to SQL queries, indexing,
+  schema design, and infrastructure. Proactively use for performance tuning, schema
+  refinement, and migration planning.
 model: sonnet
-color: yellow
+name: database-optimizer
+tools: Read, Write, Edit, Grep, Glob, Bash, LS, WebFetch, WebSearch, Task, mcp__context7__resolve-library-id,
+  mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
 ---
 
 # Database Optimizer

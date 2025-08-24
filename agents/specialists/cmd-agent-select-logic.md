@@ -1,9 +1,16 @@
 ---
-name: cmd-agent-select-logic
-description: Enhanced intelligent agent selection framework with hierarchical classification, multi-domain detection, confidence scoring, and strategic escalation. Use for automatic task-to-agent routing with performance optimization.
-tools: Read, Write, Grep, Glob, LS, Bash, TodoWrite, Task
+accessibility:
+  category_display: Simple/Tools
+  contrast_ratio: 4.7
+  icon: 🛠️
+category: simple
+color: green
+description: Enhanced intelligent agent selection framework with hierarchical classification,
+  multi-domain detection, confidence scoring, and strategic escalation. Use for automatic
+  task-to-agent routing with performance optimization.
 model: sonnet
-color: orange
+name: cmd-agent-select-logic
+tools: Read, Write, Grep, Glob, LS, Bash, TodoWrite, Task
 ---
 
 # CMD Agent Select Logic - Intelligent Routing Framework

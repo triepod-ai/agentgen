@@ -1,9 +1,17 @@
 ---
-name: context-manager
-description: Acts as the central nervous system for collaborative AI projects. It continuously audits the project's file system to maintain a real-time map of its structure and purpose, ensuring all agents operate with an accurate and shared understanding of the codebase and its context.
-tools: Read, Write, Edit, Grep, Glob, Bash, TodoWrite, Task
-model: opus
+accessibility:
+  category_display: Critical/Security
+  contrast_ratio: 4.7
+  icon: 🛡️
+category: critical
 color: red
+description: Acts as the central nervous system for collaborative AI projects. It
+  continuously audits the project's file system to maintain a real-time map of its
+  structure and purpose, ensuring all agents operate with an accurate and shared understanding
+  of the codebase and its context.
+model: opus
+name: context-manager
+tools: Read, Write, Edit, Grep, Glob, Bash, TodoWrite, Task
 ---
 
 # Context Manager

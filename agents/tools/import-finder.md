@@ -1,8 +1,13 @@
 ---
-name: import-finder
+accessibility:
+  category_display: Simple/Tools
+  contrast_ratio: 4.7
+  icon: 🛠️
+category: simple
+color: green
 description: Find imports, requires, and dependencies. Use for dependency analysis.
 model: haiku
-color: green
+name: import-finder
 tools: Grep
 ---
 

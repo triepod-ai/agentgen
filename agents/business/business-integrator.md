@@ -1,9 +1,16 @@
 ---
-name: treepod-local-dir-import
-description: Data integration and transaction specialist for business listings. Executes database insertions with duplicate detection, transaction safety, and rollback capability. Use this agent PROACTIVELY when integrating validated business data into the database.
-tools: Read, Write, Edit, Bash
+accessibility:
+  category_display: Business/Content
+  contrast_ratio: 4.7
+  icon: 💼
+category: business
+color: brown
+description: Data integration and transaction specialist for business listings. Executes
+  database insertions with duplicate detection, transaction safety, and rollback capability.
+  Use this agent PROACTIVELY when integrating validated business data into the database.
 model: sonnet
-color: yellow
+name: treepod-local-dir-import
+tools: Read, Write, Edit, Bash
 ---
 
 # Business Integrator Sub-Agent

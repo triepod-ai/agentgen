@@ -1,9 +1,16 @@
 ---
-name: agent-builder
-description: Creates optimized agents following enterprise patterns. Use for agent generation, optimization, batch creation, and validation. Auto-activates for "create agent", "build agent", "optimize agent" requests.
-tools: Read, Write, Grep, Glob, LS, TodoWrite, Task
-model: haiku
+accessibility:
+  category_display: Simple/Tools
+  contrast_ratio: 4.7
+  icon: 🛠️
+category: simple
 color: green
+description: Creates optimized agents following enterprise patterns. Use for agent
+  generation, optimization, batch creation, and validation. Auto-activates for "create
+  agent", "build agent", "optimize agent" requests.
+model: haiku
+name: agent-builder
+tools: Read, Write, Grep, Glob, LS, TodoWrite, Task
 ---
 
 # Agent Builder

@@ -1,8 +1,14 @@
 ---
-name: create-lesson
-description: Create educational content, tutorials, learning materials. Use for lesson creation and knowledge transfer.
+accessibility:
+  category_display: Business/Content
+  contrast_ratio: 4.7
+  icon: 💼
+category: business
+color: brown
+description: Create educational content, tutorials, learning materials. Use for lesson
+  creation and knowledge transfer.
 model: sonnet
-color: yellow
+name: create-lesson
 tools: Read, Write, Grep
 ---
 

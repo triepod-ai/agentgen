@@ -1,9 +1,17 @@
 ---
-name: architect-specialist
-description: Proactively reviews code for architectural consistency, adherence to patterns, and maintainability. Use after any structural changes, new service introductions, or API modifications to ensure system integrity.
-tools: Read, Grep, Glob, LS, WebFetch, WebSearch, Task, mcp__sequential-thinking__sequentialthinking, mcp__context7__resolve-library-id, mcp__context7__get-library-docs
-model: sonnet
+accessibility:
+  category_display: Architecture/Orchestration
+  contrast_ratio: 4.7
+  icon: 🏗️
+category: architecture
 color: orange
+description: Proactively reviews code for architectural consistency, adherence to
+  patterns, and maintainability. Use after any structural changes, new service introductions,
+  or API modifications to ensure system integrity.
+model: sonnet
+name: architect-specialist
+tools: Read, Grep, Glob, LS, WebFetch, WebSearch, Task, mcp__sequential-thinking__sequentialthinking,
+  mcp__context7__resolve-library-id, mcp__context7__get-library-docs
 ---
 
 # Architect Specialist

@@ -1,8 +1,14 @@
 ---
-name: test-automation
-description: Create tests, automate testing, test coverage analysis. Use for unit tests, integration tests, test suites.
+accessibility:
+  category_display: Quality/Testing
+  contrast_ratio: 4.7
+  icon: 🧪
+category: quality
+color: teal
+description: Create tests, automate testing, test coverage analysis. Use for unit
+  tests, integration tests, test suites.
 model: sonnet
-color: yellow
+name: test-automation
 tools: Read, Write, Edit, Bash
 ---
 

@@ -1,9 +1,16 @@
 ---
-name: token-optimizer
-description: Optimize token usage and MCP performance. Use for applying tool filtering and optimization frameworks.
-tools: Read, Bash
+accessibility:
+  category_display: Simple/Tools
+  contrast_ratio: 4.7
+  icon: 🛠️
+category: simple
+color: green
 complexity: red
+description: Optimize token usage and MCP performance. Use for applying tool filtering
+  and optimization frameworks.
 model: opus
+name: token-optimizer
+tools: Read, Bash
 ---
 
 # Token Optimizer

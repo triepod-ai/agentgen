@@ -1,9 +1,17 @@
 ---
-name: deployment-engineer
-description: Designs and implements robust CI/CD pipelines, container orchestration, and cloud infrastructure automation. Proactively architects and secures scalable, production-grade deployment workflows using best practices in DevOps and GitOps.
-tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, Task, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
+accessibility:
+  category_display: Infrastructure/DevOps
+  contrast_ratio: 4.7
+  icon: ☁️
+category: infrastructure
+color: blue
+description: Designs and implements robust CI/CD pipelines, container orchestration,
+  and cloud infrastructure automation. Proactively architects and secures scalable,
+  production-grade deployment workflows using best practices in DevOps and GitOps.
 model: sonnet
-color: yellow
+name: deployment-engineer
+tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, Task,
+  mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
 ---
 
 # Deployment Engineer

@@ -1,8 +1,15 @@
 ---
-name: orchestrate-tasks
-description: Master orchestration intelligence layer with automated agent provisioning. Analyzes complexity, installs missing agents, breaks down tasks, and routes to appropriate orchestrators. Use as primary entry point for all orchestration needs.
-model: sonnet
+accessibility:
+  category_display: Architecture/Orchestration
+  contrast_ratio: 4.7
+  icon: 🏗️
+category: architecture
 color: orange
+description: Master orchestration intelligence layer with automated agent provisioning.
+  Analyzes complexity, installs missing agents, breaks down tasks, and routes to appropriate
+  orchestrators. Use as primary entry point for all orchestration needs.
+model: sonnet
+name: orchestrate-tasks
 tools: Task, Read, Write, Bash, TodoWrite, LS, Grep, Glob
 ---
 

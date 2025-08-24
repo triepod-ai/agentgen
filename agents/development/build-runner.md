@@ -1,8 +1,13 @@
 ---
-name: build-runner
+accessibility:
+  category_display: Simple/Tools
+  contrast_ratio: 4.7
+  icon: 🛠️
+category: simple
+color: green
 description: Run build commands (make, npm, cargo, etc). Use for compilation and builds.
 model: haiku
-color: green
+name: build-runner
 tools: Bash
 ---
 

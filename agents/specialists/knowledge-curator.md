@@ -1,8 +1,19 @@
 ---
+accessibility:
+  category_display: Simple/Tools
+  contrast_ratio: 4.7
+  icon: 🛠️
+category: simple
+color: green
+description: Centralized knowledge acquisition and organization specialist. Systematically
+  gathers domain expertise from authoritative web sources using firecrawl, processes
+  and structures knowledge, then stores in organized Qdrant collections. Use proactively
+  for building knowledge bases for new specialties or updating existing domain knowledge.
 name: knowledge-curator
-description: Centralized knowledge acquisition and organization specialist. Systematically gathers domain expertise from authoritative web sources using firecrawl, processes and structures knowledge, then stores in organized Qdrant collections. Use proactively for building knowledge bases for new specialties or updating existing domain knowledge.
-tools: mcp__firecrawl__firecrawl_scrape, mcp__firecrawl__firecrawl_search, mcp__firecrawl__firecrawl_map, mcp__firecrawl__firecrawl_crawl, mcp__firecrawl__research_extract, mcp__qdrant__qdrant_store, mcp__qdrant__qdrant_bulk_store, mcp__qdrant__qdrant_find, mcp__qdrant__qdrant_list_collections, mcp__qdrant__qdrant_collection_info, WebSearch, WebFetch, Read, Write, Edit
-color: purple
+tools: mcp__firecrawl__firecrawl_scrape, mcp__firecrawl__firecrawl_search, mcp__firecrawl__firecrawl_map,
+  mcp__firecrawl__firecrawl_crawl, mcp__firecrawl__research_extract, mcp__qdrant__qdrant_store,
+  mcp__qdrant__qdrant_bulk_store, mcp__qdrant__qdrant_find, mcp__qdrant__qdrant_list_collections,
+  mcp__qdrant__qdrant_collection_info, WebSearch, WebFetch, Read, Write, Edit
 ---
 
 # Knowledge Curator - Domain Expertise Acquisition Specialist

@@ -1,8 +1,13 @@
 ---
-name: error-finder
+accessibility:
+  category_display: Simple/Tools
+  contrast_ratio: 4.7
+  icon: 🛠️
+category: simple
+color: green
 description: Find errors, exceptions, and stack traces. Use for quick error location.
 model: haiku
-color: green
+name: error-finder
 tools: Grep
 ---
 

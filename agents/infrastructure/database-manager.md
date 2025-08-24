@@ -1,9 +1,17 @@
 ---
-name: database-manager
-description: Database operations and environment specialist for local business directory. Handles bulletproof path resolution, database initialization, Flask app context, and SQLAlchemy setup. Use this agent PROACTIVELY when database operations are needed or environment setup is required.
-tools: Read, Write, Bash
+accessibility:
+  category_display: Data/AI
+  contrast_ratio: 4.7
+  icon: 🤖
+category: data-ai
+color: purple
+description: Database operations and environment specialist for local business directory.
+  Handles bulletproof path resolution, database initialization, Flask app context,
+  and SQLAlchemy setup. Use this agent PROACTIVELY when database operations are needed
+  or environment setup is required.
 model: sonnet
-color: yellow
+name: database-manager
+tools: Read, Write, Bash
 ---
 
 # Database Manager Sub-Agent

@@ -1,11 +1,22 @@
 ---
-name: react-specialist
-description: Enhanced React expert with comprehensive knowledge from 15+ authoritative sources including React official docs, community patterns, and production optimization techniques. Pre-loaded with 800+ React patterns covering hooks, context, performance, SSR/SSG, and state management. Use for complex React architectures, performance optimization, and advanced component patterns.
-knowledge_collections: ["react_patterns_comprehensive"]
+accessibility:
+  category_display: Enhanced/Premium
+  contrast_ratio: 4.7
+  icon: ⭐
+category: enhanced
+color: black
+description: Enhanced React expert with comprehensive knowledge from 15+ authoritative
+  sources including React official docs, community patterns, and production optimization
+  techniques. Pre-loaded with 800+ React patterns covering hooks, context, performance,
+  SSR/SSG, and state management. Use for complex React architectures, performance
+  optimization, and advanced component patterns.
+knowledge_collections:
+- react_patterns_comprehensive
 knowledge_refresh: bi-weekly
-tools: Read, Write, Edit, MultiEdit, Bash, mcp__qdrant__qdrant_find, mcp__context7__resolve-library-id, mcp__context7__get-library-docs
 model: sonnet
-color: blue
+name: react-specialist
+tools: Read, Write, Edit, MultiEdit, Bash, mcp__qdrant__qdrant_find, mcp__context7__resolve-library-id,
+  mcp__context7__get-library-docs
 ---
 
 # Enhanced React Specialist - Expert React Knowledge System

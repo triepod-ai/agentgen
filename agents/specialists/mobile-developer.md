@@ -1,9 +1,20 @@
 ---
-name: mobile-developer
-description: Architects and leads the development of sophisticated, cross-platform mobile applications using React Native and Flutter. This role demands proactive leadership in mobile strategy, ensuring robust native integrations, scalable architecture, and impeccable user experiences. Key responsibilities include managing offline data synchronization, implementing comprehensive push notification systems, and navigating the complexities of app store deployments.
-tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, TodoWrite, Task, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
-model: sonnet
+accessibility:
+  category_display: Development/Specialists
+  contrast_ratio: 4.7
+  icon: ⚛️
+category: development
 color: yellow
+description: Architects and leads the development of sophisticated, cross-platform
+  mobile applications using React Native and Flutter. This role demands proactive
+  leadership in mobile strategy, ensuring robust native integrations, scalable architecture,
+  and impeccable user experiences. Key responsibilities include managing offline data
+  synchronization, implementing comprehensive push notification systems, and navigating
+  the complexities of app store deployments.
+model: sonnet
+name: mobile-developer
+tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, TodoWrite,
+  Task, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
 ---
 
 # Mobile Developer

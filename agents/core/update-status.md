@@ -1,8 +1,14 @@
 ---
-name: update-status
-description: Update project status, progress reports, status tracking. Use for PROJECT_STATUS.md updates and reporting.
+accessibility:
+  category_display: Business/Content
+  contrast_ratio: 4.7
+  icon: 💼
+category: business
+color: brown
+description: Update project status, progress reports, status tracking. Use for PROJECT_STATUS.md
+  updates and reporting.
 model: haiku
-color: green
+name: update-status
 tools: Read, Write, Edit, Grep
 ---
 

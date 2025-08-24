@@ -1,8 +1,14 @@
 ---
-name: deploy-application
-description: Deploy applications, CI/CD setup, container deployment, cloud infrastructure. Use for deployment and DevOps tasks.
+accessibility:
+  category_display: Infrastructure/DevOps
+  contrast_ratio: 4.7
+  icon: ☁️
+category: infrastructure
+color: blue
+description: Deploy applications, CI/CD setup, container deployment, cloud infrastructure.
+  Use for deployment and DevOps tasks.
 model: sonnet
-color: yellow
+name: deploy-application
 tools: Read, Write, Bash
 ---
 

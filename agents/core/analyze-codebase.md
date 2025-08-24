@@ -1,8 +1,14 @@
 ---
-name: analyze-codebase
-description: Analyze code architecture, quality, patterns. Use for code review, architecture analysis, technical debt assessment.
+accessibility:
+  category_display: Quality/Testing
+  contrast_ratio: 4.7
+  icon: 🧪
+category: quality
+color: teal
+description: Analyze code architecture, quality, patterns. Use for code review, architecture
+  analysis, technical debt assessment.
 model: sonnet
-color: yellow
+name: analyze-codebase
 tools: Read, Grep, Glob, Bash
 ---
 

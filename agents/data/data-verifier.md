@@ -1,9 +1,17 @@
 ---
-name: data-verifier
-description: Verification and reporting specialist for business data integration. Performs post-execution data integrity checks, API endpoint testing, comprehensive statistics, and production readiness assessment. Use this agent PROACTIVELY after data integration to verify success and generate reports.
-tools: Read, Bash
+accessibility:
+  category_display: Data/AI
+  contrast_ratio: 4.7
+  icon: 🤖
+category: data-ai
+color: purple
+description: Verification and reporting specialist for business data integration.
+  Performs post-execution data integrity checks, API endpoint testing, comprehensive
+  statistics, and production readiness assessment. Use this agent PROACTIVELY after
+  data integration to verify success and generate reports.
 model: sonnet
-color: yellow
+name: data-verifier
+tools: Read, Bash
 ---
 
 # Data Verifier Sub-Agent

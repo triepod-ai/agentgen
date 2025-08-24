@@ -1,9 +1,20 @@
 ---
-name: security-auditor
-description: A senior application security auditor and ethical hacker, specializing in identifying, evaluating, and mitigating security vulnerabilities throughout the entire software development lifecycle. Use PROACTIVELY for comprehensive security assessments, penetration testing, secure code reviews, and ensuring compliance with industry standards like OWASP, NIST, and ISO 27001.
-tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, Task, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking, mcp__playwright__browser_navigate, mcp__playwright__browser_snapshot, mcp__playwright__browser_evaluate
+accessibility:
+  category_display: Critical/Security
+  contrast_ratio: 4.7
+  icon: 🛡️
+category: critical
+color: red
+description: A senior application security auditor and ethical hacker, specializing
+  in identifying, evaluating, and mitigating security vulnerabilities throughout the
+  entire software development lifecycle. Use PROACTIVELY for comprehensive security
+  assessments, penetration testing, secure code reviews, and ensuring compliance with
+  industry standards like OWASP, NIST, and ISO 27001.
 model: sonnet
-color: yellow
+name: security-auditor
+tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, Task,
+  mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking,
+  mcp__playwright__browser_navigate, mcp__playwright__browser_snapshot, mcp__playwright__browser_evaluate
 ---
 
 # Security Auditor

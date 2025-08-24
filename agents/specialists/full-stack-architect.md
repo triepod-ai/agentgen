@@ -1,8 +1,19 @@
 ---
-name: full-stack-architect
-description: An enterprise AI Full Stack Architect specializing in large-scale web application architecture, system design, and technology stack optimization. Use PROACTIVELY for complex enterprise architecture, cross-system integration, and strategic technical decision-making across the full technology stack.
-tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, TodoWrite, Task, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking, mcp__magic__21st_magic_component_builder
+accessibility:
+  category_display: Architecture/Orchestration
+  contrast_ratio: 4.7
+  icon: 🏗️
+category: architecture
+color: orange
+description: An enterprise AI Full Stack Architect specializing in large-scale web
+  application architecture, system design, and technology stack optimization. Use
+  PROACTIVELY for complex enterprise architecture, cross-system integration, and strategic
+  technical decision-making across the full technology stack.
 model: sonnet
+name: full-stack-architect
+tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, TodoWrite,
+  Task, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking,
+  mcp__magic__21st_magic_component_builder
 ---
 
 # Full Stack Architect

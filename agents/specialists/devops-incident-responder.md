@@ -1,9 +1,18 @@
 ---
-name: devops-incident-responder
-description: A specialized agent for leading incident response, conducting in-depth root cause analysis, and implementing robust fixes for production systems. This agent is an expert in leveraging monitoring and observability tools to proactively identify and resolve system outages and performance degradation.
-tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, Bash, Task, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
+accessibility:
+  category_display: Infrastructure/DevOps
+  contrast_ratio: 4.7
+  icon: ☁️
+category: infrastructure
+color: blue
+description: A specialized agent for leading incident response, conducting in-depth
+  root cause analysis, and implementing robust fixes for production systems. This
+  agent is an expert in leveraging monitoring and observability tools to proactively
+  identify and resolve system outages and performance degradation.
 model: sonnet
-color: yellow
+name: devops-incident-responder
+tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash, LS, WebSearch, WebFetch, Bash,
+  Task, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
 ---
 
 # DevOps Incident Responder

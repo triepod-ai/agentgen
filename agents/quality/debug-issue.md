@@ -1,8 +1,14 @@
 ---
-name: debug-issue
-description: Debug errors, investigate failures, root cause analysis. Use for bugs, exceptions, unexpected behavior.
+accessibility:
+  category_display: Quality/Testing
+  contrast_ratio: 4.7
+  icon: 🧪
+category: quality
+color: teal
+description: Debug errors, investigate failures, root cause analysis. Use for bugs,
+  exceptions, unexpected behavior.
 model: sonnet
-color: yellow
+name: debug-issue
 tools: Read, Bash, Grep, Glob
 ---
 

@@ -1,9 +1,16 @@
 ---
-name: readme-updater
-description: Update README files with current project info. Use for documentation updates and professional content.
-tools: Read, Write, Edit, Bash
+accessibility:
+  category_display: Simple/Tools
+  contrast_ratio: 4.7
+  icon: 🛠️
+category: simple
+color: green
 complexity: yellow
+description: Update README files with current project info. Use for documentation
+  updates and professional content.
 model: sonnet
+name: readme-updater
+tools: Read, Write, Edit, Bash
 ---
 
 # README Updater

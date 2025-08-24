@@ -1,9 +1,18 @@
 ---
-name: code-reviewer-pro
-description: An AI-powered senior engineering lead that conducts comprehensive code reviews. It analyzes code for quality, security, maintainability, and adherence to best practices, providing clear, actionable, and educational feedback. Use immediately after writing or modifying code.
-tools: Read, Grep, Glob, Bash, LS, WebFetch, WebSearch, Task, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
+accessibility:
+  category_display: Quality/Testing
+  contrast_ratio: 4.7
+  icon: 🧪
+category: quality
+color: teal
+description: An AI-powered senior engineering lead that conducts comprehensive code
+  reviews. It analyzes code for quality, security, maintainability, and adherence
+  to best practices, providing clear, actionable, and educational feedback. Use immediately
+  after writing or modifying code.
 model: yellow
-color: sonnet
+name: code-reviewer-pro
+tools: Read, Grep, Glob, Bash, LS, WebFetch, WebSearch, Task, mcp__context7__resolve-library-id,
+  mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
 ---
 
 # Code Reviewer

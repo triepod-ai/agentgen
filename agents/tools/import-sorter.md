@@ -1,8 +1,13 @@
 ---
-name: import-sorter
+accessibility:
+  category_display: Simple/Tools
+  contrast_ratio: 4.7
+  icon: 🛠️
+category: simple
+color: green
 description: Sort and organize imports/requires. Use for import organization.
 model: haiku
-color: green
+name: import-sorter
 tools: Edit
 ---
 

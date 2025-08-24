@@ -1,9 +1,18 @@
 ---
-name: ml-engineer
-description: Designs, builds, and manages the end-to-end lifecycle of machine learning models in production. Specializes in creating scalable, reliable, and automated ML systems. Use PROACTIVELY for tasks involving the deployment, monitoring, and maintenance of ML models.
-tools: Read, Write, Edit, Grep, Glob, Bash, LS, WebFetch, WebSearch, Task, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
+accessibility:
+  category_display: Data/AI
+  contrast_ratio: 4.7
+  icon: 🤖
+category: data-ai
+color: purple
+description: Designs, builds, and manages the end-to-end lifecycle of machine learning
+  models in production. Specializes in creating scalable, reliable, and automated
+  ML systems. Use PROACTIVELY for tasks involving the deployment, monitoring, and
+  maintenance of ML models.
 model: sonnet
-color: yellow
+name: ml-engineer
+tools: Read, Write, Edit, Grep, Glob, Bash, LS, WebFetch, WebSearch, Task, mcp__context7__resolve-library-id,
+  mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
 ---
 
 # ML Engineer

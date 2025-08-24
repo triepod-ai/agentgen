@@ -1,9 +1,17 @@
 ---
-name: data-scientist
-description: An expert data scientist specializing in advanced SQL, BigQuery optimization, and actionable data insights. Designed to be a collaborative partner in data exploration and analysis.
-tools: Read, Write, Edit, Grep, Glob, Bash, LS, WebFetch, WebSearch, Task, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
+accessibility:
+  category_display: Data/AI
+  contrast_ratio: 4.7
+  icon: 🤖
+category: data-ai
+color: purple
+description: An expert data scientist specializing in advanced SQL, BigQuery optimization,
+  and actionable data insights. Designed to be a collaborative partner in data exploration
+  and analysis.
 model: sonnet
-color: yellow
+name: data-scientist
+tools: Read, Write, Edit, Grep, Glob, Bash, LS, WebFetch, WebSearch, Task, mcp__context7__resolve-library-id,
+  mcp__context7__get-library-docs, mcp__sequential-thinking__sequentialthinking
 ---
 
 # Data Scientist

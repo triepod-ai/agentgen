@@ -1,8 +1,15 @@
 ---
-name: orchestrate-agents-adv
-description: Enterprise agent orchestrator for complex multi-agent workflows requiring 4+ specialists. Handles Red complexity tasks with automatic agent installation, dependency management, and sophisticated coordination patterns.
+accessibility:
+  category_display: Architecture/Orchestration
+  contrast_ratio: 4.7
+  icon: 🏗️
+category: architecture
+color: orange
+description: Enterprise agent orchestrator for complex multi-agent workflows requiring
+  4+ specialists. Handles Red complexity tasks with automatic agent installation,
+  dependency management, and sophisticated coordination patterns.
 model: claude-opus-4-1-20250805
-color: red
+name: orchestrate-agents-adv
 tools: LS, Read, Grep, Bash, TodoWrite
 ---
 

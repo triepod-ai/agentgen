@@ -1,8 +1,14 @@
 ---
-name: build-backend
-description: Build APIs, services, database integrations, backend architecture. Use for server-side development, API creation.
-model: sonnet
+accessibility:
+  category_display: Development/Specialists
+  contrast_ratio: 4.7
+  icon: ⚛️
+category: development
 color: yellow
+description: Build APIs, services, database integrations, backend architecture. Use
+  for server-side development, API creation.
+model: sonnet
+name: build-backend
 tools: Read, Write, Edit, Bash
 ---
 

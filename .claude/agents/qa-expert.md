@@ -1,1 +1,1 @@
-/home/bryan/agentgen/agents/specialists/qa-expert.md
+/home/bryan/agentgen/agents/quality/qa-expert.md

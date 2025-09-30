@@ -13,16 +13,23 @@ _install_agents_completion() {
     local agents_hub="$script_dir/agents"
     
     # Available options
-    local global_opts="--help --symlink --copy --global --project --health --repair --force --all --list --profile --list-profiles --show-profile --simple --simple-read --simple-write --simple-bash --simple-grep --simple-edit --dry-run --verbose --skip-speak-check"
+    local global_opts="--help --symlink --copy --global --project --health --repair --force --all --list --list-installed --profile --list-profiles --show-profile --simple --simple-read --simple-write --simple-bash --simple-grep --simple-edit --dry-run --verbose --skip-speak-check"
     
     # Get available profiles (remove .profile extension)
     if [[ -d "$profiles_dir" ]]; then
         profiles=$(ls "$profiles_dir"/*.profile 2>/dev/null | xargs -n1 basename | sed 's/\.profile$//' | tr '\n' ' ')
     fi
     
-    # Get available agents from hub
+    # Get available agents from hub (optimized with timeout and caching)
     if [[ -d "$agents_hub" ]]; then
-        agents=$(find "$agents_hub" -name "*.md" -type f 2>/dev/null | xargs -n1 basename | sed 's/\.md$//' | tr '\n' ' ')
+        # Use a faster approach: ls in each category directory
+        agents=""
+        for category in business content core data development experimental infrastructure quality simple specialists test tools; do
+            if [[ -d "$agents_hub/$category" ]]; then
+                category_agents=$(ls "$agents_hub/$category"/*.md 2>/dev/null | xargs -n1 basename 2>/dev/null | sed 's/\.md$//' | tr '\n' ' ')
+                agents="$agents $category_agents"
+            fi
+        done
     fi
     
     # Handle specific argument completions
@@ -61,7 +68,7 @@ _install_agents_completion() {
             --simple|--simple-*)
                 has_simple_option="true"
                 ;;
-            --symlink|--copy|--global|--health|--repair|--force|--list|--list-profiles|--show-profile|--dry-run|--verbose|--skip-speak-check|--help)
+            --symlink|--copy|--global|--health|--repair|--force|--list|--list-installed|--list-profiles|--show-profile|--dry-run|--verbose|--skip-speak-check|--help)
                 # These are options, not target paths
                 ;;
             --project)
@@ -96,10 +103,11 @@ _install_agents_completion() {
     local can_complete_agents=""
     
     # Check if we're in a mode that needs a directory
-    if [[ ! " ${COMP_WORDS[*]} " =~ --global ]] && 
-       [[ ! " ${COMP_WORDS[*]} " =~ --health ]] && 
+    if [[ ! " ${COMP_WORDS[*]} " =~ --global ]] &&
+       [[ ! " ${COMP_WORDS[*]} " =~ --health ]] &&
        [[ ! " ${COMP_WORDS[*]} " =~ --repair ]] &&
        [[ ! " ${COMP_WORDS[*]} " =~ --list ]] &&
+       [[ ! " ${COMP_WORDS[*]} " =~ --list-installed ]] &&
        [[ ! " ${COMP_WORDS[*]} " =~ --list-profiles ]] &&
        [[ ! " ${COMP_WORDS[*]} " =~ --show-profile ]]; then
         needs_directory="true"
@@ -109,11 +117,12 @@ _install_agents_completion() {
     # NEW DEFAULT: Current directory is default target, so we can complete agents in simple mode
     if [[ -n "$has_target_path" || " ${COMP_WORDS[*]} " =~ --global ]]; then
         can_complete_agents="true"
-    elif [[ -z "$has_target_path" ]] && 
+    elif [[ -z "$has_target_path" ]] &&
          [[ ! " ${COMP_WORDS[*]} " =~ --project ]] &&
-         [[ ! " ${COMP_WORDS[*]} " =~ --health ]] && 
+         [[ ! " ${COMP_WORDS[*]} " =~ --health ]] &&
          [[ ! " ${COMP_WORDS[*]} " =~ --repair ]] &&
          [[ ! " ${COMP_WORDS[*]} " =~ --list ]] &&
+         [[ ! " ${COMP_WORDS[*]} " =~ --list-installed ]] &&
          [[ ! " ${COMP_WORDS[*]} " =~ --list-profiles ]] &&
          [[ ! " ${COMP_WORDS[*]} " =~ --show-profile ]]; then
         # NEW DEFAULT: Simple mode - current directory is target

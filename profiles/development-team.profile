@@ -29,6 +29,7 @@ agents:
   - agent-organizer
   - orchestrate-tasks
   - cmd-agent-select-logic
+  - general-research-assistant  # Local LLM research via Ollama multi-model analysis
   
   # Tools & Management
   - agent-builder

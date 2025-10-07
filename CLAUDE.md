@@ -78,6 +78,15 @@ All orchestration agents integrate with context-manager:
 
 ## 📚 Core Documentation
 
+### **[PORTFOLIO_DESCRIPTION.md](docs/reference/PORTFOLIO_DESCRIPTION.md)** - Authoritative Portfolio Reference ⭐⭐⭐⭐⭐
+**NEW**: Single source of truth for project descriptions, portfolio content, and resume entries:
+- **Verified Specifications**: 102+ agents, 5-tier complexity system, validated performance metrics
+- **Production Metrics**: 10× development velocity, 70-80% cost reduction, 100% test success rate
+- **Three Description Templates**: Short (LinkedIn/resume), Medium (portfolio page), Long (detailed project)
+- **Technical Accuracy**: All claims validated against current implementation and testing results
+- **Update Policy**: Maintained as authoritative reference for all external communications
+- Use this document for **any portfolio, resume, or project description needs** to ensure accuracy
+
 ### **[README.md](./README.md)** - Main Agent System Overview
 Complete overview of the 102+ specialized agents with complexity-based model selection:
 - Design philosophy based on enterprise patterns

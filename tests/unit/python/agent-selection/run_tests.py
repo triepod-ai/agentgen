@@ -9,7 +9,7 @@ import unittest
 import time
 
 # Add src directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../../../../cmd-agent-select-logic'))
 
 # Fix import issues by handling enum correctly
 from src.core.models import RoutingAction

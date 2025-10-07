@@ -1,0 +1,317 @@
+{
+  "available_agents": {
+    "core": [
+      "config-reader",
+      "log-reader", 
+      "readme-reader",
+      "env-reader",
+      "analyze-screenshot"
+    ],
+    "development": [
+      "code-reviewer",
+      "debugger",
+      "build-frontend",
+      "build-backend",
+      "full-stack-developer",
+      "frontend-developer",
+      "react-pro",
+      "nextjs-pro"
+    ],
+    "infrastructure": [
+      "deployment-engineer",
+      "cloud-architect-specialist",
+      "performance-engineer",
+      "monitor-system"
+    ],
+    "security": [
+      "security-auditor",
+      "secure-application"
+    ],
+    "quality": [
+      "qa-expert",
+      "test-automator"
+    ],
+    "data": [
+      "database-specialist",
+      "data-engineer",
+      "ml-specialist"
+    ],
+    "documentation": [
+      "documentation-expert",
+      "api-documenter"
+    ],
+    "specialist": [
+      "python-specialist",
+      "react-specialist",
+      "architect-specialist"
+    ],
+    "orchestration": [
+      "orchestrate-tasks",
+      "orchestrate-agents",
+      "orchestrate-agents-adv",
+      "install-agents-manager"
+    ]
+  },
+  "agent_profiles": {
+    "core": {
+      "description": "Essential 15-agent profile for all workflows",
+      "agents": [
+        "config-reader", "log-reader", "readme-reader", "env-reader", "analyze-screenshot",
+        "code-reviewer", "debugger", "build-frontend", "build-backend", "qa-expert",
+        "deployment-engineer", "security-auditor", "documentation-expert", 
+        "orchestrate-tasks", "install-agents-manager"
+      ],
+      "installation_time": "30s",
+      "disk_space": "2MB"
+    },
+    "development-team": {
+      "description": "Complete development team setup",
+      "agents": [
+        "full-stack-developer", "frontend-developer", "build-backend", "react-pro", "nextjs-pro",
+        "code-reviewer", "debugger", "qa-expert", "test-automator", "architect-specialist",
+        "python-specialist", "react-specialist", "database-specialist", "deployment-engineer",
+        "documentation-expert", "api-documenter", "performance-engineer", "orchestrate-agents"
+      ],
+      "installation_time": "45s", 
+      "disk_space": "5MB"
+    },
+    "frontend-focus": {
+      "description": "UI/UX development optimization",
+      "agents": [
+        "frontend-developer", "ui-designer", "ux-designer", "react-pro", "nextjs-pro",
+        "build-frontend", "code-reviewer", "qa-expert", "test-automator", "performance-engineer"
+      ],
+      "installation_time": "25s",
+      "disk_space": "3MB"
+    },
+    "backend-focus": {
+      "description": "API/database/infrastructure focus", 
+      "agents": [
+        "build-backend", "database-specialist", "python-specialist", "deployment-engineer",
+        "cloud-architect-specialist", "performance-engineer", "security-auditor", "api-documenter"
+      ],
+      "installation_time": "30s",
+      "disk_space": "3MB"
+    },
+    "security-audit": {
+      "description": "Vulnerability assessment and secure development",
+      "agents": [
+        "security-auditor", "code-reviewer", "architect-specialist", "qa-expert",
+        "deployment-engineer", "documentation-expert"
+      ],
+      "installation_time": "20s",
+      "disk_space": "2MB"
+    },
+    "ai-ml-team": {
+      "description": "Machine learning and data science development",
+      "agents": [
+        "ml-specialist", "data-engineer", "database-specialist", "python-specialist",
+        "performance-engineer", "code-reviewer", "qa-expert", "documentation-expert"
+      ],
+      "installation_time": "35s",
+      "disk_space": "4MB"
+    },
+    "infrastructure": {
+      "description": "DevOps and infrastructure management",
+      "agents": [
+        "deployment-engineer", "cloud-architect-specialist", "performance-engineer",
+        "monitor-system", "security-auditor", "database-specialist"
+      ],
+      "installation_time": "25s",
+      "disk_space": "3MB"
+    }
+  },
+  "agent_capabilities": {
+    "config-reader": {
+      "complexity": "green",
+      "domains": ["configuration", "inspection"],
+      "typical_tasks": ["read config files", "extract settings", "parse JSON/YAML"]
+    },
+    "security-auditor": {
+      "complexity": "red",
+      "domains": ["security", "compliance", "vulnerability"],
+      "typical_tasks": ["security scan", "vulnerability assessment", "compliance check"]
+    },
+    "code-reviewer": {
+      "complexity": "yellow",
+      "domains": ["quality", "security", "maintainability"],
+      "typical_tasks": ["code review", "quality check", "security review"]
+    },
+    "debugger": {
+      "complexity": "yellow", 
+      "domains": ["debugging", "troubleshooting", "analysis"],
+      "typical_tasks": ["debug errors", "troubleshoot issues", "root cause analysis"]
+    },
+    "full-stack-developer": {
+      "complexity": "red",
+      "domains": ["frontend", "backend", "integration"],
+      "typical_tasks": ["full application development", "end-to-end features", "system integration"]
+    },
+    "orchestrate-agents": {
+      "complexity": "yellow",
+      "domains": ["coordination", "workflow"],
+      "typical_tasks": ["coordinate 2-3 agents", "simple workflows", "standard development"]
+    },
+    "orchestrate-agents-adv": {
+      "complexity": "red", 
+      "domains": ["enterprise", "coordination", "complex-workflows"],
+      "typical_tasks": ["enterprise coordination", "4+ agents", "complex workflows"]
+    }
+  },
+  "complexity_thresholds": {
+    "green": {
+      "max_agents": 1,
+      "domains": 1,
+      "typical_routing": "direct",
+      "examples": ["read file", "extract data", "simple analysis"]
+    },
+    "yellow": {
+      "max_agents": 3,
+      "domains": 2,
+      "typical_routing": "orchestrate-agents", 
+      "examples": ["code review + debug", "build + test", "moderate development"]
+    },
+    "red": {
+      "max_agents": 8,
+      "domains": 4,
+      "typical_routing": "orchestrate-agents-adv",
+      "examples": ["enterprise workflows", "multi-domain", "complex architecture"]
+    },
+    "enterprise": {
+      "max_agents": 20,
+      "domains": 6,
+      "typical_routing": "direct-coordination",
+      "examples": ["legacy modernization", "complete transformation", "large-scale audit"]
+    }
+  },
+  "installation_strategies": {
+    "individual": {
+      "condition": "1-2 missing agents",
+      "command_template": "cd /home/bryan/agentgen && ./install-agents {agent_names}",
+      "typical_time": "10-15s",
+      "use_cases": ["single capability gap", "specific agent needed"]
+    },
+    "profile": {
+      "condition": "3+ missing agents or domain coverage",
+      "command_template": "cd /home/bryan/agentgen && ./install-agents --profile {profile_name}",
+      "typical_time": "20-45s", 
+      "use_cases": ["new project setup", "domain-specific workflows"]
+    },
+    "multi_profile": {
+      "condition": "enterprise workflows, 6+ missing agents",
+      "command_template": [
+        "cd /home/bryan/agentgen && ./install-agents --profile {primary_profile}",
+        "cd /home/bryan/agentgen && ./install-agents --profile {secondary_profile}"
+      ],
+      "typical_time": "60-90s",
+      "use_cases": ["enterprise setup", "complex multi-domain workflows"]
+    }
+  },
+  "error_scenarios": {
+    "permission_denied": {
+      "error_message": "Permission denied: cannot access /home/bryan/agentgen",
+      "fallback_strategy": "suggest manual installation or different directory",
+      "recovery_commands": ["sudo chown -R $USER /home/bryan/agentgen", "check directory permissions"]
+    },
+    "disk_space_full": {
+      "error_message": "No space left on device",
+      "fallback_strategy": "minimal profile or individual agents only",
+      "recovery_commands": ["df -h", "clean up disk space", "retry with minimal profile"]
+    },
+    "network_timeout": {
+      "error_message": "Connection timeout during installation",
+      "fallback_strategy": "retry with offline mode or cached agents",
+      "recovery_commands": ["check internet connection", "retry installation", "use local agents"]
+    },
+    "agent_not_found": {
+      "error_message": "Agent '{agent_name}' not found in repository",
+      "fallback_strategy": "suggest alternative agents or update repository",
+      "recovery_commands": ["list available agents", "suggest alternatives", "update agent repository"]
+    },
+    "profile_not_found": {
+      "error_message": "Profile '{profile_name}' not found",
+      "fallback_strategy": "list available profiles or create custom profile", 
+      "recovery_commands": ["./install-agents --list-profiles", "suggest alternative profiles"]
+    }
+  },
+  "mock_responses": {
+    "context_manager": {
+      "project_structure_query": {
+        "success": {
+          "project_structure": {
+            "name": "test-project",
+            "agents_installed": ["code-reviewer"],
+            "complexity_indicators": ["moderate", "development"],
+            "recent_activity": ["code changes", "testing"]
+          }
+        },
+        "failure": {
+          "error": "context-manager unavailable",
+          "fallback": "use basic agent scan"
+        }
+      },
+      "agent_activity_query": {
+        "success": {
+          "recent_activity": [
+            {"agent": "code-reviewer", "task": "security review", "timestamp": "2025-01-17T10:30:00Z"},
+            {"agent": "debugger", "task": "authentication bug", "timestamp": "2025-01-17T09:15:00Z"}
+          ],
+          "available_agents": ["code-reviewer", "debugger", "qa-expert"]
+        },
+        "failure": {
+          "error": "activity log unavailable",
+          "fallback": "proceed without activity context"
+        }
+      }
+    },
+    "install_agents_manager": {
+      "individual_install": {
+        "success": "Successfully installed: {agent_name}",
+        "permission_failure": "ERROR: Permission denied accessing agent repository",
+        "not_found": "ERROR: Agent '{agent_name}' not found",
+        "disk_full": "ERROR: No space left on device"
+      },
+      "profile_install": {
+        "success": "Successfully installed profile: {profile_name} ({agent_count} agents)",
+        "timeout": "ERROR: Installation timeout - network issues",
+        "partial_success": "WARNING: Partial installation - {failed_count} agents failed"
+      }
+    },
+    "orchestrators": {
+      "orchestrate_agents": {
+        "success": "Coordinating {agent_count} agents for: {task_description}",
+        "unavailable": "ERROR: orchestrate-agents currently unavailable"
+      },
+      "orchestrate_agents_adv": {
+        "success": "Enterprise coordination initiated for: {task_description}",
+        "unavailable": "ERROR: orchestrate-agents-adv currently unavailable"
+      }
+    }
+  },
+  "test_project_scenarios": {
+    "empty_project": {
+      "description": "Project with no agents installed",
+      "agents_installed": [],
+      "complexity": "unknown",
+      "typical_needs": ["core profile", "basic setup"]
+    },
+    "partial_project": {
+      "description": "Project with some agents",
+      "agents_installed": ["code-reviewer", "debugger"],
+      "complexity": "development",
+      "typical_needs": ["additional specialists", "domain-specific agents"]
+    },
+    "full_project": {
+      "description": "Project with complete agent coverage",
+      "agents_installed": ["all from development-team profile"],
+      "complexity": "enterprise",
+      "typical_needs": ["specialized workflows only"]
+    },
+    "legacy_project": {
+      "description": "Project with outdated agents",
+      "agents_installed": ["deprecated-agents"],
+      "complexity": "migration",
+      "typical_needs": ["agent updates", "migration to new profiles"]
+    }
+  }
+}

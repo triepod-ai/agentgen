@@ -9,7 +9,7 @@ import time
 import traceback
 
 # Add src to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../../../../cmd-agent-select-logic'))
 
 # Import Phase 2 components
 try:

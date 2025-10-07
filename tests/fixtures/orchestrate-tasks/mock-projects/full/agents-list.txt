@@ -1,0 +1,42 @@
+# Mock Full Project Agent List
+# This file represents a fully-configured project for testing
+
+# Core Development Agents
+code-reviewer.md
+debugger.md
+build-frontend.md
+build-backend.md
+full-stack-developer.md
+
+# Infrastructure Agents  
+deployment-engineer.md
+performance-engineer.md
+cloud-architect-specialist.md
+
+# Security Agents
+security-auditor.md
+secure-application.md
+
+# Quality Agents
+qa-expert.md
+test-automator.md
+
+# Data/AI Agents
+database-specialist.md
+ml-specialist.md
+data-engineer.md
+
+# Documentation Agents
+documentation-expert.md
+api-documenter.md
+
+# Specialist Agents
+python-specialist.md
+react-specialist.md
+architect-specialist.md
+
+# Orchestration Agents
+orchestrate-tasks.md
+orchestrate-agents.md
+orchestrate-agents-adv.md
+install-agents-manager.md

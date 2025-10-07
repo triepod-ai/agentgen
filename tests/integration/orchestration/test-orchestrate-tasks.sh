@@ -7,8 +7,8 @@ set -euo pipefail
 
 # Configuration
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-TEST_DATA_DIR="${SCRIPT_DIR}/test-data/orchestrate-tasks"
-RESULTS_DIR="${SCRIPT_DIR}/test-results"
+TEST_DATA_DIR="${SCRIPT_DIR}/../../fixtures/orchestrate-tasks"
+RESULTS_DIR="${SCRIPT_DIR}/../../results/orchestration"
 TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
 TEST_LOG="${RESULTS_DIR}/test-orchestrate-tasks-${TIMESTAMP}.log"
 

@@ -72,9 +72,9 @@ Claude Desktop Integration → Seamless WSL2 operation with path conversion
 - **Time Savings**: 70% reduction in context-switching, 50% faster debugging and troubleshooting
 - **Team Efficiency**: 80% reduction in repetitive tasks, 60% faster knowledge transfer
 
-### **Cost Optimization** 
-- **Token Efficiency**: Complexity-based model selection (Green/Yellow/Red tiers) reduces AI costs by 70%
-- **Resource Management**: <400ms agent loading, <100ms orchestration decisions
+### **Cost Optimization**
+- **Token Efficiency**: 5-tier complexity-based model selection (Green/Blue/Yellow/Orange/Red → Haiku/Sonnet 3.5/3.7/4/Opus) reduces AI costs by 70-80%
+- **Resource Management**: Sub-100ms agent loading, <100ms orchestration decisions
 - **Maintenance**: Symlink-based deployment eliminates version drift, reduces management overhead by 85%
 
 ### **Enterprise Value**

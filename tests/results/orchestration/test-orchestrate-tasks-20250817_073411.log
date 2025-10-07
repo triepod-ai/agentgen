@@ -1,0 +1,152 @@
+=== @orchestrate-tasks Test Suite ===
+Timestamp: 20250817_073411
+Mode: mock
+=========================================
+[20250817_073411] Starting test: A1: Single Missing Agent Detection
+[20250817_073411] Simulating request: Review this code for security vulnerabilities
+[20250817_073411] Expected routing: orchestrate-agents
+[20250817_073411] Expected installation: security-auditor
+[20250817_073411] Keyword scores: security=2, development=0, enterprise=0, simple=0, total=2
+[20250817_073411] Decision: agents=1, installation=security-auditor, routing=orchestrate-agents
+[20250817_073411] TEST: A1 - FAIL
+[20250817_073411] DETAILS: Failed to correctly identify agent needs or routing
+[20250817_073411] ---
+[20250817_073411] Starting test: A2: Multiple Agents Requiring Profile
+[20250817_073411] Simulating request: I need full-stack development with security audit and performance optimization
+[20250817_073411] Expected routing: orchestrate-agents-adv
+[20250817_073411] Expected installation: development-team,security-audit
+[20250817_073411] Keyword scores: security=2, development=5, enterprise=0, simple=0, total=7
+[20250817_073411] Decision: agents=2, installation=security-auditor, routing=orchestrate-agents
+[20250817_073411] MISMATCH: Expected routing 'orchestrate-agents-adv', got 'orchestrate-agents'
+[20250817_073411] MISMATCH: Expected installation 'development-team,security-audit', got 'security-auditor'
+[20250817_073411] TEST: A2 - FAIL
+[20250817_073411] DETAILS: Failed to identify profile installation strategy
+[20250817_073411] ---
+[20250817_073411] Starting test: A3: Partial Agent Availability
+[20250817_073411] Simulating request: Perform comprehensive security audit and code review
+[20250817_073411] Expected routing: orchestrate-agents
+[20250817_073411] Expected installation: security-auditor
+[20250817_073411] Keyword scores: security=2, development=1, enterprise=1, simple=0, total=4
+[20250817_073411] Decision: agents=1, installation=security-auditor, routing=orchestrate-agents
+[20250817_073411] TEST: A3 - FAIL
+[20250817_073411] DETAILS: Failed to handle partial availability correctly
+[20250817_073411] ---
+[20250817_073411] Starting test: A4: Global vs Project Installation Decision
+[20250817_073411] TEST: A4 - PASS
+[20250817_073411] DETAILS: Correctly chose project scope for team installation
+[20250817_073411] ---
+[20250817_073411] Starting test: A5: Complex Enterprise Workflow
+[20250817_073411] Simulating request: Complete enterprise security audit, architecture review, performance optimization, and modernization
+[20250817_073411] Expected routing: direct-coordination
+[20250817_073411] Expected installation: development-team,security-audit,infrastructure
+[20250817_073411] Keyword scores: security=2, development=2, enterprise=6, simple=0, total=10
+[20250817_073411] Decision: agents=2, installation=security-auditor, routing=orchestrate-agents
+[20250817_073411] MISMATCH: Expected routing 'direct-coordination', got 'orchestrate-agents'
+[20250817_073411] MISMATCH: Expected installation 'development-team,security-audit,infrastructure', got 'security-auditor'
+[20250817_073411] TEST: A5 - FAIL
+[20250817_073411] DETAILS: Failed to handle enterprise-scale workflow
+[20250817_073411] ---
+[20250817_073411] Starting test: B1: Simple Task - No Escalation
+[20250817_073411] Simulating request: Read this config file and extract database settings
+[20250817_073411] Expected routing: direct
+[20250817_073411] Expected installation: none
+[20250817_073411] Keyword scores: security=0, development=0, enterprise=0, simple=6, total=0
+[20250817_073411] Decision: agents=1, installation=none, routing=direct
+[20250817_073411] TEST: B1 - FAIL
+[20250817_073411] DETAILS: Incorrectly escalated simple task
+[20250817_073411] ---
+[20250817_073411] Starting test: B2: Standard Development - Route to orchestrate-agents
+[20250817_073411] Simulating request: Debug this authentication issue and improve error handling
+[20250817_073411] Expected routing: orchestrate-agents
+[20250817_073411] Expected installation: none
+[20250817_073411] Keyword scores: security=0, development=5, enterprise=0, simple=0, total=5
+[20250817_073411] Decision: agents=2, installation=none, routing=orchestrate-agents
+[20250817_073411] TEST: B2 - FAIL
+[20250817_073411] DETAILS: Failed to route standard development task correctly
+[20250817_073411] ---
+[20250817_073411] Starting test: B3: Complex Multi-Domain - Route to orchestrate-agents-adv
+[20250817_073411] Simulating request: Modernize legacy authentication system with new architecture, security audit, and performance testing
+[20250817_073411] Expected routing: orchestrate-agents-adv
+[20250817_073411] Expected installation: development-team,security-audit
+[20250817_073411] Keyword scores: security=2, development=2, enterprise=5, simple=0, total=9
+[20250817_073411] Decision: agents=2, installation=security-auditor, routing=orchestrate-agents
+[20250817_073411] MISMATCH: Expected routing 'orchestrate-agents-adv', got 'orchestrate-agents'
+[20250817_073411] MISMATCH: Expected installation 'development-team,security-audit', got 'security-auditor'
+[20250817_073411] TEST: B3 - FAIL
+[20250817_073411] DETAILS: Failed to handle complex multi-domain routing
+[20250817_073411] ---
+[20250817_073411] Starting test: B4: Ambiguous Complexity Assessment
+[20250817_073411] TEST: B4 - PASS
+[20250817_073411] DETAILS: Correctly used conservative routing for ambiguous request
+[20250817_073411] ---
+[20250817_073411] Starting test: B5: Boundary Conditions - 3 vs 4 Agents
+[20250817_073411] TEST: B5 - PASS
+[20250817_073411] DETAILS: Correctly handled 4-agent boundary condition
+[20250817_073411] ---
+[20250817_073411] Starting test: C1: Agent Installation Failure - Permission Denied
+[20250817_073411] TEST: C1 - PASS
+[20250817_073411] DETAILS: Correctly detected and handled permission failure
+[20250817_073411] ---
+[20250817_073411] Starting test: C2: Profile Installation Timeout
+[20250817_073411] TEST: C2 - PASS
+[20250817_073411] DETAILS: Correctly handled profile installation timeout
+[20250817_073411] ---
+[20250817_073411] Starting test: C3: Orchestrator Unavailability
+[20250817_073411] TEST: C3 - PASS
+[20250817_073411] DETAILS: Correctly handled orchestrator unavailability
+[20250817_073411] ---
+[20250817_073411] Starting test: C4: Partial Installation Success
+[20250817_073411] TEST: C4 - PASS
+[20250817_073411] DETAILS: Correctly handled partial installation success
+[20250817_073411] ---
+[20250817_073411] Starting test: C5: Context-Manager Communication Failure
+[20250817_073411] TEST: C5 - PASS
+[20250817_073411] DETAILS: Correctly handled context-manager failure
+[20250817_073411] ---
+[20250817_073411] Starting test: D1: Context-Manager Integration Success
+[20250817_073411] TEST: D1 - PASS
+[20250817_073411] DETAILS: Successfully integrated with context-manager
+[20250817_073411] ---
+[20250817_073411] Starting test: D2: Install-Agents-Manager Delegation
+[20250817_073411] TEST: D2 - PASS
+[20250817_073411] DETAILS: Successfully delegated to install-agents-manager
+[20250817_073411] ---
+[20250817_073411] Starting test: D3: TodoWrite Task List Creation
+[20250817_073411] TEST: D3 - PASS
+[20250817_073411] DETAILS: Successfully created TodoWrite task list
+[20250817_073411] ---
+[20250817_073411] Starting test: D4: Cross-Orchestrator Handoff
+[20250817_073411] TEST: D4 - PASS
+[20250817_073411] DETAILS: Successfully handled cross-orchestrator handoff
+[20250817_073411] ---
+[20250817_073411] Starting test: D5: Multi-Phase Workflow Coordination
+[20250817_073411] TEST: D5 - PASS
+[20250817_073411] DETAILS: Successfully organized multi-phase workflow
+[20250817_073411] ---
+[20250817_073411] Starting test: E1: Large-Scale Agent Requirements
+[20250817_073411] TEST: E1 - PASS
+[20250817_073411] DETAILS: Successfully handled large-scale agent requirements
+[20250817_073411] ---
+[20250817_073411] Starting test: E2: Rapid Context Switching
+[20250817_073411] TEST: E2 - PASS
+[20250817_073411] DETAILS: Successfully handled rapid context switching
+[20250817_073411] ---
+[20250817_073411] Starting test: E3: Concurrent Task Handling
+[20250817_073411] TEST: E3 - PASS
+[20250817_073411] DETAILS: Successfully handled concurrent tasks
+[20250817_073411] ---
+[20250817_073411] Starting test: E4: Resource Constraint Scenarios
+[20250817_073411] TEST: E4 - PASS
+[20250817_073411] DETAILS: Successfully handled resource constraints
+[20250817_073411] ---
+[20250817_073411] Starting test: E5: Malformed or Ambiguous Requests
+[20250817_073411] TEST: E5 - PASS
+[20250817_073411] DETAILS: Successfully handled malformed/ambiguous requests
+[20250817_073411] ---
+
+========== FINAL SUMMARY ==========
+Tests Run: 25
+Tests Passed: 18
+Tests Failed: 7
+Success Rate: 72%
+=========================================

@@ -2,9 +2,6 @@
 .claude/backup*
 .venv/
 logs/
-test-data/
-test-error-scenarios/
-test-results/
 specs/
 deprecated/
 .claude/hooks/
@@ -13,3 +10,10 @@ __pycache__/
 .pytest_cache
 agents_backup_phase2_20250824_075749/
 agents/*/*.md.backup
+
+# Test organization
+tests/debug/               # Temporary debug scripts
+tests/results/             # Test execution results and logs
+tests/**/__pycache__/      # Python cache files
+tests/**/*.pyc             # Compiled Python files
+*.log                      # Log files

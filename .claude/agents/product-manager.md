@@ -1,1 +1,1 @@
-/home/bryan/agentgen/agents/specialists/product-manager.md
+/home/bryan/agentgen/agents/business/product-manager.md

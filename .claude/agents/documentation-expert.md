@@ -1,1 +1,1 @@
-/home/bryan/agentgen/agents/specialists/documentation-expert.md
+/home/bryan/agentgen/agents/development/documentation-expert.md

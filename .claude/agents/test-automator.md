@@ -1,1 +1,1 @@
-/home/bryan/agentgen/agents/specialists/test-automator.md
+/home/bryan/agentgen/agents/quality/test-automator.md
